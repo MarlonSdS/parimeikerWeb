@@ -1,0 +1,10 @@
+main{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+}
