@@ -6,3 +6,5 @@ será retirado no futuro quando tivermos o nosso próprio design-->
 <link rel="stylesheet" href="/parimeikerWeb/assets/styles/main.css">
 <!--o css main também serve só para dar uma estilização básica, creio que os estilos do main serão comuns a 
 todas as páginas, mas isso pode mudar no futuro-->
+<link rel="shortcut icon" href="/parimeikerWeb/assets/images/favicon.png" >
+
