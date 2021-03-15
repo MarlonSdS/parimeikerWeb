@@ -4,25 +4,59 @@
         <?php include'../../util/commonHead.php'; ?>
         <title>Entrar</title>
     </head>
-    <body>
+    <body>    
+        <?php 
+                $tipo = $_GET["tipo"];
+                // login de cliente
+                if($tipo == "cliente"):            ?>
         <main>
             <form action="">
-            <?php 
-            //A idéia aqui é ter apenas uma página de login e mudar seus campos dependendo do que foi passado,
-            //para isso será utilizado uma verificção if em php ou javascript
-            ?>
+
             <div class="form-group">
-                    <label for="nome">Crie Sua Senha</label>
-                    <input type="text" name="nome" class="form-control">
-                </div>
+                    <label for="nome">E-mail:</label>
+                    <input type="email" name="email" class="form-control">
+            </div>
             <div class="form-group">
-                    <label for="senha">Crie Sua Senha</label>
+                    <label for="senha">Senha:</label>
                     <input type="password" name="senha" class="form-control">
             </div>
 
             <button type="submit" class="btn btn-secondary" name="login">Entrar</button>
         </form>
         </main>
+        <?php /*login de autonomo*/elseif($tipo == "auto"): ?>
+        <main>
+            <form action="">
+
+            <div class="form-group">
+                    <label for="nome">CPF:</label>
+                    <input type="text" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-secondary" name="login">Entrar</button>
+        </form>
+        </main>
+        <?php /*login de empresa*/ elseif($tipo == "empresa"): ?>
+        <main>
+            <form action="">
+
+            <div class="form-group">
+                    <label for="nome">CNPJ:</label>
+                    <input type="text" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-secondary" name="login">Entrar</button>
+        </form>
+        </main>
+        <?php endif; ?>
         
     </body>
 </html>

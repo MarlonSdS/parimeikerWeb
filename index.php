@@ -11,9 +11,9 @@
     <header></header>
     <main>
         <h1>Seja Bem Vindo!</h1>
-        <a href="/parimeikerWeb/view/crud/login.php">Login Cliente</a>
-        <a href="/parimeikerWeb/view/crud/login.php">Login Empresa</a>
-        <a href="/parimeikerWeb/view/crud/login.php">Login Profissional Autônomo</a>
+        <a href="/parimeikerWeb/view/crud/login.php?tipo=cliente">Login Cliente</a>
+        <a href="/parimeikerWeb/view/crud/login.php?tipo=empresa">Login Empresa</a>
+        <a href="/parimeikerWeb/view/crud/login.php?tipo=auto">Login Profissional Autônomo</a>
         <a href="/parimeikerWeb/view/selectCadastros.php">Cadastrar</a>
     </main>
     <footer>
