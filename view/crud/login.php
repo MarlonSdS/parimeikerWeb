@@ -10,10 +10,10 @@
                 // login de cliente
                 if($tipo == "cliente"):            ?>
         <main>
-            <form action="">
+            <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="form-group">
-                    <label for="nome">E-mail:</label>
+                    <label for="email">E-mail:</label>
                     <input type="email" name="email" class="form-control">
             </div>
             <div class="form-group">
@@ -26,11 +26,11 @@
         </main>
         <?php /*login de autonomo*/elseif($tipo == "auto"): ?>
         <main>
-            <form action="">
+            <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="form-group">
-                    <label for="nome">CPF:</label>
-                    <input type="text" name="email" class="form-control">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" name="cpf" class="form-control">
             </div>
             <div class="form-group">
                     <label for="senha">Senha:</label>
@@ -42,11 +42,11 @@
         </main>
         <?php /*login de empresa*/ elseif($tipo == "empresa"): ?>
         <main>
-            <form action="">
+            <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="form-group">
-                    <label for="nome">CNPJ:</label>
-                    <input type="text" name="email" class="form-control">
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" name="cnpj" class="form-control">
             </div>
             <div class="form-group">
                     <label for="senha">Senha:</label>
