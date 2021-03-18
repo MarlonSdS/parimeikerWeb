@@ -5,11 +5,21 @@
         <title>Entrar</title>
     </head>
     <body>    
+        <main>
+                 <?php $erro ="";
+                if(isset($_GET["erro"])){
+                        $erro = $_GET["erro"];
+                }
+                if($erro == "login"):
+        ?>
+        <div class="alert alert-warning" role="alert">
+                <p>Login ou senha incorretos</p>
+        </div>
+        <?php endif; ?>
         <?php 
                 $tipo = $_GET["tipo"];
                 // login de cliente
                 if($tipo == "cliente"):            ?>
-        <main>
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="form-group">
@@ -23,7 +33,6 @@
 
             <button type="submit" class="btn btn-secondary" name="login">Entrar</button>
         </form>
-        </main>
         <?php /*login de autonomo*/elseif($tipo == "auto"): ?>
         <main>
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
@@ -39,9 +48,7 @@
 
             <button type="submit" class="btn btn-secondary" name="login">Entrar</button>
         </form>
-        </main>
         <?php /*login de empresa*/ elseif($tipo == "empresa"): ?>
-        <main>
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="form-group">
@@ -55,8 +62,9 @@
 
             <button type="submit" class="btn btn-secondary" name="login">Entrar</button>
         </form>
-        </main>
         <?php endif; ?>
         
+        </main>
+       
     </body>
 </html>

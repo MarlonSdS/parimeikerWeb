@@ -6,10 +6,21 @@
     </head>
     <body>
         <header></header>
-        <?php //cadastro de autonomo
+        <main>
+        <?php //verificar se usuário já existe 
+        $erro ="";
+                if(isset($_GET["erro"])){
+                        $erro = $_GET["erro"];
+                }
+                if($erro == "exis"):
+        ?>
+        <div class="alert alert-warning" role="alert">
+                <p>Usuário já cadastrado</p>
+        </div>
+        <?php endif; ?>
+            <?php //cadastro de autonomo
             if ($_GET["tipo"] == "auto") :
         ?>
-        <main>
             <h1>Preencha seus dados</h1>
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
                 <div class="form-group">
@@ -26,7 +37,7 @@
                 </div>
                 <div class="form-group">
                     <label for="cpf">Seu CPF</label>
-                    <input type="text" name="cpf" class="form-control">
+                    <input type="text" name="cpf" class="form-control" maxlength="14">
                 </div>
                 <div class="form-group">
                     <label for="senha">Crie Sua Senha</label>
@@ -39,7 +50,6 @@
                 <button type="submit" class="btn btn-primary" name="cadastro">Cadastrar</button>
             </form>
             
-        </main>
         <?php //cadastro de cliente
         elseif($_GET["tipo"] == "cliente"): ?>
             <main>
@@ -68,7 +78,6 @@
                 <button type="submit" class="btn btn-primary" name="cadastro">Cadastrar</button>
             </form>
             
-        </main>
         <?php //cadastro de empresa
         elseif($_GET["tipo"] == "empresa"): ?>
             <main>
@@ -88,7 +97,7 @@
                 </div>
                 <div class="form-group">
                     <label for="cnpj">CNPJ da Empresa</label>
-                    <input type="text" name="cnpj" class="form-control">
+                    <input type="text" name="cnpj" class="form-control" maxlength="14">
                 </div>
                 <div class="form-group">
                     <label for="senha">Crie Sua Senha</label>
@@ -101,7 +110,8 @@
                 <button type="submit" class="btn btn-primary" name="cadastro">Cadastrar</button>
             </form>
             
-        </main>
         <?php endif; ?>
+        </main>
+        
     </body>
 </html>

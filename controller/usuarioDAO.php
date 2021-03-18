@@ -55,19 +55,27 @@
 
     //funções de cadastro
     function cadastrarAuto(){
-        $nome = $_POST["nome"];
-        $email = $_POST["email"];
-        $tel = $_POST["tel"];
-        $cpf = $_POST["cpf"];
-        $senha = md5($_POST["senha"]); 
-        include("../controller/conexao.php");
+        if(verificarUsuario() == true){
+            header("location: ../view/crud/cadastro.php?tipo=auto&erro=exis");
+        }else{
+            $nome = $_POST["nome"];
+            $email = $_POST["email"];
+            $tel = $_POST["tel"];
+            $cpf = $_POST["cpf"];
+            $senha = md5($_POST["senha"]); 
+            include("../controller/conexao.php");
 
-        $query = "INSERT INTO autonomo(nome, email, tel, cpf, senha) VALUES ('$nome', '$email', '$tel', '$cpf', '$senha')";
-        $operacao = mysqli_query($conexao, $query);
-        header("location: ../view/crud/login.php?tipo=auto");
+            $query = "INSERT INTO autonomo(nome, email, tel, cpf, senha) VALUES ('$nome', '$email', '$tel', '$cpf', '$senha')";
+            $operacao = mysqli_query($conexao, $query);
+            header("location: ../view/crud/login.php?tipo=auto"); 
+        }
+
     }
 
     function cadastrarEmpresa(){
+        if(verificarUsuario() == true){
+            header("location: ../view/crud/cadastro.php?tipo=empresa&erro=exis");
+        }else{
         $nome = $_POST["nome"];
         $email = $_POST["email"];
         $tel = $_POST["tel"];
@@ -77,10 +85,13 @@
 
         $query = "INSERT INTO empresa(nome, email, tel, cnpj, senha) VALUES ('$nome', '$email', '$tel', '$cnpj', '$senha')";
         $operacao = mysqli_query($conexao, $query);
-        header("location: ../view/crud/login.php?tipo=empresa");
+        header("location: ../view/crud/login.php?tipo=empresa");}
     }
 
     function cadastrarCliente(){
+        if(verificarUsuario() == true){
+            header("location: ../view/crud/cadastro.php?tipo=cliente&erro=exis");
+        }else{
         $nome = $_POST["nome"];
         $email = $_POST["email"];
         $tel = $_POST["tel"];
@@ -90,6 +101,35 @@
         $query = "INSERT INTO cliente(nome, email, tel, senha) VALUES ('$nome', '$email', '$tel', '$senha')";
         $operacao = mysqli_query($conexao, $query);
         header("location: ../view/crud/login.php?tipo=cliente");
+    }
+}
+
+    function verificarUsuario(){
+        $email = $_POST["email"];
+        $cnpj = $_POST["cnpj"];
+        $cpf = $_POST["cpf"];
+        include("../controller/conexao.php");
+
+        if (isset($cnpj)) {
+            
+        $validar = $conexao->query("SELECT * FROM empresa WHERE cnpj='$cnpj'")
+        or die($conexao->error);
+        if($validar->num_rows > 0){
+            return true;
+        }
+        }elseif(isset($cpf)){
+            $validar = $conexao->query("SELECT * FROM autonomo WHERE cpf='$cpf'")
+            or die($conexao->error);
+            if($validar->num_rows > 0){
+                return true;
+            }
+        }else{
+            $validar = $conexao->query("SELECT * FROM empresa WHERE email='$email'")
+            or die($conexao->error);
+            if($validar->num_rows > 0){
+                return true;
+            }
+        }
     }
 
     //funções de autenticação
@@ -109,9 +149,8 @@
             $_SESSION['nome'] = $validar['nome'];
             header("location: ../view/homepage.php");
         }else{
-            echo "deu ruim";}
-
-            
+            header("location: ../view/crud/login.php?tipo=cliente&erro=login");
+        }  
         }
 
         function loginAutonomo(){
@@ -129,7 +168,7 @@
                 $_SESSION['nome'] = $validar['nome'];
                 header("location: ../view/homepage.php");
             }else{
-                echo "deu ruim";}
+                header("location: ../view/crud/login.php?tipo=auto&erro=login");}
     
                 
             }
@@ -149,7 +188,7 @@
                     $_SESSION['nome'] = $validar['nome'];
                     header("location: ../view/homepage.php");
                 }else{
-                    echo "deu ruim";}
+                    header("location: ../view/crud/login.php?tipo=empresa&erro=login");}
         
                     
                 }        
