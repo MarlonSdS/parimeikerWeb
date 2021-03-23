@@ -124,7 +124,7 @@
                 return true;
             }
         }else{
-            $validar = $conexao->query("SELECT * FROM empresa WHERE email='$email'")
+            $validar = $conexao->query("SELECT * FROM cliente WHERE email='$email'")
             or die($conexao->error);
             if($validar->num_rows > 0){
                 return true;

@@ -5,6 +5,9 @@
         <title>Entrar</title>
     </head>
     <body>    
+        <header>
+                <?php include('../../util/header.php'); ?>
+        </header>
         <main>
                  <?php $erro ="";
                 if(isset($_GET["erro"])){

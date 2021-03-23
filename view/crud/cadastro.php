@@ -5,7 +5,9 @@
         <title>Cadastro</title>
     </head>
     <body>
-        <header></header>
+        <header>
+            <?php include('../../util/header.php'); ?>
+        </header>
         <main>
         <?php //verificar se usuário já existe 
         $erro ="";

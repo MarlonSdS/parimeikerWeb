@@ -8,7 +8,9 @@
     <title>Párimeiker — Ferramenta de promoção e gerenciamento para eventos</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <?php include('util/header.php'); ?>
+    </header>
     <main>
         <h1>Seja Bem Vindo!</h1>
         <a href="/parimeikerWeb/view/crud/login.php?tipo=cliente">Login Cliente</a>

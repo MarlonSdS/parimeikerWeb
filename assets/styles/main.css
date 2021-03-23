@@ -10,6 +10,56 @@ main{
     margin-top: 10%;
 }
 
+header{
+    height: 150px;
+    background-color: black;
+}
+
+.logo{
+    float: left;
+    padding: 35px 5px;
+    width: 20%;
+}
+
+.img-logo{
+    width: 100%;
+    height: 80px;
+}
+
+.menu{
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+    margin: 0;
+    padding: 55px 0;
+}
+
+.pesquisa{
+    background-color: black;
+    border-color: #ff7f2aff;
+    width: 70%;
+    margin-left: 50px;
+    
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+.btn-entrar{
+    float: right;
+    margin-left: 0px;
+    margin-right: -230px;
+    margin-top: -28px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-decoration: none;
+    background-color: #ff7f2aff;
+    border-radius: 5%;
+    padding: 2px 15px;
+
+}
+
 footer{
     position: absolute;
     bottom: 0;
