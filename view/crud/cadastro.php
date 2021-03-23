@@ -8,6 +8,7 @@
         <header>
             <?php include('../../util/header.php'); ?>
         </header>
+        <div id="vazio"></div>
         <main>
         <?php //verificar se usuário já existe 
         $erro ="";

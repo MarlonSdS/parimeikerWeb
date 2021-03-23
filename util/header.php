@@ -5,5 +5,18 @@
             <form action="" method="get">
                 <input class="pesquisa" type="text" placeholder="Pesquisar...">
             </form>
-            <a class="btn-entrar" href="">Entrar</a>
+            <div class="btn-entrar">
+                <input type="checkbox" id="chec">
+                <label for="chec">
+                    Entrar
+                </label>
+
+                <nav>
+                    <li class="ul">
+                        <li><b><a href="/parimeikerWeb/view/crud/login.php?tipo=cliente">Entrar como cliente</a></b></li>
+                        <li><b><a href="/parimeikerWeb/view/crud/login.php?tipo=auto">Entrar como autônomo</a></b></li>
+                        <li><b><a href="/parimeikerWeb/view/crud/login.php?tipo=empresa">Entrar como empresa</a></b></li>
+                    </li>
+                </nav>
+            </div>       
         </div>

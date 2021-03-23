@@ -12,6 +12,7 @@
     <header>
         <?php include('util/header.php'); ?>
     </header>
+    <div id="vazio"></div>
     <div class="banner">
         <p><b>Organize aqui <br> o seu evento<b></p>
     </div>
@@ -47,6 +48,7 @@
             </div>
 
         </div>
+        
     </main>
     <footer>
         
