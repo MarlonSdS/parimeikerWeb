@@ -1,5 +1,6 @@
+
 main{
-    width: 70%;
+    width: 75%;
     margin: auto;
     text-align: center;
 }
@@ -11,12 +12,19 @@ main{
 }
 
 header{
-    height: 150px;
+    position: fixed;
+    height: 100px;
+    width: 100%;
     background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
 }
 
 .logo{
-    float: left;
+    /*float: left;*/
     padding: 35px 5px;
     width: 20%;
 }
@@ -27,18 +35,16 @@ header{
 }
 
 .menu{
-    justify-content: center;
-    height: 100%;
-    width: 80%;
-    margin: 0;
-    padding: 55px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
 }
 
 .pesquisa{
     background-color: black;
     border-color: #ff7f2aff;
-    width: 70%;
-    margin-left: 50px;
+    width: 100%;
+    color: #ff9955ff;
     
 }
 a:hover{
@@ -46,10 +52,6 @@ a:hover{
     color: white;
 }
 .btn-entrar{
-    float: right;
-    margin-left: 0px;
-    margin-right: -230px;
-    margin-top: -28px;
     color: white;
     text-transform: uppercase;
     font-weight: bolder;
@@ -57,6 +59,8 @@ a:hover{
     background-color: #ff7f2aff;
     border-radius: 5%;
     padding: 2px 15px;
+    margin-right: 5%;
+
 
 }
 

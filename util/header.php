@@ -3,7 +3,7 @@
         </div>
         <div class="menu">
             <form action="" method="get">
-                <input class="pesquisa" type="text">
+                <input class="pesquisa" type="text" placeholder="Pesquisar...">
             </form>
             <a class="btn-entrar" href="">Entrar</a>
         </div>
