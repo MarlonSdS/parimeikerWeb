@@ -2,6 +2,7 @@
 <html>
     <head>
         <?php include'../../util/commonHead.php'; ?>
+        <link rel="stylesheet" href="../../assets/styles/crud.css">
         <title>Entrar</title>
     </head>
     <body>    
@@ -27,44 +28,41 @@
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" name="email" class="form-control">
+                <img src="../../assets/images/icons/prancehta.png" alt="">
+                    <input type="email" name="email" placeholder="E-mail" class="form-control">
             </div>
             <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <input type="password" name="senha" class="form-control">
+                    <input type="password" name="senha" placeholder="Senha" class="form-control">
             </div>
 
-            <button type="submit" class="btn btn-secondary" name="login">Entrar</button>
+            <button type="submit" class="btn-login" name="login">Entrar</button>
+            <a href="/parimeikerWeb/view/crud/cadastro.php?tipo=cliente" class="btn-cadastrar">Cadastrar</a>
         </form>
         <?php /*login de autonomo*/elseif($tipo == "auto"): ?>
-        <main>
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="form-group">
-                    <label for="cpf">CPF:</label>
-                    <input type="text" name="cpf" class="form-control">
+                    <input type="text" name="cpf" placeholder="CPF" class="form-control">
             </div>
             <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <input type="password" name="senha" class="form-control">
+                    <input type="password" name="senha" placeholder="Senha" class="form-control">
             </div>
 
-            <button type="submit" class="btn btn-secondary" name="login">Entrar</button>
+            <button type="submit" class="btn-login" name="login">Entrar</button>
+            <a href="/parimeikerWeb/view/crud/cadastro.php?tipo=auto" class="btn-cadastrar">Cadastrar</a>
         </form>
         <?php /*login de empresa*/ elseif($tipo == "empresa"): ?>
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="form-group">
-                    <label for="cnpj">CNPJ:</label>
-                    <input type="text" name="cnpj" class="form-control">
+                    <input type="text" name="cnpj" placeholder="CNPJ" class="form-control">
             </div>
             <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <input type="password" name="senha" class="form-control">
+                    <input type="password" name="senha" placeholder="Senha" class="form-control">
             </div>
 
-            <button type="submit" class="btn btn-secondary" name="login">Entrar</button>
+            <button type="submit" class="btn-login" name="login">Entrar</button>
+            <a href="/parimeikerWeb/view/crud/cadastro.php?tipo=empresa" class="btn-cadastrar">Cadastrar</a>
         </form>
         <?php endif; ?>
         

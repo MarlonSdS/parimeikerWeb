@@ -1,0 +1,48 @@
+main{
+    margin-top: 100px;
+    width: 50%;
+}
+
+main input{
+    margin-top: 50px;
+    border: 2px solid #ff9955ff !important;
+}
+
+.btn-login{
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: #ff9955ff;
+    padding: 2% 8%;
+    border: 1px transparent;
+    border-radius: 6%;
+    margin-top: 50px;
+}
+
+.btn-cadastrar{
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: #ff9955ff;
+    padding: 2.3% 5%;
+    border: 1px transparent;
+    border-radius: 6%;
+    display: block;
+    width: 26.7%;
+    margin: auto;
+    color: black;
+    margin-top: 25px;
+}
+
+.btn-cadastrar:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-group img{
+    width: 10%;
+    margin: 2%;
+}
