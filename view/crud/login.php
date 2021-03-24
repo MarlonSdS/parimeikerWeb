@@ -28,10 +28,11 @@
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="form-group">
-                <img src="../../assets/images/icons/prancehta.png" alt="">
+                <img src="../../assets/images/icons/usuario.png" alt="">
                     <input type="email" name="email" placeholder="E-mail" class="form-control">
             </div>
             <div class="form-group">
+                <img src="../../assets/images/icons/cadeado.png" alt="">
                     <input type="password" name="senha" placeholder="Senha" class="form-control">
             </div>
 
@@ -42,9 +43,11 @@
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="form-group">
+            <img src="../../assets/images/icons/usuario.png" alt="">
                     <input type="text" name="cpf" placeholder="CPF" class="form-control">
             </div>
             <div class="form-group">
+            <img src="../../assets/images/icons/cadeado.png" alt="">
                     <input type="password" name="senha" placeholder="Senha" class="form-control">
             </div>
 
@@ -55,9 +58,11 @@
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="form-group">
+            <img src="../../assets/images/icons/usuario.png" alt="">
                     <input type="text" name="cnpj" placeholder="CNPJ" class="form-control">
             </div>
             <div class="form-group">
+            <img src="../../assets/images/icons/cadeado.png" alt="">
                     <input type="password" name="senha" placeholder="Senha" class="form-control">
             </div>
 
@@ -67,6 +72,8 @@
         <?php endif; ?>
         
         </main>
-       
+       <footer>
+
+       </footer>
     </body>
 </html>

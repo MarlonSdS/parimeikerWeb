@@ -111,6 +111,8 @@
             
         <?php endif; ?>
         </main>
-        
+        <footer>
+            
+        </footer>
     </body>
 </html>
