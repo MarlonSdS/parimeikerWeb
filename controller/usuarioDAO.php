@@ -147,7 +147,7 @@
             session_start();
             $_SESSION['idCliente'] = $validar['id'];
             $_SESSION['nome'] = $validar['nome'];
-            header("location: ../view/homepage.php");
+            header("location: ../view/homepage.php?user=".$validar['nome']);
         }else{
             header("location: ../view/crud/login.php?tipo=cliente&erro=login");
         }  
@@ -166,7 +166,7 @@
                 session_start();
                 $_SESSION['idAuto'] = $validar['id'];
                 $_SESSION['nome'] = $validar['nome'];
-                header("location: ../view/homepage.php");
+                header("location: ../view/homepage.php?user=".$validar['nome']);
             }else{
                 header("location: ../view/crud/login.php?tipo=auto&erro=login");}
     
@@ -186,7 +186,7 @@
                     session_start();
                     $_SESSION['idEmpresa'] = $validar['id'];
                     $_SESSION['nome'] = $validar['nome'];
-                    header("location: ../view/homepage.php");
+                    header("location: ../view/homepage.php?user=".$validar['nome']);
                 }else{
                     header("location: ../view/crud/login.php?tipo=empresa&erro=login");}
         

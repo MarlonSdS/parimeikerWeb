@@ -13,13 +13,13 @@ main{
 
 #vazio{
     width: 100%;
-    height: 100px;
+    height: 130px;
     background-color: white;
 }
 
 header{
     position: fixed;
-    height: 100px;
+    height: 130px;
     width: 100%;
     background-color: black;
     display: flex;
@@ -37,7 +37,7 @@ header{
 
 .img-logo{
     width: 100%;
-    height: 80px;
+    height: 98%;
 }
 
 .menu{
@@ -51,7 +51,7 @@ header{
     border-color: #ff7f2aff;
     width: 100%;
     color: #ff9955ff;
-    border-radius: 3%;
+    border-radius: 5px;
     
 }
 .menu a:hover{
@@ -136,7 +136,7 @@ li:hover {
     font-weight: bolder;
     text-decoration: none;
     background-color: #ff7f2aff;
-    border-radius: 5%;
+    border-radius: 5px;
     padding: 2px 15px;
     margin-right: 5%;
 }
