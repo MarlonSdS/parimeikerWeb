@@ -46,10 +46,17 @@ header{
     width: 30%;
 }
 
+header form{
+    margin: 0%;
+    display: flex;
+    align-items: center;
+}
+
 .pesquisa{
     background-color: black;
     border-color: #ff7f2aff;
     width: 100%;
+    height: 30px;
     color: #ff9955ff;
     border-radius: 5px;
     
@@ -86,9 +93,9 @@ li{
     margin-top: 45px;
 }
 
-img {
+/*img {
     width: 40px;
-}
+}*/
 
 input[type="checkbox"] {
     display: none;
@@ -108,8 +115,9 @@ nav {
 }
 
 input[type="checkbox"]:checked~nav {
-    transform: translateY(400px);
+    transform: translateY(430px);
 }
+
 
 nav a {
     display: block;
@@ -139,6 +147,75 @@ li:hover {
     border-radius: 5px;
     padding: 2px 15px;
     margin-right: 5%;
+}
+
+/*opções da conta*/
+
+.account{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-top: 15px;
+    width: 20%;
+}
+
+.nomeUsuario{
+    color: #ff7f2aff;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 2px 15px;
+    margin-right: 5%;
+}
+
+.account img{
+    height: 60px;
+    border-radius: 50%;
+}
+
+
+/* Menu Lateral */
+.account .ul {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+   /* display: flex;
+    flex-flow: column;
+    align-content: space-between;*/
+    
+}
+
+.account li{
+    list-style: none;
+}
+
+.account input[type="checkbox"] {
+    display: none;
+}
+
+.account nav {
+    background-color: #d45500ff;
+    height: 150px; 
+    width: 11%;
+    display: flex;
+    flex-flow: column;   
+    align-content: space-between;
+}
+
+.account input[type="checkbox"]:checked~nav {
+    transform: translateY(430px);
+}
+
+
+.account nav a {
+
+
+}
+
+.account a:hover {
+    background-color: #ff9955ff;
+
 }
 
 footer{

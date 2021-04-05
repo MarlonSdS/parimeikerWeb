@@ -7,6 +7,14 @@
     pré definidas, com excessão apenas do que é exclusivo para cada página -->
     <link rel="stylesheet" href="assets/styles/index.css">
     <title>Párimeiker — Ferramenta de promoção e gerenciamento para eventos</title>
+    <?php session_start(); ?>
+    <!--Se o usuário estiver logado ele será mandado para a homepage-->
+    <?php if (isset($_SESSION['logado'])) {
+        if($_SESSION['logado'] == true){
+            header("location: view/homepage.php");
+        }
+
+    } ?>
 </head>
 <body>
     <header>

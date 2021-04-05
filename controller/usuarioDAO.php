@@ -6,6 +6,8 @@
     $listarAutonomos;
     $listarEmpresas;
 
+    $sair = $_GET['sair'];
+
     $id = "";
     $nome = "";
     $email = "";
@@ -33,6 +35,10 @@
         }elseif(isset($_POST["cnpj"])){
             loginEmpresa();
         }
+    }
+
+    if($sair == "sim"){
+        deslogar();
     }
 
     function listarClientes(){
@@ -147,7 +153,8 @@
             session_start();
             $_SESSION['idCliente'] = $validar['id'];
             $_SESSION['nome'] = $validar['nome'];
-            header("location: ../view/homepage.php?user=".$validar['nome']);
+            $_SESSION['logado'] = true;
+            header("location: ../view/homepage.php?tipo=cliente");
         }else{
             header("location: ../view/crud/login.php?tipo=cliente&erro=login");
         }  
@@ -166,7 +173,8 @@
                 session_start();
                 $_SESSION['idAuto'] = $validar['id'];
                 $_SESSION['nome'] = $validar['nome'];
-                header("location: ../view/homepage.php?user=".$validar['nome']);
+                $_SESSION['logado'] = true;
+                header("location: ../view/homepage.php?tipo=auto");
             }else{
                 header("location: ../view/crud/login.php?tipo=auto&erro=login");}
     
@@ -186,12 +194,23 @@
                     session_start();
                     $_SESSION['idEmpresa'] = $validar['id'];
                     $_SESSION['nome'] = $validar['nome'];
-                    header("location: ../view/homepage.php?user=".$validar['nome']);
+                    $_SESSION['logado'] = true;
+                    header("location: ../index.php?tipo=empresa");
                 }else{
                     header("location: ../view/crud/login.php?tipo=empresa&erro=login");}
         
                     
-                }        
+                }       
+        
+        //funçaõ de logout
+
+        function deslogar(){
+            session_start();
+            $_SESSION['nome'] = "";
+            $_SESSION['logado'] = false;
+            session_destroy();
+            header("location: /parimeikerWeb/index.php");
+        }
     
 
 ?>
