@@ -1,0 +1,15 @@
+main{
+    width: 90% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.profile-picture{
+    height: 200px;
+    border-radius: 50%;
+}
+
+.texto{
+    margin-top: 20%;
+}

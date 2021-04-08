@@ -17,7 +17,7 @@
 
                 <nav class="nav">
                     <li class="ul">
-                        <li><b><a href="/parimeikerWeb/view/crud/login.php?tipo=cliente">Ver perfil</a></b></li>
+                        <li><b><a href="/parimeikerWeb/view/profile.php">Ver perfil</a></b></li>
                         <li><b><a href="/parimeikerWeb/controller/usuarioDAO.php?sair=sim">Sair</a></b></li>
                     </li>
                 </nav>

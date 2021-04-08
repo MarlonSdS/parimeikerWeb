@@ -6,7 +6,13 @@
     $listarAutonomos;
     $listarEmpresas;
 
-    $sair = $_GET['sair'];
+    if(isset($_GET['sair'])){
+         $sair = $_GET['sair'];
+         if($sair == "sim"){
+             deslogar();
+         }
+    }
+
 
     $id = "";
     $nome = "";
@@ -15,7 +21,16 @@
     $cpf = "";
     $cnpj = "";
     $senha = "";
-    
+
+    if(isset($_POST["editar"])){
+        if(isset($_POST['cpf'])){
+            editarAuto();
+        }elseif (isset($_POST['cnpj'])) {
+            editarEmpresa();
+        }else{
+            editarCliente();
+        }
+    }
 
     if (isset($_POST["cadastro"])) {
         if(isset($_POST["cpf"])){
@@ -37,9 +52,8 @@
         }
     }
 
-    if($sair == "sim"){
-        deslogar();
-    }
+
+
 
     function listarClientes(){
         global $conexao, $listarClientes;
@@ -151,8 +165,12 @@
         if($validar->num_rows > 0 ){
             $validar = $validar->fetch_array();
             session_start();
-            $_SESSION['idCliente'] = $validar['id'];
+            $_SESSION['id'] = $validar['id'];
             $_SESSION['nome'] = $validar['nome'];
+            $_SESSION['email'] = $validar['email'];
+            $_SESSION['tel'] = $validar['tel'];
+            $_SESSION['cpf'] = "";
+            $_SESSION['cnpj'] = "";
             $_SESSION['logado'] = true;
             header("location: ../view/homepage.php?tipo=cliente");
         }else{
@@ -171,8 +189,12 @@
             if($validar->num_rows > 0 ){
                 $validar = $validar->fetch_array();
                 session_start();
-                $_SESSION['idAuto'] = $validar['id'];
+                $_SESSION['id'] = $validar['id'];
                 $_SESSION['nome'] = $validar['nome'];
+                $_SESSION['email'] = $validar['email'];
+                $_SESSION['tel'] = $validar['tel'];
+                $_SESSION['cpf'] = $validar['cpf'];
+                $_SESSION['cnpj'] = "";
                 $_SESSION['logado'] = true;
                 header("location: ../view/homepage.php?tipo=auto");
             }else{
@@ -192,8 +214,12 @@
                 if($validar->num_rows > 0 ){
                     $validar = $validar->fetch_array();
                     session_start();
-                    $_SESSION['idEmpresa'] = $validar['id'];
+                    $_SESSION['id'] = $validar['id'];
                     $_SESSION['nome'] = $validar['nome'];
+                    $_SESSION['email'] = $validar['email'];
+                    $_SESSION['tel'] = $validar['tel'];
+                    $_SESSION['cpf'] = "";
+                    $_SESSION['cnpj'] = $validar['cnpj'];
                     $_SESSION['logado'] = true;
                     header("location: ../index.php?tipo=empresa");
                 }else{
@@ -211,6 +237,57 @@
             session_destroy();
             header("location: /parimeikerWeb/index.php");
         }
+
+        //funções de edição
+        function editarAuto(){
+                $id = $_POST["id"];
+                $nome = $_POST["nome"];
+                $email = $_POST["email"];
+                $tel = $_POST["tel"];
+                $cpf = $_POST["cpf"];
+                $senha = md5($_POST["senha"]); 
+                include("../controller/conexao.php");
+    
+                $conexao->query("UPDATE autonomo SET nome='$nome', email='$email', tel=$tel, 
+                cpf=$cpf, senha='$senha' WHERE id='$id'")
+                or die($conexao->error);
+                $operacao = mysqli_query($conexao, $query);
+                loginAutonomo();
+    
+        }
+    
+        function editarEmpresa(){
+            $nome = $_POST["nome"];
+            $email = $_POST["email"];
+            $tel = $_POST["tel"];
+            $cnpj = $_POST["cnpj"];
+            $senha = md5($_POST["senha"]); 
+            $id = $_POST['id'];
+            include("../controller/conexao.php");
+    
+            $conexao->query("UPDATE empresa SET nome='$nome', email='$email', tel='$tel', 
+            cnpj='$cnpj', senha='$senha' WHERE id='$id'")
+            or die($conexao->error);
+            $operacao = mysqli_query($conexao, $query);
+            header("location: ../view/crud/login.php?tipo=empresa");
+            loginEmpresa();
+        }
+        
+    
+        function editarCliente(){
+            $id=$_POST["id"];
+            $nome = $_POST["nome"];
+            $email = $_POST["email"];
+            $tel = $_POST["tel"];
+            $senha = md5($_POST["senha"]); 
+            include("../controller/conexao.php");
+    
+            $conexao->query("UPDATE cliente SET nome='$nome', email='$email', tel=$tel,
+             senha='$senha' WHERE id='$id'")
+            or die($conexao->error);
+            $operacao = mysqli_query($conexao, $query);
+            loginCliente();
+    }
     
 
 ?>
