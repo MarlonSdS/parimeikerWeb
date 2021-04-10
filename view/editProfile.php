@@ -58,6 +58,7 @@
                     class="form-control">
                 </div>
                 <button type="submit" class="btn-cadastrar" name="editar">Salvar</button>
+                <button type="submit" class="btn-cadastrar" name="excluir">Excluir</button>
             </form>
     </main>
     

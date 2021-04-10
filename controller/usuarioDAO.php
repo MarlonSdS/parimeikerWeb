@@ -22,6 +22,10 @@
     $cnpj = "";
     $senha = "";
 
+    if(isset($_POST["excluir"])){
+        excluirUsuario();
+    }
+
     if(isset($_POST["editar"])){
         if(isset($_POST['cpf'])){
             editarAuto();
@@ -289,5 +293,20 @@
             loginCliente();
     }
     
+    //função de deletar
+    function excluirUsuario(){
+        $id=$_POST['id'];
+        include("../controller/conexao.php");
+        if(isset($_POST['cpf'])){
+            $conexao->query("DELETE FROM autonomo WHERE id='$id'") or die($conexao->error);
+            deslogar();
+        }elseif(isset($_POST['cnpj'])){
+            $conexao->query("DELETE FROM empresa WHERE id='$id'") or die($conexao->error);
+            deslogar();
+        }else{
+            $conexao->query("DELETE FROM cliente WHERE id='$id'") or die($conexao->error);
+            deslogar();
+        }
+    }
 
 ?>
