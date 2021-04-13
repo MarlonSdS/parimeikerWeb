@@ -2,7 +2,8 @@
 <html lang="pt-br">
 <head>
     <?php include("../util/commonHead.php"); 
-    session_start(); ?>
+    session_start(); 
+    $texto = fopen("../userData/userTexts/Autonomo/userText{$_SESSION['id']}.txt", "w");?>
     <link rel="stylesheet" href="../assets/styles/crud.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,6 +60,20 @@
                 </div>
                 <button type="submit" class="btn-cadastrar" name="editar">Salvar</button>
                 <button type="submit" class="btn-cadastrar" name="excluir">Excluir</button>
+            </form>
+            <h2>Informações do perfil</h2>
+            <form action="../controller/upload.php" method="POST">
+                    <div class="form-grop">
+                        <label for="texto">Esse é o textp que é exibido ao entrar no seu perfil</label>
+                        <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
+                            <input type="text" name="texto" value="<?php $id = $_SESSION['id'];
+                                include("../userData/userTexts/Empresa/userText{$id}.html"); ?>">
+                        <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
+                            <input type="text" name="texto" value="<?php $id = $_SESSION['id'];
+                                include("../userData/userTexts/Autonomo/userText{$id}.html"); ?>">
+                        <?php endif; ?>
+                    </div>
+                    <button type="submit" class="btn-cadastrar" name="editar">Salvar</button>
             </form>
     </main>
     
