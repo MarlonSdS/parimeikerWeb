@@ -23,9 +23,13 @@
     
     <main>
     <div class="infos">
-        <img 
-        src="https://lh3.googleusercontent.com/ogw/ADGmqu9rdNkN1yOf9Gw99wfhGrMwlVelAeBsnOoZS3rksQ=s83-c-mo" alt=""
-        class="profile-picture">
+        <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
+            <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $id ?>.png" class="profile-picture">
+        <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
+            <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $id ?>.png" class="profile-picture">
+        <?php else: ?>
+            <img src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" class="profile-picture">
+        <?php endif; ?>
         <h1><?php echo $_SESSION['nome']; ?></h1>
         <h2><?php echo $_SESSION['email']; ?></h2>
         <h2><?php echo $_SESSION['tel']; ?></h2>

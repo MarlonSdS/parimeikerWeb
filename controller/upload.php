@@ -32,11 +32,27 @@
             fclose($texto);
             header("location: ../view/profile.php");
         }
-        if($userType == "cliente"){
+       /* if($userType == "cliente"){
             $texto = fopen("/parimeikerWeb/userData/userTexts/Cliente/userText$id.txt", "w");
             if($texto == false) die ("não foi possível criar o arquivo");
             fwrite($texto, $_POST['texto']);
             fclose($texto);
+            header("location: ../view/profile.php");
+        } */
+
+        if(isset($_FILES['picture']['name'])){
+            if($userType == "empresa"){
+                $destino = "../userData/userProfilePictures/Empresa/userProfile{$id}.png";
+            }elseif($userType == "auto"){
+                $destino = "../userData/userProfilePictures/Autonomo/userProfile{$id}.png";
+            }else{
+                $destino = "../userData/userProfilePictures/Cliente/userProfile{$id}.png";
+            }
+            
+            
+            $arquivo_tmp = $_FILES['picture']['tmp_name'];
+            
+            move_uploaded_file( $arquivo_tmp, $destino  );
             header("location: ../view/profile.php");
         }
 

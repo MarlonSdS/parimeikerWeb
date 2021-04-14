@@ -10,7 +10,13 @@
             <div class="account" >
             <input type="checkbox" id="chec">
                 <label for="chec"> 
-               <img src="https://lh3.googleusercontent.com/ogw/ADGmqu9rdNkN1yOf9Gw99wfhGrMwlVelAeBsnOoZS3rksQ=s83-c-mo" for="chec" alt="">
+                <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
+                    <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $id ?>.png" for="chec" alt="">
+                <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
+                    <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $id ?>.png" for="chec" alt="">
+                <?php else: ?>
+                    <img src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" for="chec" alt="">
+                <?php endif; ?>
 
                 <label class="nomeUsuario" for="chec"><?php echo $_SESSION['nome']?></label>
                 </label>
