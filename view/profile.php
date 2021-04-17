@@ -31,16 +31,16 @@
             <?php else: ?>
                 <img src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" class="profile-picture">
             <?php endif; ?>
-            <p><?php echo $_SESSION['nome']; ?></p>
-            <p><?php echo $_SESSION['email']; ?></p>
-            <p><?php echo $_SESSION['tel']; ?></p>
+            
+            <p><img src="../assets/images/icons/gmail.png" class="icon"><?php echo $_SESSION['email']; ?></p>
+            <p><img src="../assets/images/icons/whatsapp.png" class="icon"><?php echo $_SESSION['tel']; ?></p>
 
             
         </div>
         
         <div class="texto">
             <h1><p><?php echo $_SESSION['nome']; ?></p>
-            <a href="/parimeikerWeb/view/editProfile.php"><buttom class="btn-editar">Editar Perfil</button></a></h1>
+            <a href="/parimeikerWeb/view/editProfile.php"><img src="../assets/images/icons/lapis.png" class="btn-editar"></a></h1>
         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
             <p class="texto-apre"><?php include("../userData/userTexts/Empresa/userText{$id}.html"); ?></p>
         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
