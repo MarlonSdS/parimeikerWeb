@@ -90,6 +90,23 @@
                             <input name="picture" type="file" />
                         <?php endif; ?>
                     </div>
+
+                        <p>Adicione itens ao seu portfólio</p>
+                        <div  class="form-group">
+                            <label for="item1">Primeiro item</label>
+                            <input name="img1" type="file">
+                            <input name="item1" type="text">
+                        </div>
+                        <div  class="form-group">
+                            <label for="item2">Segundo item</label>
+                            <input name="img2" type="file">
+                            <input name="item2" type="text">
+                        </div>
+                        <div  class="form-group">
+                            <label for="item3">Terceiro item</label>
+                            <input name="img3" type="file">
+                            <input name="item3" type="text" >
+                        </div>
                     <button type="submit" class="btn-cadastrar" name="editar">Salvar</button>
             </form>
     </main>

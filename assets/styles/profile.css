@@ -1,15 +1,125 @@
 main{
     width: 90% !important;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
 }
 
+p{
+    color: #ff6600ff;
+}
+
+.infosetexto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.infos{
+    margin-top: 5%;
+}
+
+.infos p{
+    font-weight: bolder;
+    font-size: 20px;
+}
+
 .profile-picture{
-    height: 200px;
+    height: 250px;
+    max-width: 300px;
     border-radius: 50%;
 }
 
+.infosetexto h1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn-editar {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: #f46b10;
+    border-radius: 5px;
+    padding: 2px 15px;
+    margin-right: 5%;
+}
+
+h1 a{
+    width: 50%;
+}
+h1 a:hover{
+    text-decoration: none;
+}
+
 .texto{
-    margin-top: 20%;
+    margin-top: 5%;
+    width: 70%;
+}
+
+.texto-apre{
+    border: #ff7f2aff 2px solid;
+    max-height: 300px;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.portfolio{
+    height: 200px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.portfolio-card{
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    left: 15%;
+    top: 100px;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-card img{
+    max-height: 200px;
+    max-width: 100%;
+    border-radius: 15px;
+    border: #d45500ff 2px solid;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.image-info {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ff7f2aff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: normal 20px Arial, sans-serif;
+    color: #fff !important;
+    filter: opacity(0);
+    transition: filter 500ms;
+    border-radius: 15px;
+    border: #d45500ff 2px solid;
+}
+
+.image-info p{
+    color: #fff;
+}
+
+div.portfolio-card:hover div.image-info{
+    filter: opacity(0.8);
 }

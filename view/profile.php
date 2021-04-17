@@ -22,27 +22,85 @@
     <div id="vazio"></div>
     
     <main>
-    <div class="infos">
-        <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
-            <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $id ?>.png" class="profile-picture">
-        <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
-            <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $id ?>.png" class="profile-picture">
-        <?php else: ?>
-            <img src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" class="profile-picture">
-        <?php endif; ?>
-        <h1><?php echo $_SESSION['nome']; ?></h1>
-        <h2><?php echo $_SESSION['email']; ?></h2>
-        <h2><?php echo $_SESSION['tel']; ?></h2>
+    <div class="infosetexto">
+        <div class="infos">
+            <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
+                <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $id ?>.png" class="profile-picture">
+            <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
+                <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $id ?>.png" class="profile-picture">
+            <?php else: ?>
+                <img src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" class="profile-picture">
+            <?php endif; ?>
+            <p><?php echo $_SESSION['nome']; ?></p>
+            <p><?php echo $_SESSION['email']; ?></p>
+            <p><?php echo $_SESSION['tel']; ?></p>
 
-        <a href="/parimeikerWeb/view/editProfile.php"><buttom>Editar Perfil</button></a>
-    </div>
+            
+        </div>
+        
         <div class="texto">
+            <h1><p><?php echo $_SESSION['nome']; ?></p>
+            <a href="/parimeikerWeb/view/editProfile.php"><buttom class="btn-editar">Editar Perfil</button></a></h1>
         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
-            <p><?php include("../userData/userTexts/Empresa/userText{$id}.html"); ?></p>
+            <p class="texto-apre"><?php include("../userData/userTexts/Empresa/userText{$id}.html"); ?></p>
         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
-            <p><?php include("../userData/userTexts/Autonomo/userText{$id}.html"); ?></p>
+            <p class="texto-apre"s> <?php include("../userData/userTexts/Autonomo/userText{$id}.html"); ?></p>
         <?php endif; ?>
         </div>
+    </div>
+    
+        
+
+        <div class="portfolio">
+            <div class="portfolio-card">
+                <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
+                    <img src="../userData/userPictures/Empresa/<?php echo $id?>portImage1.png" alt="">
+                    <div class="image-info">
+                        <p><?php include("../userData/userTexts/Empresa/portTexts/{$id}portText1.html") ?></p>
+                    </div>
+                    
+                <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
+                    <img src="../userData/userPictures/Auto/<?php echo $id?>portImage1.png" alt="">
+                    <div class="image-info">
+                        <p><?php include("../userData/userTexts/Autonomo/portTexts/{$id}portText1.html") ?></p>
+                    </div>
+                    
+                <?php endif; ?>
+            </div>
+            <div class="portfolio-card">
+                <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
+                    <img src="../userData/userPictures/Empresa/<?php echo $id?>portImage2.png" alt="">
+                    <div class="image-info">
+                        <p><?php include("../userData/userTexts/Empresa/portTexts/{$id}portText2.html") ?></p>
+                    </div>
+                    
+                <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
+                    <img src="../userData/userPictures/Auto/<?php echo $id?>portImage2.png" alt="">
+                    <div class="image-info">
+                        <p><?php include("../userData/userTexts/Autonomo/portTexts/{$id}portText2.html") ?></p>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <div class="portfolio-card">
+                <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
+                    <img src="../userData/userPictures/Empresa/<?php echo $id?>portImage3.png" alt="">
+                    <div class="image-info">
+                        <p><?php include("../userData/userTexts/Empresa/portTexts/{$id}portText3.html") ?></p>
+                    </div>
+                    
+                <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
+                    <img src="../userData/userPictures/Auto/<?php echo $id?>portImage3.png" alt="">
+                    <div class="image-info">
+                        <p><?php include("../userData/userTexts/Autonomo/portTexts/{$id}portText3.html") ?></p>
+                    </div>
+                    
+                <?php endif; ?>
+            </div>
+        </div>
     </main>
+
+    <footer>
+
+    </footer>
 </body>
 </html>

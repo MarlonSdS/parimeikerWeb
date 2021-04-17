@@ -12,6 +12,7 @@
             if($_SESSION['logado'] != true){
                 header("location: /parimeikerWeb/index.php");
             }
+            $id = $_SESSION['id'];
         ?>
     </head>
     <body>
