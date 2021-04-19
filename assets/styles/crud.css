@@ -49,6 +49,14 @@ main input{
     margin: 3%;
 }
 
+.textfield{
+    display: block;
+    height: 170px;
+    margin: auto;
+    border: #ff7f2a 2px solid;
+    border-radius: 5px;
+}
+
 footer{
     position: static;
     bottom: 0px;

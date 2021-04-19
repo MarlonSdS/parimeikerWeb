@@ -30,7 +30,7 @@
             if($texto == false) die ("não foi possível criar o arquivo");
             fwrite($texto, $_POST['texto']);
             fclose($texto);
-            header("location: ../view/profile.php");
+           // header("location: ../view/profile.php");
         }
        /* if($userType == "cliente"){
             $texto = fopen("/parimeikerWeb/userData/userTexts/Cliente/userText$id.txt", "w");
@@ -53,7 +53,7 @@
             $arquivo_tmp = $_FILES['picture']['tmp_name'];
             
             move_uploaded_file( $arquivo_tmp, $destino  );
-            header("location: ../view/profile.php");
+           // header("location: ../view/profile.php");
         }
 
         if (isset($_FILES['img1']) or isset($_FILES['img2']) or isset($_FILES['img3'])) {
@@ -110,7 +110,20 @@
                 fclose($texto);
             }
         }
-        header("location: ../view/profile.php");
+
+        if($_POST['tags'] != ""){
+            $tags = explode(",", $_POST['tags']);
+            for ($i=0; $i < sizeof($tags); $i++) { 
+                echo $tags[$i];
+                echo "<br>";
+                include("conexao.php");
+                $query = "INSERT INTO tagsautonomo(id, tag) VALUES ('$id', '$tags[$i]')";
+                $operacao = mysqli_query($conexao, $query);
+            }
+            
+        }
+
+        //header("location: ../view/profile.php");
 
 
 ?>

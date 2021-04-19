@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php 
             session_start();
+            if($_SESSION['logado'] != true){
+                header("location: /parimeikerWeb/index.php");
+            }
             $id = $_SESSION['id'];
             //caso por algum motivo o usuário acesse as páginas que requeram autenticação
             //sem se logar ele será redirecionado para a index

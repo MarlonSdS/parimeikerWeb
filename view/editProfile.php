@@ -3,6 +3,9 @@
 <head>
     <?php include("../util/commonHead.php"); 
     session_start(); 
+    if($_SESSION['logado'] != true){
+        header("location: /parimeikerWeb/index.php");
+    }
     $texto = fopen("../userData/userTexts/Autonomo/userText{$_SESSION['id']}.txt", "w");
     $id = $_SESSION['id'];?>
     <link rel="stylesheet" href="../assets/styles/crud.css">
@@ -66,13 +69,13 @@
             <form action="../controller/upload.php" enctype="multipart/form-data" method="POST">
                     <div class="form-grop">
                         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
-                            <label for="texto">Esse é o textp que é exibido ao entrar no seu perfil</label>
-                            <input type="text" name="texto" value="<?php $id = $_SESSION['id'];
-                                include("../userData/userTexts/Empresa/userText{$id}.html"); ?>">
+                            <label for="texto">Esse é o texto que é exibido ao entrar no seu perfil</label>
+                            <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"><?php $id = $_SESSION['id'];
+                                include("../userData/userTexts/Empresa/userText{$id}.html"); ?></textarea>
                         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
-                            <label for="texto">Esse é o textp que é exibido ao entrar no seu perfil</label>
-                            <input type="text" name="texto" value="<?php $id = $_SESSION['id'];
-                                include("../userData/userTexts/Autonomo/userText{$id}.html"); ?>">
+                            <label for="texto">Esse é o texto que é exibido ao entrar no seu perfil</label>
+                            <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"><?php $id = $_SESSION['id'];
+                                include("../userData/userTexts/Autonomo/userText{$id}.html"); ?> </textarea>
                         <?php endif; ?>
                     </div>
                     <div class="form-group">
@@ -106,6 +109,12 @@
                             <label for="item3">Terceiro item</label>
                             <input name="img3" type="file">
                             <input name="item3" type="text" >
+                        </div>
+
+                        <div class="tags">
+                            <label for="tags">Adicione Tags para ser encontrado(a) mais facilmente
+                            (separe cada tag com vírgula)</label>
+                            <textarea id="tags" name="tags" class="textfield" rows="7" cols="50"> </textarea>
                         </div>
                     <button type="submit" class="btn-cadastrar" name="editar">Salvar</button>
             </form>

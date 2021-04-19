@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Abr-2021 às 01:35
+-- Tempo de geração: 19-Abr-2021 às 21:23
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.4
 
@@ -50,7 +50,8 @@ INSERT INTO `autonomo` (`id`, `nome`, `email`, `tel`, `senha`, `cpf`) VALUES
 (7, 'teste3', 'teste@teste', '12345678', '698dc19d489c4e4db73e28a713eab07b', '1234567890'),
 (8, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', ''),
 (9, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', ''),
-(10, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', '');
+(10, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', ''),
+(11, 'auto', 'marlonfms2012@gmail.com', '0000000', '698dc19d489c4e4db73e28a713eab07b', '01234580123');
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,7 @@ INSERT INTO `cliente` (`id`, `nome`, `email`, `tel`, `senha`) VALUES
 (6, 'teste', 'teste@teste', '123', '202cb962ac59075b964b07152d234b70'),
 (7, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e'),
 (8, 'Marlon Santana dos Santos', 'marlonfms2012@gmail.com2', '000000000000', '698dc19d489c4e4db73e28a713eab07b'),
-(9, 'Marlon', 'marlonfms2012@gmail.com', '996469864', 'ed6372ce8a4eb2240e80dad6ba2d500b');
+(10, 'Marlon', 'marlonfms2012@gmail.com', '96469864', 'ed6372ce8a4eb2240e80dad6ba2d500b');
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,8 @@ INSERT INTO `empresa` (`id`, `nome`, `email`, `tel`, `senha`, `cnpj`) VALUES
 (5, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e', ''),
 (6, 'aaa', 'aaa@aaa', '123456789', '47bce5c74f589f4867dbd57e9ca9f808', '12345678901234'),
 (7, 'teste7', 'teste@teste', '000000000', '698dc19d489c4e4db73e28a713eab07b', 'serg4245'),
-(8, 'teste8', 'teste@teste.com', '12345678', '698dc19d489c4e4db73e28a713eab07b', '090909090909');
+(8, 'teste8', 'teste@teste.com', '12345678', '698dc19d489c4e4db73e28a713eab07b', '090909090909'),
+(9, 'Láticinios Ltda', 'marlonfms2012@gmail.com', '98644697', 'ed6372ce8a4eb2240e80dad6ba2d500b', '1212121212');
 
 --
 -- Índices para tabelas despejadas
@@ -140,19 +142,19 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de tabela `autonomo`
 --
 ALTER TABLE `autonomo`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
