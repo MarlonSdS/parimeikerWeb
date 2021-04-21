@@ -123,7 +123,7 @@
             
         }
 
-        //header("location: ../view/profile.php");
+        header("location: ../view/profile.php");
 
 
 ?>

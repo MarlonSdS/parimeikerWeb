@@ -2,7 +2,7 @@
             <a href="/parimeikerWeb/index.php"><img class="img-logo" src="/parimeikerWeb/assets/images/logo.png" alt=""></a>
         </div>
         <div class="menu">
-            <form action="/parimeikerWeb/controller/search.php" method="get">
+            <form action="/parimeikerWeb/view/pesquisa.php" method="get">
                 <input class="pesquisa" type="text" name="search" placeholder="Pesquisar...">
             </form>
             <!--Alternar entre o botão entrar e as opções de conta do usuário-->

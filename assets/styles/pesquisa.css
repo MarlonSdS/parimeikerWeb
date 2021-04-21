@@ -1,0 +1,97 @@
+
+
+
+
+/* CAIXA */
+.pagina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.pagina div{
+    margin-top: 6px;
+}
+
+
+.foto{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+/* CAMPO DAS IMAGENS */
+.foto img {
+   width: 100px  !important;
+   height: 100px !important;
+   border-radius: 50%;
+   margin-right: 5px;
+}
+
+/* CAMPO NOMES*/
+p{
+    color: orange;
+}
+
+.nome{
+    color: #ff6600ff;
+    border: 1px #ff6600ff solid;
+    width: 40%;
+}
+
+
+
+/*CAMPO DESCRIÇÃO */
+.descricao  {
+    text-align: center;
+    width: 100%;
+    color: orange;
+    display: flex;
+    justify-content: center;
+    border: 1px #ff6600ff solid;
+    
+}
+
+
+/*CAMPO DO QUADRADO LARANJA*/
+.pagina fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 75%;
+    border: 3px #ff6600ff solid;
+    border-radius: 3px;
+}
+
+
+/*CAMPO TAGS */
+.tag{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.tag p {
+    width: 100px;
+    height: 90px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px #ff6600ff solid;
+    height: 20px;
+}
+
+
+
+/*CAMPO BARRA LARANJA DA PAGINA*/
