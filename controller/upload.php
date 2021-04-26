@@ -26,7 +26,7 @@
            // header("location: ../view/profile.php");
         }
         if($userType == "empresa"){
-            $texto = fopen("/parimeikerWeb/userData/userTexts/Empresa/userText$id.html", "w");
+            $texto = fopen("../userData/userTexts/Empresa/userText{$id}.html", "w");
             if($texto == false) die ("não foi possível criar o arquivo");
             fwrite($texto, $_POST['texto']);
             fclose($texto);
@@ -125,13 +125,24 @@
 
         if($_POST['tags'] != ""){
             $tags = explode(",", $_POST['tags']);
-            for ($i=0; $i < sizeof($tags); $i++) { 
+            if($userType == "auto"){
+                for ($i=0; $i < sizeof($tags); $i++) { 
                 echo $tags[$i];
                 echo "<br>";
                 include("conexao.php");
                 $query = "INSERT INTO tagsautonomo(id, tag) VALUES ('$id', '$tags[$i]')";
                 $operacao = mysqli_query($conexao, $query);
             }
+            }elseif($userType == "empresa"){
+                for ($i=0; $i < sizeof($tags); $i++) { 
+                    echo $tags[$i];
+                    echo "<br>";
+                    include("conexao.php");
+                    $query = "INSERT INTO tagsempresa(id, tag) VALUES ('$id', '$tags[$i]')";
+                    $operacao = mysqli_query($conexao, $query);
+            }
+            
+        }
             
         }
 
