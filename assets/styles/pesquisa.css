@@ -42,6 +42,17 @@ p{
     color: orange;
 }
 
+div a{
+    text-decoration: none;
+    color: #ff6600ff;
+
+}
+
+div a:hover{
+    text-decoration: none;
+    color: orange;
+}
+
 .nome{
     color: #ff6600ff;
     border: 1px #ff6600ff solid;

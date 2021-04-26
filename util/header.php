@@ -11,11 +11,11 @@
             <input type="checkbox" id="chec">
                 <label for="chec"> 
                 <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
-                    <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $id ?>.png" for="chec" alt="">
+                    <img src="/parimeikerWeb/userData/userProfilePictures/Empresa/userProfile<?php echo $_SESSION['id']; ?>.png" for="chec" alt="">
                 <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
-                    <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $id ?>.png" for="chec" alt="">
+                    <img src="/parimeikerWeb/userData/userProfilePictures/Autonomo/userProfile<?php echo $_SESSION['id']; ?>.png" for="chec" alt="">
                 <?php else: ?>
-                    <img src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" for="chec" alt="">
+                    <img src="/parimeikerWeb/userData/userProfilePictures/Cliente/userProfile<?php echo $_SESSION['id']; ?>.png" for="chec" alt="">
                 <?php endif; ?>
 
                 <label class="nomeUsuario" for="chec"><?php echo $_SESSION['nome']?></label>

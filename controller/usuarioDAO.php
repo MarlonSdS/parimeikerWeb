@@ -22,6 +22,8 @@
     $cnpj = "";
     $senha = "";
 
+    $texto ="";
+
     if(isset($_POST["excluir"])){
         excluirUsuario();
     }
@@ -109,6 +111,9 @@
 
         $query = "INSERT INTO empresa(nome, email, tel, cnpj, senha) VALUES ('$nome', '$email', '$tel', '$cnpj', '$senha')";
         $operacao = mysqli_query($conexao, $query);
+
+        $validar = $conexao->query("SELECT * FROM empresa WHERE cnpj ='$cnpj' AND senha='$senha'")
+                 or die($conexao->error);
         header("location: ../view/crud/login.php?tipo=empresa");}
     }
 
@@ -130,18 +135,19 @@
 
     function verificarUsuario(){
         $email = $_POST["email"];
-        $cnpj = $_POST["cnpj"];
-        $cpf = $_POST["cpf"];
+       
+       
         include("../controller/conexao.php");
 
-        if (isset($cnpj)) {
-            
+        if (isset($_POST['cnpj'])) {
+             $cnpj = $_POST["cnpj"];
         $validar = $conexao->query("SELECT * FROM empresa WHERE cnpj='$cnpj'")
         or die($conexao->error);
         if($validar->num_rows > 0){
             return true;
         }
-        }elseif(isset($cpf)){
+        }elseif(isset($_POST['cpf'])){ 
+            $cpf = $_POST["cpf"];
             $validar = $conexao->query("SELECT * FROM autonomo WHERE cpf='$cpf'")
             or die($conexao->error);
             if($validar->num_rows > 0){

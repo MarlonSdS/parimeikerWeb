@@ -40,12 +40,17 @@ main input{
 .form-group{
     display: flex;
     flex-direction: row;
-
+    justify-content: center;
 }
 
 
 .form-group img{
     width: 9%;
+    margin: 3%;
+}
+
+.profPic{
+    width: 15%;
     margin: 3%;
 }
 

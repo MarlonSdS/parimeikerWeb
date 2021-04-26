@@ -81,35 +81,47 @@
             }
         }
 
-        if(($_POST['item1']) or ($_POST['item2']) or ($_POST['item3']) != ""){
+        if($_POST['item1'] != ""){
             if($userType == "empresa"){
                 $texto = fopen("../userData/userTexts/Empresa/portTexts/{$id}portText1.html", "w");
                 if($texto == false) die ("não foi possível criar o arquivo");
                 fwrite($texto, $_POST['item1']);
-                fclose($texto);
-                $texto = fopen("../userData/userTexts/Empresa/portTexts/{$id}portText2.html", "w");
-                if($texto == false) die ("não foi possível criar o arquivo");
-                fwrite($texto, $_POST['item2']);
-                fclose($texto);
-                $texto = fopen("../userData/userTexts/Empresa/portTexts/{$id}portText3.html", "w");
-                if($texto == false) die ("não foi possível criar o arquivo");
-                fwrite($texto, $_POST['item3']);
                 fclose($texto);
             }elseif($userType == "auto"){
                 $texto = fopen("../userData/userTexts/Autonomo/portTexts/{$id}portText1.html", "w");
                 if($texto == false) die ("não foi possível criar o arquivo");
                 fwrite($texto, $_POST['item1']);
                 fclose($texto);
-                $texto = fopen("../userData/userTexts/Autonomo/portTexts/{$id}portText2.html", "w");
-                if($texto == false) die ("não foi possível criar o arquivo");
-                fwrite($texto, $_POST['item2']);
-                fclose($texto);
-                $texto = fopen("../userData/userTexts/Autonomo/portTexts/{$id}portText3.html", "w");
-                if($texto == false) die ("não foi possível criar o arquivo");
-                fwrite($texto, $_POST['item3']);
-                fclose($texto);
             }
         }
+        if($_POST['item2'] != ""){
+                if($userType == "empresa"){
+                    $texto = fopen("../userData/userTexts/Empresa/portTexts/{$id}portText2.html", "w");
+                    if($texto == false) die ("não foi possível criar o arquivo");
+                    fwrite($texto, $_POST['item2']);
+                    fclose($texto);
+                }elseif($userType == "auto"){
+                    $texto = fopen("../userData/userTexts/Autonomo/portTexts/{$id}portText2.html", "w");
+                    if($texto == false) die ("não foi possível criar o arquivo");
+                    fwrite($texto, $_POST['item2']);
+                    fclose($texto);
+                }
+            }
+        if($_POST['item3'] != ""){
+                if($userType == "empresa"){
+                    $texto = fopen("../userData/userTexts/Empresa/portTexts/{$id}portText3.html", "w");
+                    if($texto == false) die ("não foi possível criar o arquivo");
+                    fwrite($texto, $_POST['item3']);
+                    fclose($texto); 
+                }elseif($userType == "auto"){
+                    $texto = fopen("../userData/userTexts/Autonomo/portTexts/{$id}portText3.html", "w");
+                    if($texto == false) die ("não foi possível criar o arquivo");
+                    fwrite($texto, $_POST['item3']);
+                    fclose($texto);
+                }
+            }
+                
+        
 
         if($_POST['tags'] != ""){
             $tags = explode(",", $_POST['tags']);

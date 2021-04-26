@@ -21,6 +21,7 @@
     <div id="vazio"></div>
     <main>
     <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST" autocomplete="off">
+    <h2>Informações do perfil</h2>
                 <div class="form-group">
                     <label for="nome"></label>
                     <input type="text" name="nome" 
@@ -65,7 +66,7 @@
                 <button type="submit" class="btn-cadastrar" name="editar">Salvar</button>
                 <button type="submit" class="btn-cadastrar" name="excluir">Excluir</button>
             </form>
-            <h2>Informações do perfil</h2>
+            
             <form action="../controller/upload.php" enctype="multipart/form-data" method="POST">
                     <div class="form-grop">
                         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
@@ -80,15 +81,15 @@
                     </div>
                     <div class="form-group">
                         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
-                            <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $id ?>.png" alt="">
+                            <img class="profPic" src="../userData/userProfilePictures/Empresa/userProfile<?php echo $id ?>.png" alt="">
                             <label for="picture">Selecione uma imagem de perfil</label>
                             <input name="picture" type="file" />
                         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
-                            <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $id ?>.png" alt="">
+                            <img class="profPic" src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $id ?>.png" alt="">
                             <label for="picture">Selecione uma imagem de perfil</label>
                             <input name="picture" type="file" />
                         <?php else: ?>
-                            <img src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" alt="">
+                            <img class="profPic" src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" alt="">
                             <label for="picture">Selecione uma imagem de perfil</label>
                             <input name="picture" type="file" />
                         <?php endif; ?>
@@ -98,16 +99,19 @@
                         <div  class="form-group">
                             <label for="item1">Primeiro item</label>
                             <input name="img1" type="file">
+                            <label for="item1">Texto a ser exibido junto com a imagem:</label>
                             <input name="item1" type="text">
                         </div>
                         <div  class="form-group">
                             <label for="item2">Segundo item</label>
                             <input name="img2" type="file">
+                            <label for="">Texto a ser exibido junto com a imagem:</label>
                             <input name="item2" type="text">
                         </div>
                         <div  class="form-group">
                             <label for="item3">Terceiro item</label>
                             <input name="img3" type="file">
+                            <label for="">Texto a ser exibido junto com a imagem:</label>
                             <input name="item3" type="text" >
                         </div>
 
@@ -119,6 +123,7 @@
                     <button type="submit" class="btn-cadastrar" name="editar">Salvar</button>
             </form>
     </main>
-    
+    <footer>
+    </footer>
 </body>
 </html>

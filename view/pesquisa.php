@@ -45,7 +45,7 @@ function pesquisaPorNomeEmpresa(){
     <img src="../userData/userProfilePictures/Empresa/userProfile<?php $rows_nomes['id'] ?>.png" alt="foto">
     <div class="data">
             <div class="nome" >
-            <?php echo $rows_nomes['nome']; ?>
+            <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $rows_nomes['id'];?>&tipo=empresa"><?php echo $rows_nomes['nome']; ?></a>
         </div>
 
         <div class="descricao">
@@ -73,7 +73,8 @@ function pesquisaPorNomeEmpresa(){
     <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $rows_nomes['id'] ?>.png" alt="foto">
     <div class="data">
             <div class="nome" >
-            <?php echo $rows_nomes['nome']; ?>
+            <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $rows_nomes['id'];?>&tipo=auto"><?php echo $rows_nomes['nome']; ?></a>
+            
         </div>
 
         <div class="descricao">
@@ -111,7 +112,7 @@ function pesquisaPorNomeEmpresa(){
     <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $ids[$i] ?>.png" alt="foto">
     <div class="data">
             <div class="nome" >
-            <?php echo $nomes[$i]; ?>
+            <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $ids[$i];?>&tipo=empresa"><?php echo $nomes[$i]; ?></a>
         </div>
 
         <div class="descricao">
@@ -133,8 +134,10 @@ function pesquisaPorNomeEmpresa(){
         $resultado_tags = mysqli_query($conexao, $result_tags);
         $nomes =[];
         $ids = [];
+        $tags = [];
             while($rows_tags = mysqli_fetch_array($resultado_tags)){
             $id = $rows_tags['id'];
+            $tags = $rows_tags['tag'];
             $result_nomes = "SELECT * FROM autonomo WHERE id='$id'";
             $resultado_nomes = mysqli_query($conexao, $result_nomes);
             while($rows_nomes = mysqli_fetch_array($resultado_nomes)){
@@ -148,16 +151,18 @@ function pesquisaPorNomeEmpresa(){
     <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $ids[$i] ?>.png" alt="foto">
     <div class="data">
             <div class="nome" >
-            <?php echo $nomes[$i]; ?>
+            <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $ids[$i];?>&tipo=auto"><?php echo $nomes[$i]; ?></a>
         </div>
 
         <div class="descricao">
             <p><?php include("../userData/userTexts/Autonomo/userText$ids[$i].html"); ?></p> 
         </div>
         <div class="tag">
-        <p> TAG </p>
-        <p> TAG </p>
-        <p> TAG </p>
+        <!--<?php if(sizeof($tags) >= 3): ?>
+        <p> <?php echo $tags[0]; ?> </p>
+        <p> <?php echo $tags[1]; ?> </p>
+        <p> <?php echo $tags[2]; ?> </p>
+        <?php endif; ?>-->
         </div>  
     </div>
     
