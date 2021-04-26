@@ -42,7 +42,7 @@ function pesquisaPorNomeEmpresa(){
     
     while($rows_nomes = mysqli_fetch_array($resultado_nomes)):?>
 <div class="foto">
-    <img src="../userData/userProfilePictures/Empresa/userProfile<?php $rows_nomes['id'] ?>.png" alt="foto">
+    <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $rows_nomes['id'] ?>.png" alt="foto">
     <div class="data">
             <div class="nome" >
             <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $rows_nomes['id'];?>&tipo=empresa"><?php echo $rows_nomes['nome']; ?></a>

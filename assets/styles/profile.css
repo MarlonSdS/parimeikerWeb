@@ -93,7 +93,7 @@ h1 a:hover{
 
 .portfolio-card img{
     max-height: 200px;
-    max-width: 100%;
+    width: 100%;
     border-radius: 15px;
     border: #d45500ff 2px solid;
     position: absolute;
