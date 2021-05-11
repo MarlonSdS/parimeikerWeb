@@ -113,6 +113,12 @@
         <?php  
                 if(isset($_SESSION['logado']) and $_SESSION['logado'] == true): ?>
         <div class="notas">
+            <?php
+            if(isset($_SESSION['msg'])){
+                echo $_SESSION['msg']."<br><br>";
+                unset($_SESSION['msg']);
+            }
+            ?>
             <form method="POST" action="/parimeikerWeb/controller/feedback.php" enctype="multipart/form-data">
                 <div class="estrelas">
                     <input type="radio" id="vazio" name="estrela" value="" checked>

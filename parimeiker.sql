@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Maio-2021 às 01:21
+-- Tempo de geração: 12-Maio-2021 às 00:51
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 8.0.5
 
@@ -79,8 +79,7 @@ INSERT INTO `cliente` (`id`, `nome`, `email`, `tel`, `senha`) VALUES
 (5, 'teste', 'teste@teste2', '12335465', '698dc19d489c4e4db73e28a713eab07b'),
 (6, 'teste', 'teste@teste', '123', '202cb962ac59075b964b07152d234b70'),
 (7, '', '', '', 'd41d8cd98f00b204e9800998ecf8427e'),
-(8, 'Marlon Santana dos Santos', 'marlonfms2012@gmail.com2', '000000000000', '698dc19d489c4e4db73e28a713eab07b'),
-(10, 'Marlon', 'marlonfms2012@gmail.com', '96469864', 'ed6372ce8a4eb2240e80dad6ba2d500b');
+(11, 'Marlon', 'marlonfms2012@gmail.com', '96469864', '698dc19d489c4e4db73e28a713eab07b');
 
 -- --------------------------------------------------------
 
@@ -170,7 +169,7 @@ ALTER TABLE `autonomo`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `empresa`
