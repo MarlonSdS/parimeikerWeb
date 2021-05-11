@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Abr-2021 às 21:23
--- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.4
+-- Tempo de geração: 11-Maio-2021 às 01:21
+-- Versão do servidor: 10.4.18-MariaDB
+-- versão do PHP: 8.0.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -111,6 +111,28 @@ INSERT INTO `empresa` (`id`, `nome`, `email`, `tel`, `senha`, `cnpj`) VALUES
 (7, 'teste7', 'teste@teste', '000000000', '698dc19d489c4e4db73e28a713eab07b', 'serg4245'),
 (8, 'teste8', 'teste@teste.com', '12345678', '698dc19d489c4e4db73e28a713eab07b', '090909090909'),
 (9, 'Láticinios Ltda', 'marlonfms2012@gmail.com', '98644697', 'ed6372ce8a4eb2240e80dad6ba2d500b', '1212121212');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tagsautonomo`
+--
+
+CREATE TABLE `tagsautonomo` (
+  `id` int(4) NOT NULL,
+  `tag` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tagsempresa`
+--
+
+CREATE TABLE `tagsempresa` (
+  `id` int(4) NOT NULL,
+  `tag` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tabelas despejadas

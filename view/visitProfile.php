@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/parimeikerWeb/assets/styles/profile.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <?php include("../util/commonHead.php"); 
     session_start();
     if(isset($_GET['id'])){
@@ -108,6 +109,38 @@
                 <?php endif; ?>
             </div>
         </div>
+
+        <?php  
+                if(isset($_SESSION['logado']) and $_SESSION['logado'] == true): ?>
+        <div class="notas">
+            <form method="POST" action="/parimeikerWeb/controller/feedback.php" enctype="multipart/form-data">
+                <div class="estrelas">
+                    <input type="radio" id="vazio" name="estrela" value="" checked>
+                    <input type="text" class="ocultar" name="id-usuario" value="<?php echo $_SESSION['id']; ?>" > 
+                    <input type="text" class="ocultar" name="id-avaliado" value="<?php echo $id; ?>">
+                    <input type="text" class="ocultar" name="tipo" value="<?php echo $tipo; ?>">
+                    
+                    <label for="estrela_um"><i class="fa"></i></label>
+                    <input type="radio" id="estrela_um" name="estrela" value="1">
+                    
+                    <label for="estrela_dois"><i class="fa"></i></label>
+                    <input type="radio" id="estrela_dois" name="estrela" value="2">
+                    
+                    <label for="estrela_tres"><i class="fa"></i></label>
+                    <input type="radio" id="estrela_tres" name="estrela" value="3">
+                    
+                    <label for="estrela_quatro"><i class="fa"></i></label>
+                    <input type="radio" id="estrela_quatro" name="estrela" value="4">
+                    
+                    <label for="estrela_cinco"><i class="fa"></i></label>
+                    <input type="radio" id="estrela_cinco" name="estrela" value="5"><br><br>
+                    
+                    <input type="submit" value="Avaliar">
+                    
+                </div>
+            </form>
+        </div>    
+    <?php endif; ?>
     </main>
 
     <footer>
