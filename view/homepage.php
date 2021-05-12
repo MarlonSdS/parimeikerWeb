@@ -35,14 +35,14 @@
                     $id = $rows_nomes['id'];
                     ?>
                 <div class="newUsers">
-                    <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $id; ?>.png" alt="">
-                    <p><?php echo $nome; ?></p>
+                    <img src="../userData/userPictures/Empresa/<?php echo $id; ?>portImage1.png" alt="">
+                    <p><a href="visitProfile.php?tipo=empresa&id=<?php echo $id; ?>"><?php echo $nome; ?></a></p>
                     <br>
                 </div>
                  <?php } ?>
 
                  <?php include("../controller/conexao.php");
-                //pesquisa por empresas
+                //pesquisa por autonomos
                 $result_nomes = "SELECT * FROM autonomo WHERE id > 0 ORDER BY id DESC LIMIT 3";
                 $resultado_nomes = mysqli_query($conexao, $result_nomes);
                 
@@ -51,11 +51,53 @@
                     $id = $rows_nomes['id'];
                     ?>
                 <div class="newUsers">
-                    <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $id; ?>.png" alt="">
-                    <p><?php echo $nome; ?></p>
+                    <img src="../userData/userPictures/Auto/<?php echo $id; ?>portImage1.png" alt="">
+                    <p><a href="visitProfile.php?tipo=auto&id=<?php echo $id; ?>"><?php echo $nome; ?></a></p>
                     <br>
                 </div>
                  <?php } ?>
+        <h1>Mais bem avaliados</h1>
+            <?php include("../controller/conexao.php");
+                //pesquisa por empresas
+                $result_nomes = "SELECT idEmpresa FROM notas WHERE nota > 3 AND idEmpresa > 0 ORDER BY nota DESC LIMIT 3";
+                $resultado_nomes = mysqli_query($conexao, $result_nomes);
+                while($rows_nomes = mysqli_fetch_array($resultado_nomes)){
+                    $id = $rows_nomes['idEmpresa'];
+                    $result_nomes = "SELECT * FROM empresa WHERE id = '$id'";
+                    $resultado_nomes = mysqli_query($conexao, $result_nomes);
+                    
+                    while($rows_nomes = mysqli_fetch_array($resultado_nomes)){
+                        $nome = $rows_nomes['nome'];
+                        $id = $rows_nomes['id'];
+                    ?>
+                    <div class="newUsers">
+                    <img src="../userData/userPictures/Empresa/<?php echo $id; ?>portImage1.png" alt="">
+                    <p><a href="visitProfile.php?tipo=empresa&id=<?php echo $id; ?>"><?php echo $nome; ?></a></p>
+                    <br>
+                </div>
+                 <?php } ?>
+                 <?php } ?>
+            <?php include("../controller/conexao.php");
+                //pesquisa por autonomos
+                $result_nomes = "SELECT idAutonomo FROM notas WHERE nota > 3 AND idAutonomo > 0 ORDER BY nota DESC LIMIT 3";
+                $resultado_nomes = mysqli_query($conexao, $result_nomes);
+                while($rows_nomes = mysqli_fetch_array($resultado_nomes)){
+                    $id = $rows_nomes['idAutonomo'];
+                    $result_nomes = "SELECT * FROM autonomo WHERE id = '$id'";
+                    $resultado_nomes = mysqli_query($conexao, $result_nomes);
+                    
+                    while($rows_nomes = mysqli_fetch_array($resultado_nomes)){
+                        $nome = $rows_nomes['nome'];
+                        $id = $rows_nomes['id'];
+                    ?>
+                    <div class="newUsers">
+                    <img src="../userData/userPictures/Auto/<?php echo $id; ?>portImage1.png" alt="">
+                    <p><a href="visitProfile.php?tipo=auto&id=<?php echo $id; ?>"><?php echo $nome; ?></a></p>
+                    <br>
+                </div>
+                 <?php } ?>
+                 <?php } ?>
+
         </main>
         <footer></footer>
     </body>
