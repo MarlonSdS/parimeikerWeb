@@ -226,9 +226,14 @@ li:hover {
 
 footer{
     position: static;
-    bottom: 0px;
-    background-color: #f46b10;
-    height: 100px;
-    width: 100%;
-    margin-top: 150px;
+    background: rgb(255,155,46); /* Old browsers */
+background: -moz-linear-gradient(left,  rgb(255,155,46) 0%, rgb(223,157,30) 19%, rgb(251,87,107) 57%, rgb(255,49,75) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgb(255,155,46) 0%,rgb(223,157,30) 19%,rgb(251,87,107) 57%,rgb(255,49,75) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgb(255,155,46) 0%,rgb(223,157,30) 19%,rgb(251,87,107) 57%,rgb(255,49,75) 100%); /* W3C, IE10+, FF16+, Chrome26
++, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9b2e', endColorstr='#ff314b',GradientType=1 ); /* IE6-9 */
+
+height: 100px;
+width: 100%;
+  margin-top: 20%;
 }
