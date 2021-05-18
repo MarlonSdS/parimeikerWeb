@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Maio-2021 às 00:51
+-- Tempo de geração: 18-Maio-2021 às 15:45
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 8.0.5
 
@@ -110,6 +110,29 @@ INSERT INTO `empresa` (`id`, `nome`, `email`, `tel`, `senha`, `cnpj`) VALUES
 (7, 'teste7', 'teste@teste', '000000000', '698dc19d489c4e4db73e28a713eab07b', 'serg4245'),
 (8, 'teste8', 'teste@teste.com', '12345678', '698dc19d489c4e4db73e28a713eab07b', '090909090909'),
 (9, 'Láticinios Ltda', 'marlonfms2012@gmail.com', '98644697', 'ed6372ce8a4eb2240e80dad6ba2d500b', '1212121212');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `notas`
+--
+
+CREATE TABLE `notas` (
+  `nota` int(1) NOT NULL,
+  `comentario` varchar(500) NOT NULL,
+  `idUser` int(4) NOT NULL,
+  `idEmpresa` int(4) DEFAULT NULL,
+  `idAutonomo` int(4) DEFAULT NULL,
+  `data` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `notas`
+--
+
+INSERT INTO `notas` (`nota`, `comentario`, `idUser`, `idEmpresa`, `idAutonomo`, `data`) VALUES
+(4, 'b', 11, NULL, 11, '0000-00-00'),
+(4, 'b', 11, NULL, 11, '2021-05-18');
 
 -- --------------------------------------------------------
 

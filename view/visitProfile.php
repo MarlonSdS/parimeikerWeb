@@ -141,12 +141,35 @@
                     <label for="estrela_cinco"><i class="fa"></i></label>
                     <input type="radio" id="estrela_cinco" name="estrela" value="5"><br><br>
                     
-                    <input type="submit" value="Avaliar">
-                    
                 </div>
+                <div class="ampo-coment">
+                    <p>Deixe um comentário</p>
+                    <textarea name="coment" id="" cols="30" rows="5"></textarea>
+                </div>
+                <input type="submit" value="Avaliar">
             </form>
         </div>    
     <?php endif; ?>
+        <div class="coments">
+            <?php 
+                if($tipo == "auto"){
+                    include("../controller/conexao.php");
+                    $result_nomes = "SELECT * FROM notas WHERE idAutonomo LIKE '$id' LIMIT 10";
+                    $resultado_nomes = mysqli_query($conexao, $result_nomes);
+                    
+                    while($rows_nomes = mysqli_fetch_array($resultado_nomes)):
+                
+            ?>
+            <div>
+              aaaaa
+              <?php 
+                    $idUser = $rows_nomes['idUser'];
+                    $data = $rows_nomes['data'];
+              ?>
+              <p><?php echo $idUser; echo $data; ?></p>
+            </div>
+            <?php endwhile; }?>
+        </div>
     </main>
 
     <footer>
