@@ -111,7 +111,7 @@
         </div>
 
         <?php  
-                if(isset($_SESSION['logado']) and $_SESSION['logado'] == true): ?>
+                if(isset($_SESSION['usertype']) and $_SESSION['usertype'] == "cliente"): ?>
         <div class="notas">
             <?php
             if(isset($_SESSION['msg'])){
@@ -150,8 +150,15 @@
             </form>
         </div>    
     <?php endif; ?>
-        <div class="coments">
+        <div>
             <?php 
+                function formatarData($data){
+                    $dataFormatada = explode("-", $data);
+                    $ano = $dataFormatada[0];
+                    $mes = $dataFormatada[1];
+                    $dia = $dataFormatada[2];
+                    return "$dia/$mes/$ano";
+                }
                 if($tipo == "auto"){
                     include("../controller/conexao.php");
                     $result_nomes = "SELECT * FROM notas WHERE idAutonomo LIKE '$id' LIMIT 10";
@@ -160,13 +167,27 @@
                     while($rows_nomes = mysqli_fetch_array($resultado_nomes)):
                 
             ?>
-            <div>
-              aaaaa
-              <?php 
+            <div class="coment">
+                <?php 
                     $idUser = $rows_nomes['idUser'];
-                    $data = $rows_nomes['data'];
-              ?>
-              <p><?php echo $idUser; echo $data; ?></p>
+                    include("../controller/conexao.php");
+                    $search_user = "SELECT * FROM cliente WHERE id LIKE '$idUser' LIMIT 10";
+                    $result_user = mysqli_query($conexao, $search_user);
+                    $userName = mysqli_fetch_array($result_user);
+                    $userName = $userName['nome'];
+                ?>
+                <div class="coment-infos">
+                    <div>
+                        <img src="../userData/userProfilePictures/Cliente/userProfile<?php echo $rows_nomes['idUser']; ?>.png" alt="">
+                    <h2><?php echo $userName; ?> </h2>
+                    </div>
+                    
+                    <h2><?php $data = $rows_nomes['data'];
+                    echo formatarData($data); ?></h2>
+                </div>
+                
+                <p><?php echo $rows_nomes['comentario']; ?></p>
+                <p class="fa"><?php echo $rows_nomes['nota']; ?></p>
             </div>
             <?php endwhile; }?>
         </div>

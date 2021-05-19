@@ -182,6 +182,7 @@
             $_SESSION['cpf'] = "";
             $_SESSION['cnpj'] = "";
             $_SESSION['logado'] = true;
+            $_SESSION['usertype'] = "cliente";
             header("location: ../view/homepage.php?tipo=cliente");
         }else{
             header("location: ../view/crud/login.php?tipo=cliente&erro=login");

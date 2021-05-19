@@ -139,3 +139,37 @@ div.portfolio-card:hover div.image-info{
 }.estrelas  input[type=radio]:checked  ~ label i.fa:before{
 	color: #CCC;
 }
+
+.coment img{
+    width: 8%;
+    min-width: 35px;
+}
+
+.coment{
+    display: flex;
+    flex-direction: column;
+}
+
+.coment-infos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+
+}
+
+.coment-infos div{
+    display: flex;
+    flex-direction: row;
+}
+
+.coment-infos h2{
+    color: #d45500ff;
+    margin-left: 2%;
+}
+
+.coment p{
+    color: black;
+    font-size: 18px;
+}
