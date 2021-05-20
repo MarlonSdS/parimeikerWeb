@@ -110,6 +110,8 @@
             </div>
         </div>
 
+        <h2>Avaliações dos clientes</h2>
+
         <?php  
                 if(isset($_SESSION['usertype']) and $_SESSION['usertype'] == "cliente"): ?>
         <div class="notas">
@@ -161,7 +163,7 @@
                 }
                 if($tipo == "auto"){
                     include("../controller/conexao.php");
-                    $result_nomes = "SELECT * FROM notas WHERE idAutonomo LIKE '$id' LIMIT 10";
+                    $result_nomes = "SELECT * FROM notas WHERE idAutonomo LIKE '$id' ORDER BY data DESC LIMIT 10";
                     $resultado_nomes = mysqli_query($conexao, $result_nomes);
                     
                     while($rows_nomes = mysqli_fetch_array($resultado_nomes)):
@@ -185,9 +187,10 @@
                     <h2><?php $data = $rows_nomes['data'];
                     echo formatarData($data); ?></h2>
                 </div>
-                
-                <p><?php echo $rows_nomes['comentario']; ?></p>
-                <p class="fa"><?php echo $rows_nomes['nota']; ?></p>
+                <div class="coment-box">
+                    <p><?php echo $rows_nomes['comentario']; ?></p>
+                    <p class="nota">Nota: <?php echo $rows_nomes['nota']; ?></p>
+                </div>
             </div>
             <?php endwhile; }?>
         </div>
