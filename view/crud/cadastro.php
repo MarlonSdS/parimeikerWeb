@@ -21,12 +21,124 @@
         <div class="alert alert-warning" role="alert">
                 <p>Usuário já cadastrado</p>
         </div>
+
+        <?php //cadastro de cliente
+        elseif($_GET["tipo"] == "cliente"): ?>
+
+            <img class="icon-logo" src="/parimeikerWeb/assets/images/icon.png">
+
+            <div class="center-cadastro">      
+
+            <h1 class="fill">Crie sua Conta</h1> 
+
+            <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
+            
+            <div class="campo-texto">
+                  <input type="text" required>
+                  <span></span>
+                  <label>Nome</label>      
+                </div>
+
+                <div class="campo-texto">
+                  <input type="text" required>
+                  <span></span>
+                  <label>Email</label>      
+                </div>
+
+                <div class="campo-texto">
+                  <input type="text" required>
+                  <span></span>
+                  <label>Telefone</label>      
+                </div>
+
+                <div class="campo-texto">
+                  <input type="password" required>
+                  <span></span>
+                  <label>Senha</label>      
+                </div>
+            
+                <input type="submit" value="CADASTRO">
+                <div class="link-conta">
+                        Já tem uma conta? <a href="">Login</a>
+        </div>
+
+            <!--
+            <div class="form-group">
+                    <label for="nome"></label>
+                    <input type="text" name="nome" placeholder="Seu Nome" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email"></label>
+                    <input type="email" name="email" placeholder="Seu e-mail" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="tel"></label>
+                    <input type="number" name="tel" placeholder="Seu telefone" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="senha"></label>
+                    <input type="password" name="senha" placeholder="Crie Sua Senha" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="nome"></label>
+                    <input type="hidden" name="tipo" placeholder="" class="form-control">
+
+                </div>
+            <button type="submit" class="btn-cadastrar" name="cadastro">Cadastrar</button>
+            -->
+                
+            </form>
+        </div>
+
         <?php endif; ?>
             <?php //cadastro de autonomo
             if ($_GET["tipo"] == "auto") :
         ?>
+
+            <img class="icon-logo" src="/parimeikerWeb/assets/images/icon.png">
+
+            <div class="center-cadastro">      
+
+            <h1 class="fill">Crie sua Conta</h1>
+
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
-                <div class="form-group">
+            
+            <div class="campo-texto">
+                  <input type="text" required>
+                  <span></span>
+                  <label>Nome</label>      
+                </div>
+
+                <div class="campo-texto">
+                  <input type="text" required>
+                  <span></span>
+                  <label>Email</label>      
+                </div>
+
+                <div class="campo-texto">
+                  <input type="text" required>
+                  <span></span>
+                  <label>Telefone</label>      
+                </div>
+
+                <div class="campo-texto">
+                  <input type="text" required>
+                  <span></span>
+                  <label>CNPJ</label>      
+                </div>
+
+                <div class="campo-texto">
+                  <input type="password" required>
+                  <span></span>
+                  <label>Senha</label>      
+                </div>
+                
+                <input type="submit" value="CADASTRO">
+                <div class="link-conta">
+                        Já tem uma conta? <a href="">Login</a>
+        </div>
+            <!--
+            <div class="form-group">
                     <label for="nome"></label>
                     <input type="text" name="nome" placeholder="Seu Nome" class="form-control">
                 </div>
@@ -51,38 +163,58 @@
                     <input type="hidden" name="tipo" placeholder="" class="form-control">
                 </div>
                 <button type="submit" class="btn-cadastrar" name="cadastro">Cadastrar</button>
+            -->
             </form>
-            
-        <?php //cadastro de cliente
-        elseif($_GET["tipo"] == "cliente"): ?>
-            <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
-                <div class="form-group">
-                    <label for="nome"></label>
-                    <input type="text" name="nome" placeholder="Seu Nome" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="email"></label>
-                    <input type="email" name="email" placeholder="Seu e-mail" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="tel"></label>
-                    <input type="number" name="tel" placeholder="Seu telefone" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="senha"></label>
-                    <input type="password" name="senha" placeholder="Crie Sua Senha" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="nome"></label>
-                    <input type="hidden" name="tipo" placeholder="" class="form-control">
-                </div>
-                <button type="submit" class="btn-cadastrar" name="cadastro">Cadastrar</button>
-            </form>
-            
+            </div>
+
         <?php //cadastro de empresa
         elseif($_GET["tipo"] == "empresa"): ?>
+
+            <img class="icon-logo" src="/parimeikerWeb/assets/images/icon.png">
+
+            <div class="center-cadastro">      
+
+            <h1 class="fill">Crie sua Conta</h1>
+
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
-                <div class="form-group">
+
+            <div class="campo-texto">
+                  <input type="text" required>
+                  <span></span>
+                  <label>Nome</label>      
+                </div>
+
+                <div class="campo-texto">
+                  <input type="text" required>
+                  <span></span>
+                  <label>Email</label>      
+                </div>
+
+                <div class="campo-texto">
+                  <input type="text" required>
+                  <span></span>
+                  <label>Telefone</label>      
+                </div>
+
+                <div class="campo-texto">
+                  <input type="text" required>
+                  <span></span>
+                  <label>CNPJ</label>      
+                </div>
+
+                <div class="campo-texto">
+                  <input type="password" required>
+                  <span></span>
+                  <label>Senha</label>      
+                </div>
+            
+                <input type="submit" value="CADASTRO">
+                <div class="link-conta">
+                        Já tem uma conta? <a href="">Login</a>
+        </div>
+
+            <!--
+            <div class="form-group">
                     <label for="nome"></label>
                     <input type="text" name="nome" placeholder="Nome da Empresa" class="form-control">
                 </div>
@@ -106,13 +238,18 @@
                     <label for="nome"></label>
                     <input type="hidden" name="tipo" placeholder="" class="form-control">
                 </div>
-                <button type="submit" class="btn-cadastrar" name="cadastro">Cadastrar</button>
-            </form>
-            
+            <button type="submit" class="btn-cadastrar" name="cadastro">Cadastrar</button>
+       
+            -->
+                
+            </form> 
+        </div> 
         <?php endif; ?>
         </main>
-        <footer>
-            
-        </footer>
+        
+            <!-- Footer -->
+
+            <?php include('../../util/footer.php'); ?>  
+
     </body>
 </html>
