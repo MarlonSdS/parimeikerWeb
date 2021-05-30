@@ -3,8 +3,13 @@
 <html lang="pt-br">
 <head>
     
-    <?php include("util/commonHead.php"); ?>
 
+
+    <!--para ser mais prático o head de todas as páginas será feito apenas incluindo este arquivo com informções
+    pré definidas, com excessão apenas do que é exclusivo para cada página -->
+    <?php include("util/commonHead.php"); ?>
+    <!-- <link rel="stylesheet" href="assets/styles/index.css"> -->
+    
     <link rel="stylesheet" href="style.css">
     <!-- Link Style do Header-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0.">
@@ -26,133 +31,71 @@
 
     } ?>
 </head>
+<body>
+    
+    <!-- Header -->
 
-    <body>
-        
-        <!-- Header -->
+    <?php include("util/header.php"); ?>
 
-        <?php include("util/header.php"); ?>
-        
-        <!-- Carrousel -->
-        
-    <div class="carrousel">
-            <div class="gallery autoplay items-3">
-        <div id="item-1" class="control-operator"></div>
-        <div id="item-2" class="control-operator"></div>
-        <div id="item-3" class="control-operator"></div>
-        
+    <!-- Carrousel -->
+<div class="carrousel">
+        <div class="gallery autoplay items-3">
+    <div id="item-1" class="control-operator"></div>
+    <div id="item-2" class="control-operator"></div>
+    <div id="item-3" class="control-operator"></div>
 
-        <figure class="item">
-            <h1><img src="assets/images/Banner-01.png"></h1>
-        </figure>
+    <figure class="item">
+        <h1><img src="assets/images/Banner-01.png"></h1>
+    </figure>
 
-        <figure class="item">
-            <h1><img src="assets/images/Banner-02.png"></h1>
-        </figure>
+    <figure class="item">
+        <h1><img src="assets/images/Banner-02.png"></h1>
+    </figure>
 
-        <figure class="item">
-            <h1><img src="assets/images/Banner-03.png"></h1>
-        </figure>
+    <figure class="item">
+        <h1><img src="assets/images/Banner-03.png"></h1>
+    </figure>
 
-        <div class="controls">
-            <a href="#item-1" class="control-button">•</a>
-            <a href="#item-2" class="control-button">•</a>
-            <a href="#item-3" class="control-button">•</a>
-            
-        </div>
-        </div>
+    <div class="controls">
+        <a href="#item-1" class="control-button">•</a>
+        <a href="#item-2" class="control-button">•</a>
+        <a href="#item-3" class="control-button">•</a>
     </div>
+    </div>
+</div>
 
 
-        <!-- Feed -->
+<!-- Feed -->
+<div class="container-feed">
+<div class="feed">
+    <img src="assets/images/001.jpg" alt="" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
 
-        <h1 class="titulo-feed">MAIS AVALIADOS</h1>
-        <div class="container-feed">
-            
-        <div class="feed">
-            <img src="assets/images/feed-01.png" alt="" >
-        </a>
-        <div class="desc">Palace Doces e Salgados</div>
-        </div>
+<div class="feed">
+    <img src="assets/images/001.jpg" alt="" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
 
-        <div class="feed">
-            <img src="assets/images/feed-02.png" alt="" >
-        </a>
-        <div class="desc">Divino  Açaí</div>
-        </div>
+<div class="feed">
+    <img src="assets/images/001.jpg" alt="" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
 
-        <div class="feed">
-            <img src="assets/images/feed-03.png" alt="" >
-        </a>
-        <div class="desc">Browneria Artesanal</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-04.png" alt="" >
-        </a>
-        <div class="desc">Moccia Cozinha Afetiva</div>
-        </div>
-        </div>
-
-        <div class="container-feed">
-            
-        <div class="feed">
-            <img src="assets/images/feed-05.png" alt="" >
-        </a>
-        <div class="desc">Caliente Cozinha Mexicana</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-06.png" alt="" >
-        </a>
-        <div class="desc">Pono Culinária Havaiana</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-07.png" alt="" >
-        </a>
-        <div class="desc">Antônia Buffet</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-08.png" alt="" >
-        </a>
-        <div class="desc">Pães de Mel Xaveco</div>
-        </div>
-        </div>
+<div class="feed">
+    <img src="assets/images/001.jpg" alt="" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+</div>
 
 
-        <h1 class="titulo-feed2">MAIS RECENTES</h1>
-        <div class="container-feed2">
-        <div class="feed">
-            <img src="assets/images/feed-02.png" alt="" >
-        </a>
-        <div class="desc">Divino Açaí</div>
-        </div>
+    <!-- Footer -->
 
-        <div class="feed">
-            <img src="assets/images/feed-04.png" alt="" >
-        </a>
-        <div class="desc">Moccia Cozinha Afetiva</div>
-        </div>
+    <?php include("util/footer.php"); ?>
 
-        <div class="feed">
-            <img src="assets/images/feed-06.png" alt="" >
-        </a>
-        <div class="desc">Pono Culinária Havaiana</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-07.png" alt="" >
-        </a>
-        <div class="desc">Antônia Buffet</div>
-        </div>
-        </div>
-
-        <!-- Footer -->
-
-        <?php include("util/footer.php"); ?>
-
-    </body>
-
+</body>
 </html>

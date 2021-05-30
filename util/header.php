@@ -1,6 +1,6 @@
 <nav>
         <ul>
-            <li class="logo"><a href="/parimeikerWeb/"><img src="/parimeikerWeb/assets/images/logo.png"></a></li>
+            <li class="logo"><a href="/parimeikerWeb/"><img src="/parimeikerWeb/assets/images/logo.png"></a>  </li>
             <li class="search-icon">
             <input type="search" placeholder="Pesquise">
             <label class="icon">
@@ -8,13 +8,13 @@
             </label>
             </li>
             <?php if(!isset($_SESSION['nome'])): ?>
-            <li class="dropdown">
-            <button class="dropbtn">ENTRAR</button>
-            <div class="dropdown-content">
-                <a href="view/crud/login.php?tipo=cliente">ENTAR COMO CLIENTE</a>
-                <a href="view/crud/login.php?tipo=empresa">ENTRAR COMO EMPRESA</a>
-                <a href="view/crud/login.php?tipo=auto">ENTRAR COMO PRESTADOR</a>
-            </div>
+            <li class="btn-entrar">
+            <button class="input-btn" href="www.youtube.com">ENTRAR</button>
+            <ul>
+                <li><a href="view/crud/login.php?tipo=cliente">Entrar como cliente</a></li>
+                <li><a href="view/crud/login.php?tipo=auto">Entrar como autônomo</a></li>
+                <li><a href="view/crud/login.php?tipo=empresa">Entrar como empresa</a></li>
+            </ul>
             </li>
             <?php else: ?>  
             <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
@@ -39,5 +39,3 @@
             <?php endif; ?>
         </ul>
     </nav>
-
-    
