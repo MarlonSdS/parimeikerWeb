@@ -183,7 +183,7 @@
             $_SESSION['cnpj'] = "";
             $_SESSION['logado'] = true;
             $_SESSION['usertype'] = "cliente";
-            header("location: ../view/homepage.php?tipo=cliente");
+            header("location: ../index.php?tipo=cliente");
         }else{
             header("location: ../view/crud/login.php?tipo=cliente&erro=login");
         }  
@@ -207,7 +207,7 @@
                 $_SESSION['cpf'] = $validar['cpf'];
                 $_SESSION['cnpj'] = "";
                 $_SESSION['logado'] = true;
-                header("location: ../view/homepage.php?tipo=auto");
+                header("location: ../index.php?tipo=auto");
             }else{
                 header("location: ../view/crud/login.php?tipo=auto&erro=login");}
     

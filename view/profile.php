@@ -20,7 +20,7 @@
 </head>
 <body>
     <header>
-        <?php include'../util/header.php'; ?>
+    <?php include("../util/header.php"); ?>
     </header>
     <div id="vazio"></div>
     
@@ -103,7 +103,7 @@
     </main>
 
     <footer>
-
+        <?php include("../util/footer.php"); ?>
     </footer>
 </body>
 </html>
