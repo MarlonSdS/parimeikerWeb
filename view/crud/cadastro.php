@@ -164,7 +164,7 @@
                 <div class="campo-texto">
                   <input type="text" name="cpf" required>
                   <span></span>
-                  <label>CPF</label>      
+                  <label>CNPJ</label>      
                 </div>
 
                 <div class="campo-texto">
