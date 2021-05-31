@@ -31,9 +31,7 @@
                 if($tipo == "cliente"): ?>
 
                 <img class="icon-logo" src="/parimeikerWeb/assets/images/icon.png">
-
-                <div class="center"> 
-
+                <div class="center">
                 <h1 class="fill">Faça Seu Login</h1> 
 
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
@@ -41,8 +39,7 @@
             <div class="campo-texto">
                   <input type="email" name="email" required>
                   <span></span>
-                  <label>Email</label>     
-                  
+                  <label>Email</label>  
                 </div>
 
                 <div class="campo-texto">
@@ -53,17 +50,16 @@
               
             </div>
 
-                        <div class="center-cadastro">
-            <input type="submit" value="LOGIN" name="login">
+                <div class="center-login">
+                <input type="submit" value="LOGIN" name="login">
                 <div class="link-conta">
-                        Ainda não tem uma conta? <a href="cadastro.php?tipo=cliente">Crie agora</a>
+                Ainda não tem uma conta? <a href="cadastro.php?tipo=cliente">Crie agora</a>
                 </div>
-                <div class="senha-cadastro">Esqueçeu a Senha?</div>
+                <div class="senha-login">Esqueçeu a Senha?</div>
                 </div>
         </form>
         </div>   
         
-                </div>
 
         <?php /*login de autonomo*/elseif($tipo == "auto"): ?>
 
@@ -75,37 +71,28 @@
 
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
-            <<div class="campo-texto">
-                  <input type="text" required>
+            <div class="campo-texto">
+                  <input type="email" name="cpf" required>
                   <span></span>
-                  <label>Usuário</label>      
+                  <label>CPF</label>  
                 </div>
 
                 <div class="campo-texto">
-                  <input type="password" required>
+                  <input type="password" name="senha" required>
                   <span></span>
                   <label>Senha</label>      
                 </div>
-            
-                <div class="senha">Esqueçeu a Senha?</div>
-                <input type="submit" value="LOGIN">
+              
+            </div>
+
+                <div class="center-login">
+                <input type="submit" value="LOGIN" name="login">
                 <div class="link-conta">
-                        Ainda não tem uma conta? <a href="cadastro.php?tipo=auto">Crie agora</a>
+                Ainda não tem uma conta? <a href="cadastro.php?tipo=auto">Crie agora</a>
+                </div>
+                <div class="senha-login">Esqueçeu a Senha?</div>
                 </div>
 
-            <!--
-            <div class="form-group">
-            <img src="../../assets/images/icons/usuario.png" alt="">
-                    <input type="text" name="cpf" placeholder="CPF" class="form-control">
-            </div>
-            <div class="form-group">
-            <img src="../../assets/images/icons/cadeado.png" alt="">
-                    <input type="password" name="senha" placeholder="Senha" class="form-control">
-            </div>
-
-            <button type="submit" class="btn-login" name="login">Entrar</button>
-            <a href="/parimeikerWeb/view/crud/cadastro.php?tipo=auto" class="btn-cadastrar">Cadastrar</a>
-                -->
         </form>
         </div>
         
@@ -121,38 +108,29 @@
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="campo-texto">
-                  <input type="text" required>
+                  <input type="email" name="cnpj" required>
                   <span></span>
-                  <label>Usuário</label>      
+                  <label>CNPJ</label>  
                 </div>
 
-
                 <div class="campo-texto">
-                  <input type="password" required>
+                  <input type="password" name="senha" required>
                   <span></span>
                   <label>Senha</label>      
                 </div>
-            
-                <div class="senha">Esqueçeu a Senha?</div>
-                <input type="submit" value="LOGIN">
+              
+            </div>
+
+                <div class="center-login">
+                <input type="submit" value="LOGIN" name="login">
                 <div class="link-conta">
-                        Ainda não tem uma conta? <a href="cadastro.php?tipo=empresa">Crie agora</a>
+                Ainda não tem uma conta? <a href="cadastro.php?tipo=empresa">Crie agora</a>
+                </div>
+                <div class="senha-login">Esqueçeu a Senha?</div>
                 </div>
 
-            <!--
-            <div class="form-group">
-            <img src="../../assets/images/icons/usuario.png" alt="">
-                    <input type="text" name="cnpj" placeholder="CNPJ" class="form-control">
-            </div>
-            <div class="form-group">
-            <img src="../../assets/images/icons/cadeado.png" alt="">
-                    <input type="password" name="senha" placeholder="Senha" class="form-control">
-            </div>
-
-            <button type="submit" class="btn-login" name="login">Entrar</button>
-            <a href="/parimeikerWeb/view/crud/cadastro.php?tipo=empresa" class="btn-cadastrar">Cadastrar</a>
-        -->
         </form>
+        </div>
         <?php endif; ?>
         
         </main>
