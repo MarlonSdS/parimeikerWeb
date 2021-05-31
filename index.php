@@ -66,31 +66,89 @@
 
 
 <!-- Feed -->
-<div class="container-feed">
-<div class="feed">
-    <img src="assets/images/001.jpg" alt="" width="600" height="400">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
 
-<div class="feed">
-    <img src="assets/images/001.jpg" alt="" width="600" height="400">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
+<h1 class="titulo-feed">MAIS AVALIADOS</h1>
+        <div class="container-feed">
+            
+        <div class="feed">
+            <img src="assets/images/feed-01.png" alt="" >
+        </a>
+        <div class="desc">Palace Doces e Salgados</div>
+        </div>
 
-<div class="feed">
-    <img src="assets/images/001.jpg" alt="" width="600" height="400">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
+        <div class="feed">
+            <img src="assets/images/feed-02.png" alt="" >
+        </a>
+        <div class="desc">Divino  Açaí</div>
+        </div>
 
-<div class="feed">
-    <img src="assets/images/001.jpg" alt="" width="600" height="400">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
-</div>
+        <div class="feed">
+            <img src="assets/images/feed-03.png" alt="" >
+        </a>
+        <div class="desc">Browneria Artesanal</div>
+        </div>
+
+        <div class="feed">
+            <img src="assets/images/feed-04.png" alt="" >
+        </a>
+        <div class="desc">Moccia Cozinha Afetiva</div>
+        </div>
+        </div>
+
+        <div class="container-feed">
+            
+        <div class="feed">
+            <img src="assets/images/feed-05.png" alt="" >
+        </a>
+        <div class="desc">Caliente Cozinha Mexicana</div>
+        </div>
+
+        <div class="feed">
+            <img src="assets/images/feed-06.png" alt="" >
+        </a>
+        <div class="desc">Pono Culinária Havaiana</div>
+        </div>
+
+        <div class="feed">
+            <img src="assets/images/feed-07.png" alt="" >
+        </a>
+        <div class="desc">Antônia Buffet</div>
+        </div>
+
+        <div class="feed">
+            <img src="assets/images/feed-08.png" alt="" >
+        </a>
+        <div class="desc">Pães de Mel Xaveco</div>
+        </div>
+        </div>
+
+
+        <h1 class="titulo-feed2">MAIS RECENTES</h1>
+        <div class="container-feed2">
+        <div class="feed">
+            <img src="assets/images/feed-02.png" alt="" >
+        </a>
+        <div class="desc">Divino Açaí</div>
+        </div>
+
+        <div class="feed">
+            <img src="assets/images/feed-04.png" alt="" >
+        </a>
+        <div class="desc">Moccia Cozinha Afetiva</div>
+        </div>
+
+        <div class="feed">
+            <img src="assets/images/feed-06.png" alt="" >
+        </a>
+        <div class="desc">Pono Culinária Havaiana</div>
+        </div>
+
+        <div class="feed">
+            <img src="assets/images/feed-07.png" alt="" >
+        </a>
+        <div class="desc">Antônia Buffet</div>
+        </div>
+        </div>
 
 
     <!-- Footer -->

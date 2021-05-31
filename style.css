@@ -1,6 +1,25 @@
 
 /* Feed */
 
+.titulo-feed{
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  font-size: 25px;
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo-feed2{
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  font-size: 25px;
+  margin-top: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 div.feed {
   margin: 5px;
   border: 1px solid #ccc;
@@ -28,5 +47,10 @@ div.desc {
   margin-top: 3%;
 }
 
+.container-feed2{
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
 
 

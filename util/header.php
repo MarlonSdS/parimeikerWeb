@@ -8,13 +8,13 @@
             </label>
             </li>
             <?php if(!isset($_SESSION['nome'])): ?>
-            <li class="btn-entrar">
-            <button class="input-btn" href="www.youtube.com">ENTRAR</button>
-            <ul>
-                <li><a href="/parimeikerWeb/view/crud/login.php?tipo=cliente">Entrar como cliente</a></li>
-                <li><a href="/parimeikerWeb/view/crud/login.php?tipo=auto">Entrar como autônomo</a></li>
-                <li><a href="/parimeikerWeb/view/crud/login.php?tipo=empresa">Entrar como empresa</a></li>
-            </ul>
+                <li class="dropdown">
+            <button class="dropbtn">ENTRAR</button>
+            <div class="dropdown-content">
+                <a href="view/crud/login.php?tipo=cliente">ENTAR COMO CLIENTE</a>
+                <a href="view/crud/login.php?tipo=empresa">ENTRAR COMO EMPRESA</a>
+                <a href="view/crud/login.php?tipo=auto">ENTRAR COMO PRESTADOR</a>
+            </div>
             </li>
             <?php else: ?>  
             <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
