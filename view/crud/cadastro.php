@@ -25,44 +25,11 @@
         <?php //cadastro de cliente
         elseif($_GET["tipo"] == "cliente"): ?>
 
-            <img class="icon-logo" src="/parimeikerWeb/assets/images/icon.png">
-
-            <div class="center-cadastro">      
-
-            <h1 class="fill">Crie sua Conta</h1> 
+            
 
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
             
-            <div class="campo-texto">
-                  <input type="text" name="nome" required>
-                  <span></span>
-                  <label>Nome</label>      
-                </div>
-
-                <div class="campo-texto">
-                  <input type="text" name="email" required>
-                  <span></span>
-                  <label>Email</label>      
-                </div>
-
-                <div class="campo-texto">
-                  <input type="text" name="tel" required>
-                  <span></span>
-                  <label>Telefone</label>      
-                </div>
-
-                <div class="campo-texto">
-                  <input type="password" name="senha" required>
-                  <span></span>
-                  <label>Senha</label>      
-                </div>
             
-                <input type="submit" value="CADASTRO">
-                <div class="link-conta">
-                        Já tem uma conta? <a href="">Login</a>
-        </div>
-
-            <!--
             <div class="form-group">
                     <label for="nome"></label>
                     <input type="text" name="nome" placeholder="Seu Nome" class="form-control">
