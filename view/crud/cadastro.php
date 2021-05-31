@@ -34,25 +34,25 @@
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
             
             <div class="campo-texto">
-                  <input type="text" required>
+                  <input type="text" name="nome" required>
                   <span></span>
                   <label>Nome</label>      
                 </div>
 
                 <div class="campo-texto">
-                  <input type="text" required>
+                  <input type="text" name="email" required>
                   <span></span>
                   <label>Email</label>      
                 </div>
 
                 <div class="campo-texto">
-                  <input type="text" required>
+                  <input type="text" name="tel" required>
                   <span></span>
                   <label>Telefone</label>      
                 </div>
 
                 <div class="campo-texto">
-                  <input type="password" required>
+                  <input type="password" name="senha" required>
                   <span></span>
                   <label>Senha</label>      
                 </div>

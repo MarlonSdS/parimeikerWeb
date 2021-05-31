@@ -136,7 +136,7 @@
     function verificarUsuario(){
         $email = $_POST["email"];
        
-       
+       $ver = false;
         include("../controller/conexao.php");
 
         if (isset($_POST['cnpj'])) {
@@ -144,22 +144,25 @@
         $validar = $conexao->query("SELECT * FROM empresa WHERE cnpj='$cnpj'")
         or die($conexao->error);
         if($validar->num_rows > 0){
-            return true;
+            $ver = true;
         }
         }elseif(isset($_POST['cpf'])){ 
             $cpf = $_POST["cpf"];
             $validar = $conexao->query("SELECT * FROM autonomo WHERE cpf='$cpf'")
             or die($conexao->error);
             if($validar->num_rows > 0){
-                return true;
+                $ver = true;
             }
         }else{
             $validar = $conexao->query("SELECT * FROM cliente WHERE email='$email'")
             or die($conexao->error);
             if($validar->num_rows > 0){
-                return true;
+                $ver = true;
             }
         }
+
+        return $ver;
+        
     }
 
     //funções de autenticação

@@ -11,9 +11,9 @@
             <li class="btn-entrar">
             <button class="input-btn" href="www.youtube.com">ENTRAR</button>
             <ul>
-                <li><a href="view/crud/login.php?tipo=cliente">Entrar como cliente</a></li>
-                <li><a href="view/crud/login.php?tipo=auto">Entrar como autônomo</a></li>
-                <li><a href="view/crud/login.php?tipo=empresa">Entrar como empresa</a></li>
+                <li><a href="/parimeikerWeb/view/crud/login.php?tipo=cliente">Entrar como cliente</a></li>
+                <li><a href="/parimeikerWeb/view/crud/login.php?tipo=auto">Entrar como autônomo</a></li>
+                <li><a href="/parimeikerWeb/view/crud/login.php?tipo=empresa">Entrar como empresa</a></li>
             </ul>
             </li>
             <?php else: ?>  
