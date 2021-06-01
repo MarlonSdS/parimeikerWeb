@@ -21,34 +21,41 @@
 
 
                 <img src="/parimeikerWeb/userData/userProfilePictures/Empresa/userProfile<?php echo $_SESSION['id']; ?>.png" class="img-menu" alt="">
+               
                 <li class="dropdown">
-            <button class="dropbtn">ENTRAR</button>
+            <button class="dropbtn"></button>
             <div class="dropdown-content">
-                <a href="view/crud/login.php?tipo=cliente">ENTAR COMO CLIENTE</a>
-                <a href="view/crud/login.php?tipo=empresa">ENTRAR COMO EMPRESA</a>
-                <a href="view/crud/login.php?tipo=auto">ENTRAR COMO PRESTADOR</a>
+            <a href="/parimeikerWeb/view/profile.php">Ver perfil</a>
+            <a href="/parimeikerWeb/controller/usuarioDAO.php?sair=sim">Sair</a>
             </div>
             </li>
-                <li class="ul">
-                        <li><b><a href="/parimeikerWeb/view/profile.php">Ver perfil</a></b></li>
-                        <li><b><a href="/parimeikerWeb/controller/usuarioDAO.php?sair=sim">Sair</a></b></li>
-                    </li>
-
+                
 
             <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>  <!-- autonomo -->
                 <img src="/parimeikerWeb/userData/userProfilePictures/Autonomo/userProfile<?php echo $_SESSION['id']; ?>.png" class="img-menu" alt="">
-                <li class="ul">
-                        <li><b><a href="/parimeikerWeb/view/profile.php">Ver perfil</a></b></li>
-                        <li><b><a href="/parimeikerWeb/controller/usuarioDAO.php?sair=sim">Sair</a></b></li>
-                    </li>
+                
+                <li class="dropdown">
+            <button class="dropbtn"></button>
+            <div class="dropdown-content">
+            <a href="/parimeikerWeb/view/profile.php">Ver perfil</a>
+            <a href="/parimeikerWeb/controller/usuarioDAO.php?sair=sim">Sair</a>
+            </div>
+            </li>
+
             <?php else: ?>
 
                 <!-- cliente -->
-                <img src="/parimeikerWeb/userData/userProfilePictures/Cliente/userProfile<?php echo $_SESSION['id']; ?>.png" class="img-menu" alt="">
-                <li class="ul">
-                        <li><b><a href="/parimeikerWeb/view/profile.php">Ver perfil</a></b></li>
-                        <li><b><a href="/parimeikerWeb/controller/usuarioDAO.php?sair=sim">Sair</a></b></li>
-                    </li>
+
+
+            <li class="dropdown">
+            <img src="/parimeikerWeb/userData/userProfilePictures/Cliente/userProfile<?php echo $_SESSION['id']; ?>.png"  class="dropbtn" class="perfil-img" class="img-menu" alt="">
+           
+            <div class="dropdown-content">
+            <a href="/parimeikerWeb/view/profile.php">Ver perfil</a>
+            <a href="/parimeikerWeb/controller/usuarioDAO.php?sair=sim">Sair</a>
+            </div>
+            </li>
+
             <?php endif; ?>
             <?php endif; ?>
         </ul>

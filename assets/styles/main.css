@@ -141,6 +141,13 @@ nav{
 /* Mostra o menu dentro do dropdown no hover */
 .dropdown:hover .dropdown-content {display: block;}
 
+
+/* Foto Perfil */
+
+.perfil-img{
+  width: 70px;
+}
+
   /* Footer */
 
 
