@@ -46,7 +46,6 @@
 
                 <!-- cliente -->
 
-
             <li class="dropdown">
             <img src="/parimeikerWeb/userData/userProfilePictures/Cliente/userProfile<?php echo $_SESSION['id']; ?>.png"  class="dropbtn" class="perfil-img" class="img-menu" alt="">
            
