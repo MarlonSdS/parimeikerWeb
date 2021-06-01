@@ -5286,6 +5286,9 @@ a.badge-dark:focus, a.badge-dark.focus {
   border-radius: 0;
 }
 
+
+/*
+
 .alert {
   position: relative;
   padding: 0.75rem 1.25rem;
@@ -5371,9 +5374,10 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .alert-warning {
-  color: #856404;
+  color: orangered;
   background-color: #fff3cd;
   border-color: #ffeeba;
+  width: 230px;
 }
 
 .alert-warning hr {
@@ -5425,6 +5429,8 @@ a.badge-dark:focus, a.badge-dark.focus {
 .alert-dark .alert-link {
   color: #040505;
 }
+
+*/
 
 @-webkit-keyframes progress-bar-stripes {
   from {

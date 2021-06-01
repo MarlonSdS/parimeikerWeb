@@ -21,9 +21,20 @@
                 }
                 if($erro == "login"):
         ?>
+
+        <div class="alert show">
+                  <span class="fas fa-exclamation-circle"></span>
+                  <span>Login ou Senha incorretos!</span>
+                  <span class="close-btn">
+                    <span class="fas fa-times"></span>
+                </span>
+        </div>
+  <!--
         <div class="alert alert-warning" role="alert">
                 <p>Login ou senha incorretos</p>
         </div>
+
+        -->
         <?php endif; ?>
         <?php 
                 $tipo = $_GET["tipo"];
@@ -72,7 +83,7 @@
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="campo-texto">
-                  <input type="email" name="cpf" required>
+                  <input type="cpf" name="cpf" required>
                   <span></span>
                   <label>CPF</label>  
                 </div>
@@ -108,7 +119,7 @@
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="campo-texto">
-                  <input type="email" name="cnpj" required>
+                  <input type="cnpj" name="cnpj" required>
                   <span></span>
                   <label>CNPJ</label>  
                 </div>

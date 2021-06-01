@@ -1,6 +1,18 @@
 
 /* LOGIN */
 
+
+/*
+.alert-warning{
+    background-color: #fb576b;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+*/
 .icon-logo{
     width: 100px;
     margin-top: 4%;
@@ -212,4 +224,81 @@
 
 .link-conta a:hover{
     text-decoration: underline;
+}
+
+/* Erro no Login - Alerta */
+
+.alert{
+    background: #ff9b2e; /* Old browsers */
+    background: -moz-linear-gradient(left,  #ff9b2e 0%, #ff9b2e 20%, #fb576b 46%, #ff314b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #ff9b2e 0%,#ff9b2e 20%,#fb576b 46%,#ff314b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #ff9b2e 0%,#ff9b2e 20%,#fb576b 46%,#ff314b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9b2e', endColorstr='#ff314b',GradientType=1 ); /* IE6-9 */;
+    padding: 15px 40px;
+    min-width: 320px;
+    position: absolute;
+    right: 0px;
+    top: 20%;
+    overflow: hidden;
+    border-radius: 8px;
+    border-left: 8px solid orangered;
+    opacity: 85%;
+}
+
+.alert.show{
+    animation: show_slide 1s ease forwards;
+}
+
+@keyframes show_slide {
+    0%{
+        transform: translateX(100%);
+    }
+
+    40%{
+        transform: translateX(-10%);
+    }
+
+    80%{
+        transform: translateX(0%);
+    }
+
+    100%{
+        transform: translateX(-10px);
+    }
+}
+
+.alert .fa-exclamation-circle{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ce8500;
+    font-size: 30px;
+}
+
+.alert.msg{
+    padding: 0 20px;
+    font-size: 18px;
+    color: #ce8500;
+}
+
+.alert .close-btn{
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: orangered;
+    padding: 18px 16px;
+    cursor: pointer;
+}
+
+.close-btn:hover{
+    background: #ffc766;
+}
+
+.close-btn .fa-times{
+    color: #ce8500;
+    font-size: 22px;
+   
+
 }

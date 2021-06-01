@@ -7,4 +7,5 @@
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/parimeikerWeb/assets/styles/bootstrap.css">
 <link rel="shortcut icon" href="/parimeikerWeb/assets/images/favicon.png" >
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 

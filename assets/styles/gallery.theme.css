@@ -13,11 +13,14 @@
 */
 .gallery {
   position: relative;
+  margin: 0;
+  left: 0;
 }
 .gallery .item {
   height: 400px;
   overflow: hidden;
   text-align: center;
+  
 }
 .gallery .controls {
   position: absolute;
@@ -36,4 +39,7 @@
 
 .carrousel{
   margin-top: -1.2%;
+  background-image: url('assets/images/Banner-01.png');
+  background-repeat: repeat-x;
 }
+
