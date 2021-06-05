@@ -5,33 +5,69 @@
     $texto = "";
     $userType = "";      
     if(isset($_POST['editar'])){
-       // verificarTipoUsuario();
-       // guardarTexto();
+       criarLinhaNoBanco();
+       guardarTexto();
+       guardarImagem();
+       guardarTextoPortfolio();
     };
     //verifica se o usuario é cliente, autonomo ou empresa
+    function verificarTipoUsuario(){
         if(strlen($_SESSION['cpf']) > 2){
-            $userType = "auto";
+            return "auto";
         }elseif(strlen($_SESSION['cnpj']) > 2){
-            $userType = "empresa";
+            return "empresa";
         }else{
-            $userType = "cliente";
+            return "cliente";
         }
+    }
 
+    function criarLinhaNoBanco(){
+        include("conexao.php");
+        $id = $_SESSION['id'];
+        if(verificarTipoUsuario() == "auto"){
+            $validar = $conexao->query("SELECT * FROM userdata WHERE idAutonomo='$id'")
+        or die($conexao->error);
+            if($validar->num_rows == 0){
+                $query = "INSERT INTO userdata(idAutonomo) VALUES('$id')";
+                $operacao = mysqli_query($conexao, $query);
+            }
+        }
+        if(verificarTipoUsuario() == "empresa"){
+            $validar = $conexao->query("SELECT * FROM userdata WHERE idEmpresa='$id'")
+        or die($conexao->error);
+            if($validar->num_rows == 0){
+                $query = "INSERT INTO userdata(idEmpresa) VALUES('$id')";
+                $operacao = mysqli_query($conexao, $query);
+            }
+        }
+        if(verificarTipoUsuario() == "cliente"){
+            $validar = $conexao->query("SELECT * FROM userdata WHERE idUsuario='$id'")
+        or die($conexao->error);
+            if($validar->num_rows < 1){
+                $query = "INSERT INTO userdata(idUsuario) VALUES('$id')";
+                $operacao = mysqli_query($conexao, $query);
+            }
+        }
+    }
+        
 
-        if($userType == "auto"){
-            $texto = fopen("../userData/userTexts/Autonomo/userText{$id}.html", "w");
-            if($texto == false) die ("não foi possível criar o arquivo");
-            fwrite($texto, $_POST['texto']);
-            fclose($texto);
+    function guardarTexto(){
+        include("conexao.php");
+        $id = $_SESSION['id'];
+         if(verificarTipoUsuario() == "auto"){
+             $texto = $_POST['texto'];
+            $query = "UPDATE userdata SET profileText = '$texto' WHERE idAutonomo = '$id'";
+            $operacao = mysqli_query($conexao, $query);
            // header("location: ../view/profile.php");
         }
-        if($userType == "empresa"){
-            $texto = fopen("../userData/userTexts/Empresa/userText{$id}.html", "w");
-            if($texto == false) die ("não foi possível criar o arquivo");
-            fwrite($texto, $_POST['texto']);
-            fclose($texto);
+        if(verificarTipoUsuario() == "empresa"){
+            $texto = $_POST['texto'];
+            $query = "UPDATE userdata SET profileText = '$texto' WHERE idEmpresa = '$id'";
+            $operacao = mysqli_query($conexao, $query);
            // header("location: ../view/profile.php");
         }
+    }
+       
        /* if($userType == "cliente"){
             $texto = fopen("/parimeikerWeb/userData/userTexts/Cliente/userText$id.txt", "w");
             if($texto == false) die ("não foi possível criar o arquivo");
@@ -40,7 +76,128 @@
             header("location: ../view/profile.php");
         } */
 
-        if(isset($_FILES['picture']['name'])){
+
+    function guardarImagem(){
+        include("conexao.php");
+        $id = $_SESSION['id'];
+        if(isset($_FILES['picture'])){
+            $imagem = $_FILES['picture']['tmp_name'];
+            $tamanho = $_FILES['picture']['size'];
+            $tipo = $_FILES['picture']['type'];
+            $nome = $_FILES['picture']['name'];
+
+            $fp = fopen($imagem, "rb");
+            $conteudo = fread($fp, $tamanho);
+            $conteudo = addslashes($conteudo);
+            fclose($fp);
+            
+            if(verificarTipoUsuario() == "empresa"){
+                $query = "UPDATE userdata SET profileImage='$conteudo' WHERE idEmpresa = '$id'";
+                $operacao = mysqli_query($conexao, $query);
+            }
+            if(verificarTipoUsuario() == "auto"){
+                $query = "UPDATE userdata SET profileImage='$conteudo' WHERE idAutonomo = '$id'";
+                $operacao = mysqli_query($conexao, $query);
+            }
+            if(verificarTipoUsuario() == "cliente"){
+                $id = $_SESSION['id'];
+                $query = "UPDATE userdata SET profileImage='$conteudo' WHERE idUsuario = '$id'";
+                $operacao = mysqli_query($conexao, $query);
+            }
+            
+        }
+        if (isset($_FILES['img1']) or isset($_FILES['img2']) or isset($_FILES['img3'])) {
+            if(verificarTipoUsuario() == "empresa"){
+                if(isset($_FILES['img1'])){
+                    $imagem = $_FILES['img1']['tmp_name'];
+                    $tamanho = $_FILES['img1']['size'];
+                    $tipo = $_FILES['img1']['type'];
+                    $nome = $_FILES['img1']['name'];
+
+                    $fp = fopen($imagem, "rb");
+                    $conteudo = fread($fp, $tamanho);
+                    $conteudo = addslashes($conteudo);
+                    fclose($fp);
+
+                    $query = "UPDATE userdata SET portImage1 = '$conteudo' WHERE idEmpresa = '$id'";
+                    $operacao = mysqli_query($conexao, $query);
+                }
+                if(isset($_FILES['img2'])){
+                    $imagem = $_FILES['img2']['tmp_name'];
+                    $tamanho = $_FILES['img2']['size'];
+                    $tipo = $_FILES['img2']['type'];
+                    $nome = $_FILES['img2']['name'];
+
+                    $fp = fopen($imagem, "rb");
+                    $conteudo = fread($fp, $tamanho);
+                    $conteudo = addslashes($conteudo);
+                    fclose($fp);
+
+                    $query = "UPDATE userdata SET portImage2 = '$conteudo' WHERE idEmpresa = '$id'";
+                    $operacao = mysqli_query($conexao, $query);
+                }
+                if(isset($_FILES['img3'])){
+                    $imagem = $_FILES['img3']['tmp_name'];
+                    $tamanho = $_FILES['img3']['size'];
+                    $tipo = $_FILES['img3']['type'];
+                    $nome = $_FILES['img3']['name'];
+
+                    $fp = fopen($imagem, "rb");
+                    $conteudo = fread($fp, $tamanho);
+                    $conteudo = addslashes($conteudo);
+                    fclose($fp);
+
+                    $query = "UPDATE userdata SET portImage3 = '$conteudo' WHERE idEmpresa = '$id'";
+                    $operacao = mysqli_query($conexao, $query);
+                }
+                
+            }elseif(verificarTipoUsuario() == "auto"){
+                if(isset($_FILES['img1'])){
+                    $imagem = $_FILES['img1']['tmp_name'];
+                    $tamanho = $_FILES['img1']['size'];
+                    $tipo = $_FILES['img1']['type'];
+                    $nome = $_FILES['img1']['name'];
+
+                    $fp = fopen($imagem, "rb");
+                    $conteudo = fread($fp, $tamanho);
+                    $conteudo = addslashes($conteudo);
+                    fclose($fp);
+
+                    $query = "UPDATE userdata SET portImage1 = '$conteudo' WHERE idAutonomo = '$id'";
+                    $operacao = mysqli_query($conexao, $query);
+                }
+                if(isset($_FILES['img2'])){
+                    $imagem = $_FILES['img2']['tmp_name'];
+                    $tamanho = $_FILES['img2']['size'];
+                    $tipo = $_FILES['img2']['type'];
+                    $nome = $_FILES['img2']['name'];
+
+                    $fp = fopen($imagem, "rb");
+                    $conteudo = fread($fp, $tamanho);
+                    $conteudo = addslashes($conteudo);
+                    fclose($fp);
+
+                    $query = "UPDATE userdata SET portImage2 = '$conteudo' WHERE idAutonomo = '$id'";
+                    $operacao = mysqli_query($conexao, $query);
+                }
+                if(isset($_FILES['img3'])){
+                    $imagem = $_FILES['img3']['tmp_name'];
+                    $tamanho = $_FILES['img3']['size'];
+                    $tipo = $_FILES['img3']['type'];
+                    $nome = $_FILES['img3']['name'];
+
+                    $fp = fopen($imagem, "rb");
+                    $conteudo = fread($fp, $tamanho);
+                    $conteudo = addslashes($conteudo);
+                    fclose($fp);
+
+                    $query = "UPDATE userdata SET portImage3 = '$conteudo' WHERE idAutonomo = '$id'";
+                    $operacao = mysqli_query($conexao, $query);
+                }
+            }
+        }
+    }
+        /*if(isset($_FILES['picture']['name'])){
             if($userType == "empresa"){
                 $destino = "../userData/userProfilePictures/Empresa/userProfile{$id}.png";
             }elseif($userType == "auto"){
@@ -54,72 +211,47 @@
             
             move_uploaded_file( $arquivo_tmp, $destino  );
            // header("location: ../view/profile.php");
-        }
+        }*/
 
-        if (isset($_FILES['img1']) or isset($_FILES['img2']) or isset($_FILES['img3'])) {
-            if($userType == "empresa"){
-                $destino = "../userData/userPictures/Empresa/{$id}portImage1.png";
-                $arquivo_tmp = $_FILES['img1']['tmp_name'];
-                move_uploaded_file( $arquivo_tmp, $destino  );
-                $destino = "../userData/userPictures/Empresa/{$id}portImage2.png";
-                $arquivo_tmp = $_FILES['img2']['tmp_name'];
-                move_uploaded_file( $arquivo_tmp, $destino  );
-                $destino = "../userData/userPictures/Empresa/{$id}portImage3.png";
-                $arquivo_tmp = $_FILES['img3']['tmp_name'];
-                move_uploaded_file( $arquivo_tmp, $destino  );
-            }elseif($userType == "auto"){
-                $destino = "../userData/userPictures/Auto/{$id}portImage1.png";
-                $arquivo_tmp = $_FILES['img1']['tmp_name'];
-                move_uploaded_file( $arquivo_tmp, $destino  );
-                $destino = "../userData/userPictures/Auto/{$id}portImage2.png";
-                $arquivo_tmp = $_FILES['img2']['tmp_name'];
-                move_uploaded_file( $arquivo_tmp, $destino  );
-                $destino = "../userData/userPictures/Auto/{$id}portImage3.png";
-                $arquivo_tmp = $_FILES['img3']['tmp_name'];
-                move_uploaded_file( $arquivo_tmp, $destino  );
-                
+        
+    function guardarTextoPortfolio(){
+        include("conexao.php");
+        $id = $_SESSION['id'];
+        if(verificarTipoUsuario() == "empresa"){
+            if(isset($_POST['item1'])){
+                $texto = $_POST['item1'];
+                $query = "UPDATE userdata SET portText1 = '$texto' WHERE idEmpresa = '$id'";
+                $operacao = mysqli_query($conexao, $query);
+            }
+            if(isset($_POST['item2'])){
+                $texto = $_POST['item2'];
+                $query = "UPDATE userdata SET portText2 = '$texto' WHERE idEmpresa = '$id'";
+                $operacao = mysqli_query($conexao, $query);
+            }
+            if(isset($_POST['item3'])){
+                $texto = $_POST['item3'];
+                $query = "UPDATE userdata SET portText3 = '$texto' WHERE idEmpresa = '$id'";
+                $operacao = mysqli_query($conexao, $query);
+            }
+        }elseif(verificarTipoUsuario() == "auto"){
+            if(isset($_POST['item1'])){
+                $texto = $_POST['item1'];
+                $query = "UPDATE userdata SET portText1 = '$texto' WHERE idAutonomo = '$id'";
+                $operacao = mysqli_query($conexao, $query);
+            }
+            if(isset($_POST['item2'])){
+                $texto = $_POST['item2'];
+                $query = "UPDATE userdata SET portText2 = '$texto' WHERE idAutonomo = '$id'";
+                $operacao = mysqli_query($conexao, $query);
+            }
+            if(isset($_POST['item3'])){
+                $texto = $_POST['item3'];
+                $query = "UPDATE userdata SET portText3 = '$texto' WHERE idAutonomo = '$id'";
+                $operacao = mysqli_query($conexao, $query);
             }
         }
-
-        if($_POST['item1'] != ""){
-            if($userType == "empresa"){
-                $texto = fopen("../userData/userTexts/Empresa/portTexts/{$id}portText1.html", "w");
-                if($texto == false) die ("não foi possível criar o arquivo");
-                fwrite($texto, $_POST['item1']);
-                fclose($texto);
-            }elseif($userType == "auto"){
-                $texto = fopen("../userData/userTexts/Autonomo/portTexts/{$id}portText1.html", "w");
-                if($texto == false) die ("não foi possível criar o arquivo");
-                fwrite($texto, $_POST['item1']);
-                fclose($texto);
-            }
-        }
-        if($_POST['item2'] != ""){
-                if($userType == "empresa"){
-                    $texto = fopen("../userData/userTexts/Empresa/portTexts/{$id}portText2.html", "w");
-                    if($texto == false) die ("não foi possível criar o arquivo");
-                    fwrite($texto, $_POST['item2']);
-                    fclose($texto);
-                }elseif($userType == "auto"){
-                    $texto = fopen("../userData/userTexts/Autonomo/portTexts/{$id}portText2.html", "w");
-                    if($texto == false) die ("não foi possível criar o arquivo");
-                    fwrite($texto, $_POST['item2']);
-                    fclose($texto);
-                }
-            }
-        if($_POST['item3'] != ""){
-                if($userType == "empresa"){
-                    $texto = fopen("../userData/userTexts/Empresa/portTexts/{$id}portText3.html", "w");
-                    if($texto == false) die ("não foi possível criar o arquivo");
-                    fwrite($texto, $_POST['item3']);
-                    fclose($texto); 
-                }elseif($userType == "auto"){
-                    $texto = fopen("../userData/userTexts/Autonomo/portTexts/{$id}portText3.html", "w");
-                    if($texto == false) die ("não foi possível criar o arquivo");
-                    fwrite($texto, $_POST['item3']);
-                    fclose($texto);
-                }
-            }
+    }
+        
                 
         
 
@@ -146,7 +278,8 @@
             
         }
 
-        header("location: ../view/profile.php");
+        //header("location: ../view/profile.php");
+        echo $id;
 
 
 ?>
