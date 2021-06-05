@@ -30,11 +30,16 @@
         }
 
     } ?>
+
 </head>
 <body>
     
-    <!-- Header -->
 
+<!-- <div id="loader" class="loader"></div> -->
+
+
+    <!-- Header -->
+  
     <?php include("util/header.php"); ?>
 
     <!-- Carrousel -->
@@ -68,6 +73,7 @@
 <!-- Feed -->
 
 <h1 class="titulo-feed">MAIS AVALIADOS</h1>
+
         <div class="container-feed">
             
         <div class="feed">
@@ -153,7 +159,28 @@
 
     <!-- Footer -->
 
+   
+
     <?php include("util/footer.php"); ?>
+
+     <!-- Script -->
+   
+<!--
+
+    <script>
+    jQuery(window).load(function () {
+      $(".loader").fadeOut("slow"); //retire o delay quando for copiar!
+    $("#tudo_page").toggle("fast");
+});
+    </script> 
+
+    <script>
+    function loading(){
+     $('.loader').css('display','none');
+}
+    </script>   
+
+    -->
 
 </body>
 </html>

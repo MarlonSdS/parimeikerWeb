@@ -35,8 +35,8 @@
                 <img src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" class="profile-picture">
             <?php endif; ?>
             
-            <p><img src="../assets/images/icons/gmail.png" class="icon"><?php echo $_SESSION['email']; ?></p>
-            <p><img src="../assets/images/icons/whatsapp.png" class="icon"><?php echo $_SESSION['tel']; ?></p>
+            <p><i class="far fa-envelope" class="icons-prof"> <?php echo $_SESSION['email']; ?> </i></p>
+            <p><i class="fab fa-whatsapp" class="icons-prof"> <?php echo $_SESSION['tel']; ?> </i></p>
 
             
         </div>
@@ -77,6 +77,7 @@
                         <p><?php include("../userData/userTexts/Empresa/portTexts/{$id}portText2.html") ?></p>
                     </div>
                     
+
                 <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
                     <img src="../userData/userPictures/Auto/<?php echo $id?>portImage2.png" alt="">
                     <div class="image-info">
@@ -102,8 +103,8 @@
         </div>
     </main>
 
-    <footer>
+    
         <?php include("../util/footer.php"); ?>
-    </footer>
+    
 </body>
 </html>

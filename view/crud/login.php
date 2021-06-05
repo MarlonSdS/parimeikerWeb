@@ -83,7 +83,7 @@
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="campo-texto">
-                  <input type="cpf" name="cpf" required>
+                  <input type="text" name="cpf" maxlength="14" required>
                   <span></span>
                   <label>CPF</label>  
                 </div>
@@ -119,7 +119,7 @@
             <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST">
 
             <div class="campo-texto">
-                  <input type="cnpj" name="cnpj" required>
+                  <input type="text" name="cnpj" required>
                   <span></span>
                   <label>CNPJ</label>  
                 </div>

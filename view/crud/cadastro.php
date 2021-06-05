@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="campo-texto">
-                  <input type="text" name="cpf" required>
+                  <input type="text" name="cpf" maxlength="14" required>
                   <span></span>
                   <label>CPF</label>      
                 </div>
@@ -162,7 +162,7 @@
                 </div>
 
                 <div class="campo-texto">
-                  <input type="text" name="cpf" required>
+                  <input type="text" name="cnpj" required>
                   <span></span>
                   <label>CNPJ</label>      
                 </div>

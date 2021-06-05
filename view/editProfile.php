@@ -22,17 +22,17 @@
     <main>
     <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST" autocomplete="off">
     <h2>Informações do perfil</h2>
-                <div class="form-group">
+                <div class="campo-texto">
                     <label for="nome"></label>
                     <input type="text" name="nome" 
                     value="<?php echo $_SESSION['nome']; ?>" placeholder="Nome da Empresa" class="form-control">
                 </div>
-                <div class="form-group">
+                <div class="campo-texto">
                     <label for="email"></label>
                     <input type="email" name="email" value="<?php echo $_SESSION['email']; ?>" 
                     placeholder="E-mail de contato" class="form-control">
                 </div>
-                <div class="form-group">
+                <div class="campo-texto">
                     <label for="tel"></label>
                     <input type="number" name="tel" value="<?php echo $_SESSION['tel']; ?>" 
                     placeholder="Telefone de Contato" class="form-control">
@@ -50,21 +50,23 @@
                     placeholder="Seu CPF" class="form-control" maxlength="14">
                 </div>
                 <?php endif; ?>
-                <div class="form-group" id="hiddenSenha">
+                <div class="campo-texto" id="hiddenSenha">
                     <label for="senha"></label>
-                    <input type="password" name="senha" autocomplete="off" placeholder="Crie Sua Senha" class="form-control">
+                    <input type="password" name="senha" autocomplete="off" placeholder="Senha" required>
+                    <span></span>
                 </div>
-                <div class="form-group">
+                <div class="campo-texto">
                     <label for="senha"></label>
-                    <input type="password" name="senha" autocomplete="off" placeholder="Crie Sua Senha" class="form-control">
+                    <input type="password" name="senha" autocomplete="off" placeholder="Senha" required>
+                    <span></span>
                 </div>
                 <div class="form-group">
                     <label for="id"></label>
                     <input type="hidden" name="id" placeholder="" value="<?php echo $_SESSION['id']; ?>" 
                     class="form-control">
                 </div>
-                <button type="submit" class="btn-cadastrar" name="editar">Salvar</button>
-                <button type="submit" class="btn-cadastrar" name="excluir">Excluir</button>
+                <input type="submit" class="btn-cadastrar" name="editar" value="SALVAR">
+                <input type="submit" class="btn-cadastrar" name="excluir" value="EXCLUIR">
             </form>
             
             <form action="../controller/upload.php" enctype="multipart/form-data" method="POST">
@@ -91,7 +93,7 @@
                         <?php else: ?>
                             <img class="profPic" src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" alt="">
                             <label for="picture">Selecione uma imagem de perfil</label>
-                            <input name="picture" type="file" />
+                            <input name="picture" type="file"/>
                         <?php endif; ?>
                     </div>
 
