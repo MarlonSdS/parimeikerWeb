@@ -1,6 +1,8 @@
 
 /* Feed */
-
+.imgteste{
+  width: 20%;
+}
 .titulo-feed{
   font-family: Impact, 'Arial Narrow Bold', sans-serif;
   font-size: 25px;
