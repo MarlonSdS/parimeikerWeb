@@ -11,9 +11,9 @@
                 <li class="dropdown">
             <button class="dropbtn">ENTRAR</button>
             <div class="dropdown-content">
-                <a href="view/crud/login.php?tipo=cliente">ENTRAR COMO CLIENTE</a>
-                <a href="view/crud/login.php?tipo=empresa">ENTRAR COMO EMPRESA</a>
-                <a href="view/crud/login.php?tipo=auto">ENTRAR COMO PRESTADOR</a>
+                <a href="/parimeikerWeb/view/crud/login.php?tipo=cliente">ENTRAR COMO CLIENTE</a>
+                <a href="/parimeikerWeb/view/crud/login.php?tipo=empresa">ENTRAR COMO EMPRESA</a>
+                <a href="/parimeikerWeb/view/crud/login.php?tipo=auto">ENTRAR COMO PRESTADOR</a>
             </div>
             </li>
             <?php else: ?>  

@@ -42,16 +42,18 @@
   
     <?php include("util/header.php"); ?>
 
-    <?php include("controller/conexao.php"); 
+    <?php /* include("controller/conexao.php"); 
         $query = "SELECT * FROM userdata WHERE idUsuario = '11'";
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
         $imagem = $row['profileImage'];
         echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['profileImage'] ).'" class="imgteste"/>';
         
-       // var_dump($album);
+       // var_dump($album);*/
     ?>
-
+    <?php include("controller/getFile.php"); 
+    pegarImagemPerfil("cliente", 11, "imgteste");
+?>
        
 
 

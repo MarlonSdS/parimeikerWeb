@@ -37,12 +37,13 @@
     <main>
     <div class="infosetexto">
         <div class="infos">
+            <?php include("../controller/getFile.php"); ?>
             <?php if($tipo == "empresa"): ?>
-                <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $id ?>.png" class="profile-picture">
+                <?php pegarImagemPerfil($tipo, $id, "profile-picture"); ?>
             <?php elseif($tipo == "auto"): ?>
-                <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $id ?>.png" class="profile-picture">
+                <?php pegarImagemPerfil($tipo, $id, "profile-picture"); ?>
             <?php else: ?>
-                <img src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" class="profile-picture">
+                <?php pegarImagemPerfil($tipo, $id, "profile-picture"); ?>
             <?php endif; ?>
             
             <p><img src="../assets/images/icons/gmail.png" class="icon"><?php echo $user['email']; ?></p>
@@ -52,11 +53,12 @@
         </div>
         
         <div class="texto">
+        
             <h1><p><?php echo $user['nome']; ?></p></h1>
         <?php if($tipo == "empresa"): ?>
-            <p class="texto-apre"><?php include("../userData/userTexts/Empresa/userText{$id}.html"); ?></p>
+            <p class="texto-apre"><?php pegarTextoPerfil($tipo, $id); ?></p>
         <?php elseif($tipo == "auto"): ?>
-            <p class="texto-apre"> <?php include("../userData/userTexts/Autonomo/userText{$id}.html"); ?></p>
+            <p class="texto-apre"> <?php pegarTextoPerfil($tipo, $id); ?></p>
         <?php endif; ?>
         </div>
     </div>
@@ -66,44 +68,44 @@
         <div class="portfolio">
             <div class="portfolio-card">
                 <?php if($tipo == "empresa"): ?>
-                    <img src="../userData/userPictures/Empresa/<?php echo $id?>portImage1.png" alt="">
+                    <?php pegarImagemPortfolio($tipo, $id, 1); ?>
                     <div class="image-info">
-                        <p><?php include("../userData/userTexts/Empresa/portTexts/{$id}portText1.html") ?></p>
+                        <p><?php pegarTextoPortfolio($tipo, $id, 1); ?></p>
                     </div>
                     
                 <?php elseif($tipo == "auto"): ?>
                     <img src="../userData/userPictures/Auto/<?php echo $id?>portImage1.png" alt="">
                     <div class="image-info">
-                        <p><?php include("../userData/userTexts/Autonomo/portTexts/{$id}portText1.html") ?></p>
+                        <p><?php pegarTextoPortfolio($tipo, $id, 1); ?></p>
                     </div>
                     
                 <?php endif; ?>
             </div>
             <div class="portfolio-card">
                 <?php if($tipo == "empresa"): ?>
-                    <img src="../userData/userPictures/Empresa/<?php echo $id?>portImage2.png" alt="">
+                    <?php pegarImagemPortfolio($tipo, $id, 2); ?>
                     <div class="image-info">
-                        <p><?php include("../userData/userTexts/Empresa/portTexts/{$id}portText2.html") ?></p>
+                        <p><?php pegarTextoPortfolio($tipo, $id, 2); ?></p>
                     </div>
                     
                 <?php elseif($tipo == "auto"): ?>
-                    <img src="../userData/userPictures/Auto/<?php echo $id?>portImage2.png" alt="">
+                    <?php pegarImagemPortfolio($tipo, $id, 2); ?>
                     <div class="image-info">
-                        <p><?php include("../userData/userTexts/Autonomo/portTexts/{$id}portText2.html") ?></p>
+                        <p><?php pegarTextoPortfolio($tipo, $id, 2); ?></p>
                     </div>
                 <?php endif; ?>
             </div>
             <div class="portfolio-card">
                 <?php if($tipo == "empresa"): ?>
-                    <img src="../userData/userPictures/Empresa/<?php echo $id?>portImage3.png" alt="">
+                    <?php pegarImagemPortfolio($tipo, $id, 3); ?>
                     <div class="image-info">
-                        <p><?php include("../userData/userTexts/Empresa/portTexts/{$id}portText3.html") ?></p>
+                        <p><?php pegarTextoPortfolio($tipo, $id, 3); ?></p>
                     </div>
                     
                 <?php elseif($tipo == "auto"): ?>
-                    <img src="../userData/userPictures/Auto/<?php echo $id?>portImage3.png" alt="">
+                    <?php pegarImagemPortfolio($tipo, $id, 3); ?>
                     <div class="image-info">
-                        <p><?php include("../userData/userTexts/Autonomo/portTexts/{$id}portText3.html") ?></p>
+                        <p><?php pegarTextoPortfolio($tipo, $id, 3); ?></p>
                     </div>
                     
                 <?php endif; ?>

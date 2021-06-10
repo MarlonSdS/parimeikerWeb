@@ -80,7 +80,7 @@
     function guardarImagem(){
         include("conexao.php");
         $id = $_SESSION['id'];
-        if(isset($_FILES['picture'])){
+        if($_FILES['picture']['tmp_name'] > 2){
             $imagem = $_FILES['picture']['tmp_name'];
             $tamanho = $_FILES['picture']['size'];
             $tipo = $_FILES['picture']['type'];
@@ -278,8 +278,8 @@
             
         }
 
-        //header("location: ../view/profile.php");
-        echo $id;
+        header("location: ../view/profile.php");
+    
 
 
 ?>
