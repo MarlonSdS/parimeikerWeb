@@ -7,6 +7,18 @@ main{
 
 /* Header */
 
+.form-pesquisa{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.form-pesquisa label{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 nav{
     background-color: #222222;
   }
@@ -108,7 +120,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 100px;
   width: 83px;
   border: none;
   outline: none;

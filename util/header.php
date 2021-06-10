@@ -2,11 +2,23 @@
         <ul>
             <li class="logo"><a href="/parimeikerWeb/"><img src="/parimeikerWeb/assets/images/logo.png"></a>  </li>
             <li class="search-icon">
-            <input type="search" placeholder="Pesquise">
-            <label class="icon">
-                <span class="fas fa-search"></span>
-            </label>
+            <form action="/parimeikerWeb/view/pesquisa.php" method="GET" class="form-pesquisa">
+                <input type="search" placeholder="Pesquise" name="search">
+                <label class="icon">
+                    <span class="fas fa-search" type="submit"></span>
+                </label>
+            </form>
+           
             </li>
+            <?php $id = $_SESSION['id'];$tipo;
+            if(mb_strlen($_SESSION['cnpj']) > 2){
+                $tipo = "empresa";
+            }elseif(mb_strlen($_SESSION['cpf']) > 2){
+                $tipo = "auto";
+            }else{
+                $tipo="cliente";
+            } ?>
+            
             <?php if(!isset($_SESSION['nome'])): ?>
                 <li class="dropdown">
             <button class="dropbtn">ENTRAR</button>
@@ -17,12 +29,13 @@
             </div>
             </li>
             <?php else: ?>  
+            <?php// include("../controller/getFile.php"); ?>
             <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?> <!-- empresa -->
                
              <li class="dropdown">
 
-             <img class="dropbtn-logado" src="/parimeikerWeb/userData/userProfilePictures/Empresa/userProfile<?php echo $_SESSION['id']; ?>.png" class="perfil-img"  class="img-menu" alt="">
-
+             <!--<img class="dropbtn-logado" src="/parimeikerWeb/userData/userProfilePictures/Empresa/userProfile<?php //echo $_SESSION['id']; ?>.png" class="perfil-img"  class="img-menu" alt="">-->
+            <?php pegarImagemPerfil($tipo, $id, "dropbtn-logado"); ?>
             <div class="dropdown-content">
             <a href="/parimeikerWeb/view/profile.php">Ver perfil</a>
             <a href="/parimeikerWeb/controller/usuarioDAO.php?sair=sim">Sair</a>
@@ -31,7 +44,7 @@
                 
 
             <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>  <!-- autonomo -->
-                <img src="/parimeikerWeb/userData/userProfilePictures/Autonomo/userProfile<?php echo $_SESSION['id']; ?>.png" class="perfil-img"  class="img-menu" alt="">
+                <?php pegarImagemPerfil($tipo, $id, "dropbtn-logado"); ?>
                 
                 <li class="dropdown">
             <button class="dropbtn-logado"></button>
@@ -46,7 +59,7 @@
                 <!-- cliente -->
 
             <li class="dropdown">
-              <img class="dropbtn-logado" src="/parimeikerWeb/userData/userProfilePictures/Cliente/userProfile<?php echo $_SESSION['id']; ?>.png"  class="dropbtn" class="perfil-img" class="img-menu" alt="">
+            <?php pegarImagemPerfil($tipo, $id, "dropbtn-logado"); ?>
            
             <div class="dropdown-content">
             <a href="/parimeikerWeb/view/profile.php">Ver perfil</a>

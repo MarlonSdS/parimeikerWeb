@@ -27,10 +27,11 @@
 </head>
 <body>
     <header>
-    <?php include("../util/header.php"); ?>
-    </header>
     <div id="vazio"></div>
     <?php include("../controller/getFile.php"); ?>
+    <?php include("../util/header.php"); ?>
+    </header>
+    
     <main>
     <div class="infosetexto">
         <div class="infos">

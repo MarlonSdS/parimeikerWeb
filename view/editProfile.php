@@ -17,7 +17,9 @@
 </head>
 <body>
 
-    <header><?php include("../util/header.php"); ?></header>
+    <header><?php
+    include("../controller/getFile.php");
+    include("../util/header.php"); ?></header>
     <div id="vazio"></div>
     <main>
     <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST" autocomplete="off">

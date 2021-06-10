@@ -39,7 +39,7 @@
 
 
     <!-- Header -->
-  
+    <?php include("controller/getFile.php"); ?>
     <?php include("util/header.php"); ?>
 
     <?php /* include("controller/conexao.php"); 
@@ -51,9 +51,6 @@
         
        // var_dump($album);*/
     ?>
-    <?php include("controller/getFile.php"); 
-    pegarImagemPerfil("cliente", 11, "imgteste");
-?>
        
 
 

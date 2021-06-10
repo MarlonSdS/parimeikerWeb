@@ -14,8 +14,13 @@
         ?>
     </head>
     <body>
+    
         <header>
-            <?php include("../util/header.php"); ?>
+        
+            <?php 
+            include_once("../controller/getFile.php");
+            include("../util/header.php"); ?>
+            
         </header>
         <div id="vazio"></div>
 
@@ -42,14 +47,14 @@ function pesquisaPorNomeEmpresa(){
     
     while($rows_nomes = mysqli_fetch_array($resultado_nomes)):?>
 <div class="foto">
-    <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $rows_nomes['id'] ?>.png" alt="foto">
+    <?php pegarImagemPerfil("empresa", $rows_nomes['id'], "" ); ?>
     <div class="data">
             <div class="nome" >
             <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $rows_nomes['id'];?>&tipo=empresa"><?php echo $rows_nomes['nome']; ?></a>
         </div>
 
         <div class="descricao">
-            <p><?php include("../userData/userTexts/Empresa/userText".$rows_nomes['id'].".html"); ?></p> 
+            <p><?php pegarTextoPerfil("empresa", $rows_nomes['id']); ?></p> 
         </div>
         <div class="tag">
         <p> TAG </p>
@@ -70,7 +75,7 @@ function pesquisaPorNomeEmpresa(){
         
         while($rows_nomes = mysqli_fetch_array($resultado_nomes)):?>
 <div class="foto">
-    <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $rows_nomes['id'] ?>.png" alt="foto">
+    <?php pegarImagemPerfil("auto", $rows_nomes['id'], "" ); ?>
     <div class="data">
             <div class="nome" >
             <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $rows_nomes['id'];?>&tipo=auto"><?php echo $rows_nomes['nome']; ?></a>
@@ -78,7 +83,7 @@ function pesquisaPorNomeEmpresa(){
         </div>
 
         <div class="descricao">
-            <p><?php include("../userData/userTexts/Autonomo/userText".$rows_nomes['id'].".html"); ?></p> 
+            <p><?php pegarTextoPerfil("auto", $rows_nomes['id']); ?></p> 
         </div>
         <div class="tag">
         <p> TAG </p>
@@ -109,14 +114,14 @@ function pesquisaPorNomeEmpresa(){
         
             for ($i=0; $i < sizeof($nomes); $i++):?>
             <div class="foto">
-    <img src="../userData/userProfilePictures/Empresa/userProfile<?php echo $ids[$i] ?>.png" alt="foto">
+            <?php pegarImagemPerfil("empresa", $id[$i], "" ); ?>
     <div class="data">
             <div class="nome" >
             <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $ids[$i];?>&tipo=empresa"><?php echo $nomes[$i]; ?></a>
         </div>
 
         <div class="descricao">
-            <p><?php include("../userData/userTexts/Empresa/userText$ids[$i].html"); ?></p> 
+            <p><?php pegarTextoPerfil("auto", $id[$i]); ?></p> 
         </div>
         <div class="tag">
         <p> TAG </p>
@@ -148,14 +153,14 @@ function pesquisaPorNomeEmpresa(){
         
             for ($i=0; $i < sizeof($nomes); $i++):?>
             <div class="foto">
-    <img src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $ids[$i] ?>.png" alt="foto">
+            <?php pegarImagemPerfil("auto", $id[$i], "" ); ?>
     <div class="data">
             <div class="nome" >
             <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $ids[$i];?>&tipo=auto"><?php echo $nomes[$i]; ?></a>
         </div>
 
         <div class="descricao">
-            <p><?php include("../userData/userTexts/Autonomo/userText$ids[$i].html"); ?></p> 
+            <p><?php pegarTextoPerfil("auto", $id[$i]); ?></p> 
         </div>
         <div class="tag">
         <!--<?php if(sizeof($tags) >= 3): ?>
@@ -173,6 +178,7 @@ function pesquisaPorNomeEmpresa(){
      
 
         <footer>
+            <?php include("../util/footer.php") ?>
         </footer>
     </body>
 </html>

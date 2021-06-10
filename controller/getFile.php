@@ -15,7 +15,7 @@ function pegarImagemPerfil($tipo, $id, $classe){
         $query = "SELECT * FROM userdata WHERE idUsuario = '$id'";
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
-        $imagem = $row['profileImage'];
+        //$imagem = $row['profileImage'];
         
         echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['profileImage'] ).'" class="'.$classe.'"/>';
     
@@ -23,14 +23,14 @@ function pegarImagemPerfil($tipo, $id, $classe){
         $query = "SELECT * FROM userdata WHERE idEmpresa = '$id'";
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
-        $imagem = $row['profileImage'];
+        //$imagem = $row['profileImage'];
         
         echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['profileImage'] ).'" class="'.$classe.'"/>';
     }elseif($tipo == "auto"){
         $query = "SELECT * FROM userdata WHERE idAutonomo = '$id'";
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
-        $imagem = $row['profileImage'];
+        //$imagem = $row['profileImage'];
         
         echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['profileImage'] ).'" class="'.$classe.'"/>';
     }
