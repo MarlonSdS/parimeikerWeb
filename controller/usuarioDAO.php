@@ -90,8 +90,20 @@
             $cpf = $_POST["cpf"];
             $senha = md5($_POST["senha"]); 
             include("../controller/conexao.php");
-
             $query = "INSERT INTO autonomo(nome, email, tel, cpf, senha) VALUES ('$nome', '$email', '$tel', '$cpf', '$senha')";
+            $operacao = mysqli_query($conexao, $query);
+
+            $validar = $conexao->query("SELECT * FROM autonomo WHERE email='$email' AND senha='$senha'")
+         or die($conexao->error);
+            $validar = $validar->fetch_array();
+            $id = $validar['id'];
+            session_start();
+            $_SESSION['id'] = $id;
+            $_SESSION['cpf'] = $cpf;
+            include("upload.php");
+            criarLinhaNoBanco();
+            $texto = "Olá! Eu estou usando o PartyMaker!";
+            $query = "UPDATE userdata SET profileText = '$texto' WHERE idAutonomo = '$id'";
             $operacao = mysqli_query($conexao, $query);
             header("location: ../view/crud/login.php?tipo=auto"); 
         }

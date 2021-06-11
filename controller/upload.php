@@ -50,6 +50,16 @@
         }
     }
         
+    function criarDadosPadrao($tipo, $id){
+        criarLinhaNoBanco();
+        $texto = "Olá! Eu estou usando o PartyMaker!";
+        if($tipo == "auto"){
+            $query = "UPDATE userdata SET profileText = '$texto' WHERE idAutonomo = '$id'";
+            $operacao = mysqli_query($conexao, $query);
+            echo $texto;
+        }
+        
+    }
 
     function guardarTexto(){
         include("conexao.php");
@@ -113,42 +123,48 @@
                     $tamanho = $_FILES['img1']['size'];
                     $tipo = $_FILES['img1']['type'];
                     $nome = $_FILES['img1']['name'];
-
-                    $fp = fopen($imagem, "rb");
+                    if($tamanho > 2){
+                        $fp = fopen($imagem, "rb");
                     $conteudo = fread($fp, $tamanho);
                     $conteudo = addslashes($conteudo);
                     fclose($fp);
 
                     $query = "UPDATE userdata SET portImage1 = '$conteudo' WHERE idEmpresa = '$id'";
                     $operacao = mysqli_query($conexao, $query);
+                    }
+                    
                 }
                 if(isset($_FILES['img2'])){
                     $imagem = $_FILES['img2']['tmp_name'];
                     $tamanho = $_FILES['img2']['size'];
                     $tipo = $_FILES['img2']['type'];
                     $nome = $_FILES['img2']['name'];
-
-                    $fp = fopen($imagem, "rb");
+                    if($tamanho > 2){
+                       $fp = fopen($imagem, "rb");
                     $conteudo = fread($fp, $tamanho);
                     $conteudo = addslashes($conteudo);
                     fclose($fp);
 
                     $query = "UPDATE userdata SET portImage2 = '$conteudo' WHERE idEmpresa = '$id'";
-                    $operacao = mysqli_query($conexao, $query);
+                    $operacao = mysqli_query($conexao, $query); 
+                    }
+                    
                 }
                 if(isset($_FILES['img3'])){
                     $imagem = $_FILES['img3']['tmp_name'];
                     $tamanho = $_FILES['img3']['size'];
                     $tipo = $_FILES['img3']['type'];
                     $nome = $_FILES['img3']['name'];
-
-                    $fp = fopen($imagem, "rb");
+                    if($tamanho > 2){
+                        $fp = fopen($imagem, "rb");
                     $conteudo = fread($fp, $tamanho);
                     $conteudo = addslashes($conteudo);
                     fclose($fp);
 
                     $query = "UPDATE userdata SET portImage3 = '$conteudo' WHERE idEmpresa = '$id'";
                     $operacao = mysqli_query($conexao, $query);
+                    }
+                    
                 }
                 
             }elseif(verificarTipoUsuario() == "auto"){
@@ -157,42 +173,48 @@
                     $tamanho = $_FILES['img1']['size'];
                     $tipo = $_FILES['img1']['type'];
                     $nome = $_FILES['img1']['name'];
-
-                    $fp = fopen($imagem, "rb");
+                    if($tamanho > 2){
+                      $fp = fopen($imagem, "rb");
                     $conteudo = fread($fp, $tamanho);
                     $conteudo = addslashes($conteudo);
                     fclose($fp);
 
                     $query = "UPDATE userdata SET portImage1 = '$conteudo' WHERE idAutonomo = '$id'";
-                    $operacao = mysqli_query($conexao, $query);
+                    $operacao = mysqli_query($conexao, $query);  
+                    }
+                    
                 }
                 if(isset($_FILES['img2'])){
                     $imagem = $_FILES['img2']['tmp_name'];
                     $tamanho = $_FILES['img2']['size'];
                     $tipo = $_FILES['img2']['type'];
                     $nome = $_FILES['img2']['name'];
-
-                    $fp = fopen($imagem, "rb");
+                    if($tamanho > 2){
+                       $fp = fopen($imagem, "rb");
                     $conteudo = fread($fp, $tamanho);
                     $conteudo = addslashes($conteudo);
                     fclose($fp);
 
                     $query = "UPDATE userdata SET portImage2 = '$conteudo' WHERE idAutonomo = '$id'";
-                    $operacao = mysqli_query($conexao, $query);
+                    $operacao = mysqli_query($conexao, $query); 
+                    }
+                    
                 }
                 if(isset($_FILES['img3'])){
                     $imagem = $_FILES['img3']['tmp_name'];
                     $tamanho = $_FILES['img3']['size'];
                     $tipo = $_FILES['img3']['type'];
                     $nome = $_FILES['img3']['name'];
-
-                    $fp = fopen($imagem, "rb");
+                    if($tamanho > 2){
+                        $fp = fopen($imagem, "rb");
                     $conteudo = fread($fp, $tamanho);
                     $conteudo = addslashes($conteudo);
                     fclose($fp);
 
                     $query = "UPDATE userdata SET portImage3 = '$conteudo' WHERE idAutonomo = '$id'";
                     $operacao = mysqli_query($conexao, $query);
+                    }
+                    
                 }
             }
         }

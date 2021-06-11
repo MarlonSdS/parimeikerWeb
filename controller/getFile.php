@@ -77,9 +77,9 @@ function pegarImagemPortfolio($tipo, $id, $num){
         $query = "SELECT * FROM userdata WHERE idAutonomo = '$id'";
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
-        $imagem = $row['profileImage'];
+        $imagem = "portImage$num";
         
-        echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['profileImage'] ).'" class="'.$classe.'"/>';
+        echo '<img src="data:image/jpeg;base64,'.base64_encode( $row[$imagem] ).'"/>';
 }
 
     

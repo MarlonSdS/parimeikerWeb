@@ -9,17 +9,12 @@
                 </label>
             </form>
            
-            </li>
-            <?php $id = $_SESSION['id'];$tipo;
-            if(mb_strlen($_SESSION['cnpj']) > 2){
-                $tipo = "empresa";
-            }elseif(mb_strlen($_SESSION['cpf']) > 2){
-                $tipo = "auto";
-            }else{
-                $tipo="cliente";
-            } ?>
+            </li> 
+            <?php $tipo = "";
+                $id = ""; ?>
+            <?php if(!isset($_SESSION['id'])): ?>
             
-            <?php if(!isset($_SESSION['nome'])): ?>
+            
                 <li class="dropdown">
             <button class="dropbtn">ENTRAR</button>
             <div class="dropdown-content">
@@ -28,9 +23,20 @@
                 <a href="/parimeikerWeb/view/crud/login.php?tipo=auto">ENTRAR COMO PRESTADOR</a>
             </div>
             </li>
-            <?php else: ?>  
+            <?php endif; ?>
+            <?php if(isset($_SESSION['id'])){
+                $id = $_SESSION['id']; 
+                if(mb_strlen($_SESSION['cnpj']) > 2){
+                $tipo = "empresa";
+                }elseif(mb_strlen($_SESSION['cpf']) > 2){
+                 $tipo = "auto";
+                }else{
+                    $tipo="cliente";
+            }
+              if(mb_strlen($_SESSION['cnpj']) > 2){ 
+                ?>  
             <?php// include("../controller/getFile.php"); ?>
-            <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?> <!-- empresa -->
+            <!-- empresa -->
                
              <li class="dropdown">
 
@@ -43,7 +49,7 @@
             </li>
                 
 
-            <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>  <!-- autonomo -->
+            <?php }elseif(mb_strlen($_SESSION['cpf']) > 2){ ?>  <!-- autonomo -->
                 <?php pegarImagemPerfil($tipo, $id, "dropbtn-logado"); ?>
                 
                 <li class="dropdown">
@@ -54,7 +60,7 @@
             </div>
             </li>
 
-            <?php else: ?>
+            <?php }else{ ?>
 
                 <!-- cliente -->
 
@@ -67,7 +73,8 @@
             </div>
             </li>
 
-            <?php endif; ?>
-            <?php endif; ?>
+            <?php } 
+            }?>
+            
         </ul>
     </nav>

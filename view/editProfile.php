@@ -7,7 +7,13 @@
         header("location: /parimeikerWeb/index.php");
     }
     $texto = fopen("../userData/userTexts/Autonomo/userText{$_SESSION['id']}.txt", "w");
-    $id = $_SESSION['id'];?>
+    $id = $_SESSION['id'];
+    $tipo = "";
+    if(mb_strlen($_SESSION['cpf'])>2){
+        $tipo = "auto";
+    }elseif(mb_strlen($_SESSION['cnpj'])> 2){
+        $tipo = "empresa";}else{
+            $tipo = "cliente";}?>
     <link rel="stylesheet" href="../assets/styles/crud.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,25 +81,23 @@
                     <div class="form-grop">
                         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
                             <label for="texto">Esse é o texto que é exibido ao entrar no seu perfil</label>
-                            <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"><?php $id = $_SESSION['id'];
-                                include("../userData/userTexts/Empresa/userText{$id}.html"); ?></textarea>
+                            <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"><?php pegarTextoPerfil($tipo, $id); ?></textarea>
                         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
                             <label for="texto">Esse é o texto que é exibido ao entrar no seu perfil</label>
-                            <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"><?php $id = $_SESSION['id'];
-                                include("../userData/userTexts/Autonomo/userText{$id}.html"); ?> </textarea>
+                            <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"><?php pegarTextoPerfil($tipo, $id); ?> </textarea>
                         <?php endif; ?>
                     </div>
                     <div class="form-group">
                         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
-                            <img class="profPic" src="../userData/userProfilePictures/Empresa/userProfile<?php echo $id ?>.png" alt="">
+                            <?php pegarImagemPerfil($tipo, $id, "profPic"); ?>
                             <label for="picture">Selecione uma imagem de perfil</label>
-                            <input name="picture" type="file" />
+                            <input name="picture" type="file"  />
                         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
-                            <img class="profPic" src="../userData/userProfilePictures/Autonomo/userProfile<?php echo $id ?>.png" alt="">
+                            <?php pegarImagemPerfil($tipo, $id, "profPic"); ?>
                             <label for="picture">Selecione uma imagem de perfil</label>
                             <input name="picture" type="file" />
                         <?php else: ?>
-                            <img class="profPic" src="../userData/userProfilePictures/Cliente/userProfile<?php echo $id ?>.png" alt="">
+                            <?php pegarImagemPerfil($tipo, $id, "profPic"); ?>
                             <label for="picture">Selecione uma imagem de perfil</label>
                             <input name="picture" type="file"/>
                         <?php endif; ?>
@@ -104,19 +108,19 @@
                             <label for="item1">Primeiro item</label>
                             <input name="img1" type="file">
                             <label for="item1">Texto a ser exibido junto com a imagem:</label>
-                            <input name="item1" type="text">
+                            <input name="item1" type="text" value="<?php pegarTextoPortfolio($tipo, $id, 1); ?>">
                         </div>
                         <div  class="form-group">
                             <label for="item2">Segundo item</label>
                             <input name="img2" type="file">
                             <label for="">Texto a ser exibido junto com a imagem:</label>
-                            <input name="item2" type="text">
+                            <input name="item2" type="text" value="<?php pegarTextoPortfolio($tipo, $id, 2); ?>">
                         </div>
                         <div  class="form-group">
                             <label for="item3">Terceiro item</label>
                             <input name="img3" type="file">
                             <label for="">Texto a ser exibido junto com a imagem:</label>
-                            <input name="item3" type="text" >
+                            <input name="item3" type="text" value="<?php pegarTextoPortfolio($tipo, $id, 3); ?>">
                         </div>
 
                         <div class="tags">
