@@ -29,7 +29,7 @@
     <div id="vazio"></div>
     <main>
     <form action="/parimeikerWeb/controller/usuarioDAO.php" method="POST" autocomplete="off">
-    <h2>Informações do perfil</h2>
+    <h2 class="nome-sessao">Informações do perfil</h2>
                 <div class="campo-texto">
                     <label for="nome"></label>
                     <input type="text" name="nome" 
@@ -73,8 +73,8 @@
                     <input type="hidden" name="id" placeholder="" value="<?php echo $_SESSION['id']; ?>" 
                     class="form-control">
                 </div>
-                <input type="submit" class="btn-cadastrar" name="editar" value="SALVAR">
-                <input type="submit" class="btn-cadastrar" name="excluir" value="EXCLUIR">
+                <input type="submit" class="btn-salvar" name="editar" value="SALVAR">
+                <input type="submit" class="btn-excluir" name="excluir" value="EXCLUIR">
             </form>
             
             <form action="../controller/upload.php" enctype="multipart/form-data" method="POST">
@@ -88,24 +88,36 @@
                         <?php endif; ?>
                     </div>
 
-                    <div class="sel-img">
+                    <div>
                         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
+                            <div class="imgedit-perfil">
                             <?php pegarImagemPerfil($tipo, $id, "profPic"); ?>
+                            </div>
+                            <div class="imgedit-leg">
                             <label class="text-perfilimg" for="picture">Selecione uma imagem de perfil</label>
                             <input class="perfilimg-sel" name="picture" type="file" id="picture" />
+                            </div>
                         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
+                            <div class="imgedit-perfil">
                             <?php pegarImagemPerfil($tipo, $id, "profPic"); ?>
+                            </div>
+                            <div class="imgedit-leg">
                             <label for="picture">Selecione uma imagem de perfil</label>
                             <input name="picture" type="file" />
+                            </div>
                         <?php else: ?>
+                            <div class="imgedit-perfil">
                             <?php pegarImagemPerfil($tipo, $id, "profPic"); ?>
+                            </div>
+                            <div class="imgedit-leg">
                             <label for="picture">Selecione uma imagem de perfil</label>
                             <input name="picture" type="file"/>
+                            </div>
                         <?php endif; ?>
                     </div>
 
 
-                        <p>Adicione itens ao seu portfólio</p>
+                        <p class="leg-p">Adicione itens ao seu portfólio</p>
                         <div class="sessao-up">
                             <div class="btn-up">
                                  <label class="arq1" for="img1">ESCOLHER ARQUIVO</label>
@@ -154,7 +166,7 @@
                             (separe cada tag com vírgula)</label>
                             <textarea class="text-tag" id="tags" name="tags" class="textfield" rows="7" cols="50"> </textarea>
                         </div>
-                    <input type="submit" class="btn-cadastrar" name="editar">Salvar</input>
+                    <input type="submit" class="btn-enviar" name="editar"></input>
             </form>
     </main>
 

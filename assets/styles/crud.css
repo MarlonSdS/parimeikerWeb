@@ -12,10 +12,76 @@
 }
 
 */
+.btn-salvar{
+    width: 20%;
+    height: 50px;
+    border: 1px solid;
+    background: #ff9b2e; /* Old browsers */
+    background: -moz-linear-gradient(left,  #ff9b2e 0%, #ff9b2e 20%, #fb576b 46%, #ff314b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #ff9b2e 0%,#ff9b2e 20%,#fb576b 46%,#ff314b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #ff9b2e 0%,#ff9b2e 20%,#fb576b 46%,#ff314b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9b2e', endColorstr='#ff314b',GradientType=1 ); /* IE6-9 */;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
 
-p{
-        font-family: 'Courier New', Courier, monospace;
-        font-weight: bold;
+}
+
+.btn-salvar{
+    transition: .5s;
+}
+
+.btn-excluir{
+    width: 20%;
+    height: 50px;
+    border: 1px solid;
+    background: #ff9b2e; /* Old browsers */
+    background: -moz-linear-gradient(left,  #ff9b2e 0%, #ff9b2e 20%, #fb576b 46%, #ff314b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #ff9b2e 0%,#ff9b2e 20%,#fb576b 46%,#ff314b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #ff9b2e 0%,#ff9b2e 20%,#fb576b 46%,#ff314b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9b2e', endColorstr='#ff314b',GradientType=1 ); /* IE6-9 */;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.btn-excluir{
+    transition: .5s;
+}
+
+#texto{
+    margin-top: 40px;
+}
+
+.leg-p{
+    margin-top: 40px;
+}
+
+.imgedit-perfil{
+margin: auto;
+margin-top: 60px;
+}
+
+.imgedit-leg{
+    margin: auto;
+    margin-top: 20px;
+}
+
+.sel-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nome-sessao{
+    margin-top: 50px;
 }
 
 .sessao-up input[type="file"]{
@@ -175,7 +241,7 @@ p{
       width: 100%;
   }
 
-  input[type="submit"]{
+  .center-login input[type="submit"]{
       width: 60%;
       height: 50px;
       border: 1px solid;
@@ -193,10 +259,53 @@ p{
 
   }
 
-  input[type="submit"]{
+.center-login input[type="submit"]{
       transition: .5s;
   }
 
+  .center-cadastro input[type="submit"]{
+    width: 60%;
+    height: 50px;
+    border: 1px solid;
+    background: #ff9b2e; /* Old browsers */
+    background: -moz-linear-gradient(left,  #ff9b2e 0%, #ff9b2e 20%, #fb576b 46%, #ff314b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #ff9b2e 0%,#ff9b2e 20%,#fb576b 46%,#ff314b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #ff9b2e 0%,#ff9b2e 20%,#fb576b 46%,#ff314b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9b2e', endColorstr='#ff314b',GradientType=1 ); /* IE6-9 */;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.center-cadastro input[type="submit"]{
+    transition: .5s;
+}
+
+.btn-enviar input[type="submit"]{
+    width: 60%;
+    height: 50px;
+    border: 1px solid;
+    background: #ff9b2e; /* Old browsers */
+    background: -moz-linear-gradient(left,  #ff9b2e 0%, #ff9b2e 20%, #fb576b 46%, #ff314b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #ff9b2e 0%,#ff9b2e 20%,#fb576b 46%,#ff314b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #ff9b2e 0%,#ff9b2e 20%,#fb576b 46%,#ff314b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9b2e', endColorstr='#ff314b',GradientType=1 ); /* IE6-9 */;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.btn-enviar input[type="submit"]{
+    transition: .5s;
+}
 
   /* Cadastro */
 
