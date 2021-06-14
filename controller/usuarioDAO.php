@@ -126,6 +126,11 @@
 
         $validar = $conexao->query("SELECT * FROM empresa WHERE cnpj ='$cnpj' AND senha='$senha'")
                  or die($conexao->error);
+                 include("upload.php");
+            criarLinhaNoBanco();
+            $texto = "Olá! Eu estou usando o PartyMaker!";
+            $query = "UPDATE userdata SET profileText = '$texto' WHERE idEmpresa = '$id'";
+            $operacao = mysqli_query($conexao, $query);
         header("location: ../view/crud/login.php?tipo=empresa");}
     }
 
@@ -141,6 +146,11 @@
 
         $query = "INSERT INTO cliente(nome, email, tel, senha) VALUES ('$nome', '$email', '$tel', '$senha')";
         $operacao = mysqli_query($conexao, $query);
+        include("upload.php");
+            criarLinhaNoBanco();
+            $texto = "Olá! Eu estou usando o PartyMaker!";
+            $query = "UPDATE userdata SET profileText = '$texto' WHERE idUsuario = '$id'";
+            $operacao = mysqli_query($conexao, $query);
         header("location: ../view/crud/login.php?tipo=cliente");
     }
 }

@@ -50,10 +50,11 @@
                 
 
             <?php }elseif(mb_strlen($_SESSION['cpf']) > 2){ ?>  <!-- autonomo -->
-                <?php pegarImagemPerfil($tipo, $id, "dropbtn-logado"); ?>
+                
                 
                 <li class="dropdown">
-            <button class="dropbtn-logado"></button>
+                <?php pegarImagemPerfil($tipo, $id, "dropbtn-logado"); ?>
+            
             <div class="dropdown-content">
             <a href="/parimeikerWeb/view/profile.php">Ver perfil</a>
             <a href="/parimeikerWeb/controller/usuarioDAO.php?sair=sim">Sair</a>
