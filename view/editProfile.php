@@ -78,20 +78,21 @@
             </form>
             
             <form action="../controller/upload.php" enctype="multipart/form-data" method="POST">
-                    <div class="form-grop">
+                    <div class="descricao">
                         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
-                            <label for="texto">Esse é o texto que é exibido ao entrar no seu perfil</label>
-                            <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"><?php pegarTextoPerfil($tipo, $id); ?></textarea>
+                            <h2 class="nome-sessao">Esse é o texto que é exibido ao entrar no seu perfil</h2>
+                            <textarea id="texto" name="texto" class="textfield" rows="4" cols="55"><?php pegarTextoPerfil($tipo, $id); ?></textarea>
                         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
                             <label for="texto">Esse é o texto que é exibido ao entrar no seu perfil</label>
                             <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"><?php pegarTextoPerfil($tipo, $id); ?> </textarea>
                         <?php endif; ?>
                     </div>
-                    <div class="form-group">
+
+                    <div class="sel-img">
                         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
                             <?php pegarImagemPerfil($tipo, $id, "profPic"); ?>
-                            <label for="picture">Selecione uma imagem de perfil</label>
-                            <input name="picture" type="file"  />
+                            <label class="text-perfilimg" for="picture">Selecione uma imagem de perfil</label>
+                            <input class="perfilimg-sel" name="picture" type="file" id="picture" />
                         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
                             <?php pegarImagemPerfil($tipo, $id, "profPic"); ?>
                             <label for="picture">Selecione uma imagem de perfil</label>
@@ -103,35 +104,59 @@
                         <?php endif; ?>
                     </div>
 
+
                         <p>Adicione itens ao seu portfólio</p>
-                        <div  class="form-group">
-                            <label for="item1">Primeiro item</label>
-                            <input name="img1" type="file">
-                            <label for="item1">Texto a ser exibido junto com a imagem:</label>
-                            <input name="item1" type="text" value="<?php pegarTextoPortfolio($tipo, $id, 1); ?>">
+                        <div class="sessao-up">
+                            <div class="btn-up">
+                                 <label class="arq1" for="img1">ESCOLHER ARQUIVO</label>
+                            </div>
+                            <input name="img1" type="file" id="img1">
+
+                            <div class="texto-desc">
+                            <label class="leg1" for="item1">Texto a ser exibido junto com a imagem:</label>
+                            </div>
+
+                            <input class="campo-leg" name="item1" type="text" value="<?php pegarTextoPortfolio($tipo, $id, 1); ?>">
+                       
                         </div>
-                        <div  class="form-group">
-                            <label for="item2">Segundo item</label>
-                            <input name="img2" type="file">
-                            <label for="">Texto a ser exibido junto com a imagem:</label>
-                            <input name="item2" type="text" value="<?php pegarTextoPortfolio($tipo, $id, 2); ?>">
+                        
+                        <div class="sessao-up">
+                            <div class="btn-up">
+                                <label class="arq2" for="img2">ESCOLHER ARQUIVO</label>
+                            </div>
+                            <input name="img2" type="file" id="img2">
+                            
+                            <div class="texto-desc">
+                            <label class="leg1" for="item2">Texto a ser exibido junto com a imagem:</label>
+                            </div>
+                            
+                            <input class="campo-leg" name="item2" type="text" value="<?php pegarTextoPortfolio($tipo, $id, 2); ?>">
                         </div>
-                        <div  class="form-group">
-                            <label for="item3">Terceiro item</label>
-                            <input name="img3" type="file">
-                            <label for="">Texto a ser exibido junto com a imagem:</label>
-                            <input name="item3" type="text" value="<?php pegarTextoPortfolio($tipo, $id, 3); ?>">
+
+                        <div class="sessao-up">
+                            <div class="btn-up">
+                            <label class="arq3" for="img3">ESCOLHER ARQUIVO</label>
+                            </div>
+
+                            <input name="img3" type="file" id="img3">
+
+                            <div class="texto-desc">
+                            <label class="leg1" for="item3">Texto a ser exibido junto com a imagem:</label>
+                            </div>
+
+                            <input class="campo-leg" name="item3" type="text" value="<?php pegarTextoPortfolio($tipo, $id, 3); ?>">
                         </div>
+
+                       
 
                         <div class="tags">
                             <label for="tags">Adicione Tags para ser encontrado(a) mais facilmente
                             (separe cada tag com vírgula)</label>
-                            <textarea id="tags" name="tags" class="textfield" rows="7" cols="50"> </textarea>
+                            <textarea class="text-tag" id="tags" name="tags" class="textfield" rows="7" cols="50"> </textarea>
                         </div>
-                    <button type="submit" class="btn-cadastrar" name="editar">Salvar</button>
+                    <input type="submit" class="btn-cadastrar" name="editar">Salvar</input>
             </form>
     </main>
-    <footer>
-    </footer>
+
 </body>
 </html>
