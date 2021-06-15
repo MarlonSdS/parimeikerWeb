@@ -9,17 +9,17 @@
     <?php include("../util/commonHead.php"); 
     session_start();
     if(isset($_GET['id'])){
-        $id = $_GET['id'];
-        $tipo = $_GET['tipo'];
+        $idd = $_GET['id'];
+        $type = $_GET['tipo'];
         $user = "";
-        if($tipo == "empresa"){
+        if($type == "empresa"){
             include("../controller/conexao.php");
-            $result_user = "SELECT * FROM empresa WHERE id = '$id'";
+            $result_user = "SELECT * FROM empresa WHERE id = '$idd'";
             $resultado_user = mysqli_query($conexao, $result_user);
             $user = mysqli_fetch_array($resultado_user);
-        }elseif($tipo == "auto"){
+        }elseif($type == "auto"){
             include("../controller/conexao.php");
-            $result_user = "SELECT * FROM autonomo WHERE id = '$id'";
+            $result_user = "SELECT * FROM autonomo WHERE id = '$idd'";
             $resultado_user = mysqli_query($conexao, $result_user);
             $user = mysqli_fetch_array($resultado_user);
         }
@@ -30,20 +30,22 @@
 </head>
 <body>
     <header>
-        <?php include("../util/header.php"); ?>
+        <?php include("../controller/getFile.php"); 
+        include("../util/header.php"); 
+        ?>
     </header>
     <div id="vazio"></div>
     
     <main>
     <div class="infosetexto">
         <div class="infos">
-            <?php include("../controller/getFile.php"); ?>
-            <?php if($tipo == "empresa"): ?>
-                <?php pegarImagemPerfil($tipo, $id, "profile-picture"); ?>
-            <?php elseif($tipo == "auto"): ?>
-                <?php pegarImagemPerfil($tipo, $id, "profile-picture"); ?>
+            <?php// include("../controller/getFile.php"); ?>
+            <?php if($type == "empresa"): ?>
+                <?php pegarImagemPerfil($type, $idd, "profile-picture"); ?>
+            <?php elseif($type == "auto"): ?>
+                <?php pegarImagemPerfil($type, $idd, "profile-picture"); ?>
             <?php else: ?>
-                <?php pegarImagemPerfil($tipo, $id, "profile-picture"); ?>
+                <?php pegarImagemPerfil($type, $idd, "profile-picture"); ?>
             <?php endif; ?>
             
             <p><img src="../assets/images/icons/gmail.png" class="icon"><?php echo $user['email']; ?></p>
@@ -53,13 +55,12 @@
         </div>
         
         <div class="texto">
-        
             <h1><p><?php echo $user['nome']; ?></p></h1>
-        <?php if($tipo == "empresa"): ?>
-            <p class="texto-apre"><?php pegarTextoPerfil($tipo, $id); ?></p>
-        <?php elseif($tipo == "auto"): ?>
-            <p class="texto-apre"> <?php pegarTextoPerfil($tipo, $id); ?></p>
-        <?php endif; ?>
+        <?php if($type == "empresa"){ ?>
+            <p class="texto-apre"><?php pegarTextoPerfil($type, $idd); ?></p>
+        <?php }elseif($type == "auto"){ ?>
+            <p class="texto-apre"><?php pegarTextoPerfil($type, $idd); ?></p>
+        <?php } ?>
         </div>
     </div>
     
@@ -67,45 +68,45 @@
 
         <div class="portfolio">
             <div class="portfolio-card">
-                <?php if($tipo == "empresa"): ?>
-                    <?php pegarImagemPortfolio($tipo, $id, 1); ?>
+                <?php if($type == "empresa"): ?>
+                    <?php pegarImagemPortfolio($type, $idd, 1); ?>
                     <div class="image-info">
-                        <p><?php pegarTextoPortfolio($tipo, $id, 1); ?></p>
+                        <p><?php pegarTextoPortfolio($type, $idd, 1); ?></p>
                     </div>
                     
-                <?php elseif($tipo == "auto"): ?>
-                    <img src="../userData/userPictures/Auto/<?php echo $id?>portImage1.png" alt="">
+                <?php elseif($type == "auto"): ?>
+                    <?php pegarImagemPortfolio($type, $idd, 1); ?>
                     <div class="image-info">
-                        <p><?php pegarTextoPortfolio($tipo, $id, 1); ?></p>
+                        <p><?php pegarTextoPortfolio($type, $idd, 1); ?></p>
                     </div>
                     
                 <?php endif; ?>
             </div>
             <div class="portfolio-card">
-                <?php if($tipo == "empresa"): ?>
-                    <?php pegarImagemPortfolio($tipo, $id, 2); ?>
+                <?php if($type == "empresa"): ?>
+                    <?php pegarImagemPortfolio($type, $idd, 2); ?>
                     <div class="image-info">
-                        <p><?php pegarTextoPortfolio($tipo, $id, 2); ?></p>
+                        <p><?php pegarTextoPortfolio($type, $idd, 2); ?></p>
                     </div>
                     
-                <?php elseif($tipo == "auto"): ?>
-                    <?php pegarImagemPortfolio($tipo, $id, 2); ?>
+                <?php elseif($type == "auto"): ?>
+                    <?php pegarImagemPortfolio($type, $idd, 2); ?>
                     <div class="image-info">
-                        <p><?php pegarTextoPortfolio($tipo, $id, 2); ?></p>
+                        <p><?php pegarTextoPortfolio($type, $idd, 2); ?></p>
                     </div>
                 <?php endif; ?>
             </div>
             <div class="portfolio-card">
-                <?php if($tipo == "empresa"): ?>
-                    <?php pegarImagemPortfolio($tipo, $id, 3); ?>
+                <?php if($type == "empresa"): ?>
+                    <?php pegarImagemPortfolio($type, $idd, 3); ?>
                     <div class="image-info">
-                        <p><?php pegarTextoPortfolio($tipo, $id, 3); ?></p>
+                        <p><?php pegarTextoPortfolio($type, $idd, 3); ?></p>
                     </div>
                     
-                <?php elseif($tipo == "auto"): ?>
-                    <?php pegarImagemPortfolio($tipo, $id, 3); ?>
+                <?php elseif($type == "auto"): ?>
+                    <?php pegarImagemPortfolio($type, $idd, 3); ?>
                     <div class="image-info">
-                        <p><?php pegarTextoPortfolio($tipo, $id, 3); ?></p>
+                        <p><?php pegarTextoPortfolio($type, $idd, 3); ?></p>
                     </div>
                     
                 <?php endif; ?>

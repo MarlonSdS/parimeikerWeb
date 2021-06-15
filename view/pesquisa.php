@@ -35,6 +35,7 @@
             pesquisaPorNomeAutonomo();
             pesquisaPorTagAutonomo();
             pesquisaPorTagEmpresa();
+            
         } ?>
 <!-- FOTO 1 -->
 <?php
