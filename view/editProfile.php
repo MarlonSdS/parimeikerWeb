@@ -170,5 +170,7 @@
             </form>
     </main>
 
+    <?php include('../util/footer.php'); ?>
+
 </body>
 </html>

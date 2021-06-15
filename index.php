@@ -14,9 +14,6 @@
     <!-- Link Style do Header-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0.">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <!-- Link Style do Carrousel "Banner"-->
-    <link rel="stylesheet" href="assets/styles/gallery.theme.css">
-    <link rel="stylesheet" href="assets/styles/gallery.min.css">
     <!-- Link Style do Footer-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -35,44 +32,22 @@
 <body>
     
 
-<!-- <div id="loader" class="loader"></div> -->
-
 
     <!-- Header -->
     <?php include("controller/getFile.php"); ?>
     <?php include("util/header.php"); ?>
 
 
-       
 
-
-    <!-- Carrousel -->
-<div class="carrousel">
-        <div class="gallery autoplay items-3">
-    <div id="item-1" class="control-operator"></div>
-    <div id="item-2" class="control-operator"></div>
-    <div id="item-3" class="control-operator"></div>
-
-    <figure class="item">
-        <h1><img src="assets/images/Banner-01.png"></h1>
-    </figure>
-
-    <figure class="item">
-        <h1><img src="assets/images/Banner-02.png"></h1>
-    </figure>
-
-    <figure class="item">
-        <h1><img src="assets/images/Banner-03.png"></h1>
-    </figure>
-
-    <div class="controls">
-        <a href="#item-1" class="control-button">•</a>
-        <a href="#item-2" class="control-button">•</a>
-        <a href="#item-3" class="control-button">•</a>
-    </div>
-    </div>
-</div>
-
+<div id="slider">
+		<figure>
+			<img src="assets/images/Banner-03.png">
+			<img src="assets/images/Banner-02.png">
+			<img src="assets/images/Banner-01.png">
+			<img src="assets/images/Banner-02.png">
+			<img src="assets/images/Banner-03.png">
+		</figure>
+	</div>
 
 <!-- Feed -->
 
@@ -167,24 +142,7 @@
 
     <?php include("util/footer.php"); ?>
 
-     <!-- Script -->
-   
-<!--
 
-    <script>
-    jQuery(window).load(function () {
-      $(".loader").fadeOut("slow"); //retire o delay quando for copiar!
-    $("#tudo_page").toggle("fast");
-});
-    </script> 
-
-    <script>
-    function loading(){
-     $('.loader').css('display','none');
-}
-    </script>   
-
-    -->
 
 </body>
 </html>

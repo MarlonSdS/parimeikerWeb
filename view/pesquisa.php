@@ -1,11 +1,16 @@
 <html>
-    <head>
-        <?php include("../util/commonHead.php"); ?>
-        <meta charset="UTF-8">
+
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Párimeiker — Ferramenta de promoção e gerenciamento para eventos</title>
+    <title>Party Maker — Ferramenta de Promoção de eventos</title>
+    <head>
+
+        <?php include("../util/commonHead.php"); ?>
+        
+   
     <link rel="stylesheet" href="../assets/styles/pesquisa.css">
+    <link rel="stylesheet" href="../assets/styles/main.css">
     <?php 
             session_start();
             
@@ -175,11 +180,13 @@ function pesquisaPorNomeEmpresa(){
 </div>
 <?php endfor; }?>
     </div>
+
+    
+
 </fieldset>
      
+    
+    <?php include('../util/footer.php'); ?>  
 
-        <footer>
-            <?php include("../util/footer.php") ?>
-        </footer>
     </body>
 </html>

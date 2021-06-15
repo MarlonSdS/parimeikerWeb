@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="./assets/styles/header.css">
 <link rel="stylesheet" href="./assets/styles/profile.css">
 <link rel="stylesheet" href="/parimeikerWeb/assets/styles/main.css">
+<link rel="stylesheet" href="/parimeikerWeb/assets/styles/crud.css">
 <link rel="stylesheet" href="/parimeikerWeb/assets/styles/bootstrap.css">
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,4 +13,7 @@
 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
