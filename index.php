@@ -54,85 +54,73 @@
 <h1 class="titulo-feed">MAIS AVALIADOS</h1>
 
         <div class="container-feed">
-            
-        <div class="feed">
-            <img src="assets/images/feed-01.png" alt="" >
-        </a>
-        <div class="desc">Palace Doces e Salgados</div>
+        <?php include("controller/conexao.php"); ?>
+               
+        <?php 
+            $query = "SELECT * FROM notas WHERE nota > 3 AND idEmpresa > 0 ORDER BY nota DESC LIMIT 4";
+            $query2 = "SELECT * FROM empresa";
+            $result = mysqli_query($conexao, $query);
+            $result2 = mysqli_query($conexao, $query2);
+            while($linhas = mysqli_fetch_array($result)){
+                $idb = $linhas['idEmpresa']; 
+                $query2 = "SELECT * FROM empresa WHERE id = '$idb'";
+                $result2 = mysqli_query($conexao, $query2);
+                $nomes = mysqli_fetch_array($result2);
+                $nome = $nomes['nome'];
+                ?>
+                <div class="feed">
+                <?php pegarImagemPortfolio("empresa", $idb, 1); ?>
+                
+                <div class="desc">
+                <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $idb; ?>&tipo=empresa"><?php echo $nome;?></a>
+                </div>
+                </div>
+            <?php }
+        ?>
         </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-02.png" alt="" >
-        </a>
-        <div class="desc">Divino  Açaí</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-03.png" alt="" >
-        </a>
-        <div class="desc">Browneria Artesanal</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-04.png" alt="" >
-        </a>
-        <div class="desc">Moccia Cozinha Afetiva</div>
-        </div>
-        </div>
-
         <div class="container-feed">
             
-        <div class="feed">
-            <img src="assets/images/feed-05.png" alt="" >
-        </a>
-        <div class="desc">Caliente Cozinha Mexicana</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-06.png" alt="" >
-        </a>
-        <div class="desc">Pono Culinária Havaiana</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-07.png" alt="" >
-        </a>
-        <div class="desc">Antônia Buffet</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-08.png" alt="" >
-        </a>
-        <div class="desc">Pães de Mel Xaveco</div>
-        </div>
+        <?php 
+            $query = "SELECT * FROM notas WHERE nota > 3 AND idAutonomo > 0 ORDER BY nota DESC LIMIT 4";
+           
+            $result = mysqli_query($conexao, $query);
+            while($linhas = mysqli_fetch_array($result)){
+                $idb = $linhas['idAutonomo']; 
+                $query2 = "SELECT * FROM autonomo WHERE id = '$idb'";
+                $result2 = mysqli_query($conexao, $query2);
+                $nomes = mysqli_fetch_array($result2);
+                $nome = $nomes['nome'];
+                ?>
+                <div class="feed">
+                <?php pegarImagemPortfolio("empresa", $idb, 1); ?>
+                
+                <div class="desc">
+                <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $idb; ?>&tipo=auto"><?php echo $nome;?></a>
+                </div>
+                </div>
+            <?php }
+        ?>
         </div>
 
 
         <h1 class="titulo-feed2">MAIS RECENTES</h1>
         <div class="container-feed2">
-        <div class="feed">
-            <img src="assets/images/feed-02.png" alt="" >
-        </a>
-        <div class="desc">Divino Açaí</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-04.png" alt="" >
-        </a>
-        <div class="desc">Moccia Cozinha Afetiva</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-06.png" alt="" >
-        </a>
-        <div class="desc">Pono Culinária Havaiana</div>
-        </div>
-
-        <div class="feed">
-            <img src="assets/images/feed-07.png" alt="" >
-        </a>
-        <div class="desc">Antônia Buffet</div>
-        </div>
+        <?php 
+            $query = "SELECT * FROM empresa ORDER BY id DESC LIMIT 4";
+            $result = mysqli_query($conexao, $query);
+            while($linhas = mysqli_fetch_array($result)){
+                $idb = $linhas['id']; 
+                $nome = $linhas['nome'];
+                ?>
+                <div class="feed">
+                <?php pegarImagemPortfolio("empresa", $idb, 1); ?>
+                
+                <div class="desc">
+                <a href="/parimeikerWeb/view/visitProfile.php?id=<?php echo $idb; ?>&tipo=empresa"><?php echo $nome;?></a>
+                </div>
+                </div>
+            <?php }
+        ?>
         </div>
 
 

@@ -85,15 +85,23 @@ function pegarImagemPortfolio($tipo, $id, $num){
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
         $imagem = "portImage$num";
-        echo '<img src="data:image/jpeg;base64,'.base64_encode( $row[$imagem] ).'"/>';
+        if(!isset($row[$imagem])){
+            echo '<img src="/parimeikerWeb/assets/images/logo.png"/>';
+        }else{
+             echo '<img src="data:image/jpeg;base64,'.base64_encode( $row[$imagem] ).'"/>';
+        }
+       
     }elseif($tipo == "auto"){
         $query = "SELECT * FROM userdata WHERE idAutonomo = '$id'";
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
         $imagem = "portImage".$num;
 
-        
-        echo '<img src="data:image/jpeg;base64,'.base64_encode( $row[$imagem] ).'"/>';
+        if(!isset($row[$imagem])){
+            echo '<img src="/parimeikerWeb/assets/images/logo.png"/>';
+        }else{
+             echo '<img src="data:image/jpeg;base64,'.base64_encode( $row[$imagem] ).'"/>';
+        }
 }
 
     
@@ -111,15 +119,26 @@ function pegarTextoPortfolio($tipo, $id, $num){
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
         $indice = "portText$num";
-        $texto = $row[$indice];
-         echo $texto;
+        
+        if(isset($row[$indice])){
+            $texto = $row[$indice];
+           echo $texto; 
+        }else{
+            echo "Portfolio";
+        }
+         
     }elseif($tipo == "auto"){
         $query = "SELECT * FROM userdata WHERE idAutonomo = '$id'";
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
         $indice = "portText$num";
         $texto = $row[$indice];
-         echo $texto;
+        if(isset($row[$indice])){
+            $texto = $row[$indice];
+           echo $texto; 
+        }else{
+            echo "Portfolio";
+        }
     }
 }
  

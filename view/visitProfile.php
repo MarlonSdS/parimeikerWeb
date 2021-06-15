@@ -128,8 +128,8 @@
                 <div class="estrelas">
                     <input type="radio" id="vazio" name="estrela" value="" checked>
                     <input type="text" class="ocultar" name="id-usuario" value="<?php echo $_SESSION['id']; ?>" > 
-                    <input type="text" class="ocultar" name="id-avaliado" value="<?php echo $id; ?>">
-                    <input type="text" class="ocultar" name="tipo" value="<?php echo $tipo; ?>">
+                    <input type="text" class="ocultar" name="id-avaliado" value="<?php echo $idd; ?>">
+                    <input type="text" class="ocultar" name="tipo" value="<?php echo $type; ?>">
                     
                     <label for="estrela_um"><i class="fa"></i></label>
                     <input type="radio" id="estrela_um" name="estrela" value="1">
@@ -164,9 +164,9 @@
                     $dia = $dataFormatada[2];
                     return "$dia/$mes/$ano";
                 }
-                if($tipo == "auto"){
+                if($type == "auto"){
                     include("../controller/conexao.php");
-                    $result_nomes = "SELECT * FROM notas WHERE idAutonomo LIKE '$id' ORDER BY data DESC LIMIT 10";
+                    $result_nomes = "SELECT * FROM notas WHERE idAutonomo LIKE '$idd' ORDER BY data DESC LIMIT 10";
                     $resultado_nomes = mysqli_query($conexao, $result_nomes);
                     
                     while($rows_nomes = mysqli_fetch_array($resultado_nomes)):
@@ -183,7 +183,41 @@
                 ?>
                 <div class="coment-infos">
                     <div>
-                        <img src="../userData/userProfilePictures/Cliente/userProfile<?php echo $rows_nomes['idUser']; ?>.png" alt="">
+                        <?php pegarImagemPerfil("cliente", $rows_nomes['idUser'], ""); ?>
+                    <h2><?php echo $userName; ?> </h2>
+                    </div>
+                    
+                    <h2><?php $data = $rows_nomes['data'];
+                    echo formatarData($data); ?></h2>
+                </div>
+                <div class="coment-box">
+                    <p><?php echo $rows_nomes['comentario']; ?></p>
+                    <p class="nota">Nota: <?php echo $rows_nomes['nota']; ?></p>
+                </div>
+            </div>
+            <?php endwhile; }?>
+            <?php
+                if($type == "empresa"){
+                    include("../controller/conexao.php");
+                    $result_nomes = "SELECT * FROM notas WHERE idEmpresa LIKE '$idd' ORDER BY data DESC LIMIT 10";
+                    $resultado_nomes = mysqli_query($conexao, $result_nomes);
+                    
+                    while($rows_nomes = mysqli_fetch_array($resultado_nomes)):
+                
+                
+            ?>
+             <div class="coment">
+                <?php 
+                    $idUser = $rows_nomes['idUser'];
+                    include("../controller/conexao.php");
+                    $search_user = "SELECT * FROM cliente WHERE id LIKE '$idUser' LIMIT 10";
+                    $result_user = mysqli_query($conexao, $search_user);
+                    $userName = mysqli_fetch_array($result_user);
+                    $userName = $userName['nome'];
+                ?>
+                <div class="coment-infos">
+                    <div>
+                        <?php pegarImagemPerfil("cliente", $rows_nomes['idUser'], ""); ?>
                     <h2><?php echo $userName; ?> </h2>
                     </div>
                     
