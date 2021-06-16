@@ -16,11 +16,11 @@
             
             
                 <li class="dropdown">
-            <button class="dropbtn">ENTRAR</button>
+            <button class="dropbtn">Entrar</button>
             <div class="dropdown-content">
-                <a href="/parimeikerWeb/view/crud/login.php?tipo=cliente">ENTRAR COMO CLIENTE</a>
-                <a href="/parimeikerWeb/view/crud/login.php?tipo=empresa">ENTRAR COMO EMPRESA</a>
-                <a href="/parimeikerWeb/view/crud/login.php?tipo=auto">ENTRAR COMO PRESTADOR</a>
+                <a href="/parimeikerWeb/view/crud/login.php?tipo=cliente">Entrar como Cliente</a>
+                <a href="/parimeikerWeb/view/crud/login.php?tipo=empresa">Entrar como Empresa</a>
+                <a href="/parimeikerWeb/view/crud/login.php?tipo=auto">Entrar como Autonomo</a>
             </div>
             </li>
             <?php endif; ?>
@@ -42,6 +42,7 @@
 
              <!--<img class="dropbtn-logado" src="/parimeikerWeb/userData/userProfilePictures/Empresa/userProfile<?php //echo $_SESSION['id']; ?>.png" class="perfil-img"  class="img-menu" alt="">-->
             <?php pegarImagemPerfil($tipo, $id, "dropbtn-logado"); ?>
+            
             <div class="dropdown-content">
             <a href="/parimeikerWeb/view/profile.php">Ver perfil</a>
             <a href="/parimeikerWeb/controller/usuarioDAO.php?sair=sim">Sair</a>

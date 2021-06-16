@@ -118,7 +118,7 @@ nav{
   }
   
   nav ul .search-icon .icon :hover{
-    font-size: 22px;
+    font-size: 18px;
   }
   
   
@@ -154,7 +154,7 @@ nav{
   padding: 7px 7px 7px 7px;
   color: white;
   font-size: 18px;
-  font-weight: bolder;
+  font-weight: 390;
   background-color: orangered;
   border-radius: 4px;
   
@@ -176,6 +176,7 @@ nav{
   font-weight: bolder;
   border-radius: 200px;
   
+  
 }
 
 /* Posiciona o Dropdown Content */
@@ -183,6 +184,7 @@ nav{
   position: relative;
   display: inline-block;
   margin-right: 4%;
+  
 }
 
 /* Dropdown Content (Hidden por Padrão) */
@@ -195,6 +197,7 @@ nav{
   z-index: 1;
   border-radius: 6px;
   opacity: 96%;
+  
 }
 
 /* Links dentro do dropdown */
@@ -203,7 +206,8 @@ nav{
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  font-weight: bold;
+  font-weight: 399;
+  
 }
 
 /* Muda a cor dos links do dropdown no hover */
@@ -212,16 +216,12 @@ nav{
   color: white;
   list-style: none;
   border-radius: 6px;
+  text-decoration: none;
+  font-weight: 460;
 }
 
 /* Mostra o menu dentro do dropdown no hover */
 .dropdown:hover .dropdown-content {display: block;}
-
-/* Icons Perfil */
-
-.icons-prof{
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
 
 /* Feed */
 
