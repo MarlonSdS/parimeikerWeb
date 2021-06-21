@@ -279,7 +279,7 @@
 
         if($_POST['tags'] != ""){
             $tags = explode(",", $_POST['tags']);
-            if($userType == "auto"){
+            if(verificarTipoUsuario() == "auto"){
                 for ($i=0; $i < sizeof($tags); $i++) { 
                 echo $tags[$i];
                 echo "<br>";
@@ -287,7 +287,7 @@
                 $query = "INSERT INTO tagsautonomo(id, tag) VALUES ('$id', '$tags[$i]')";
                 $operacao = mysqli_query($conexao, $query);
             }
-            }elseif($userType == "empresa"){
+            }elseif(verificarTipoUsuario() == "empresa"){
                 for ($i=0; $i < sizeof($tags); $i++) { 
                     echo $tags[$i];
                     echo "<br>";
