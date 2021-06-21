@@ -22,8 +22,6 @@ function pegarImagemPerfil($tipo, $id, $classe){
         }else{
             echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['profileImage'] ).'" class="'.$classe.'"/>';
         }
-        
-    
     }elseif($tipo == "empresa"){
         $query = "SELECT * FROM userdata WHERE idEmpresa = '$id'";
         $result = $conexao->query($query);
@@ -62,14 +60,25 @@ function pegarTextoPerfil($tipo, $id){
         $query = "SELECT * FROM userdata WHERE idEmpresa = '$id'";
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
-        $texto = $row['profileText'];
+        if(!isset($row['profileText'])){
+            $texto = "Olá! Eu estou usando Party Maker!";
+            echo $texto;
+        }else{
+            $texto = $row['profileText'];
          echo $texto;
+        }
+        
     }elseif($tipo == "auto"){
         $query = "SELECT * FROM userdata WHERE idAutonomo = '$id'";
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
-        $texto = $row['profileText'];
+        if(!isset($row['profileText'])){
+            $texto = "Olá! Eu estou usando Party Maker!";
+            echo $texto;
+        }else{
+            $texto = $row['profileText'];
          echo $texto;
+        }
     }
 }
 
@@ -79,7 +88,7 @@ function pegarImagemPortfolio($tipo, $id, $num){
         $usuario = "root";
         $password = "";
     
-        $conexao = mysqli_connect($servidor, $usuario, $password, $banco)or  die("Conexão falhou!". mysqli_connect_error);
+        $conexao = mysqli_connect($servidor, $usuario, $password, $banco)or  die("Conexão falhou!".mysqli_connect_error);
     if($tipo == "empresa"){
         $query = "SELECT * FROM userdata WHERE idEmpresa = '$id'";
         $result = $conexao->query($query);
