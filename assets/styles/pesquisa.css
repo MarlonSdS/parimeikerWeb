@@ -1,7 +1,4 @@
 
-
-
-
 /* CAIXA */
 .pagina {
     display: flex;
@@ -82,7 +79,7 @@ div a:hover{
     text-align: center;
     width: 75%;
     border: 3px #ff6600ff solid;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 

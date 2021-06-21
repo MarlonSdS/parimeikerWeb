@@ -80,10 +80,14 @@
             <form action="../controller/upload.php" enctype="multipart/form-data" method="POST">
                     <div class="descricao">
                         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
-                            <h2 class="nome-sessao">Esse é o texto que é exibido ao entrar no seu perfil</h2>
+
+                            <h1 class="nome-sessao">Esse é o texto que é exibido ao entrar no seu perfil</h1>
+                            
                             <textarea id="texto" name="texto" class="textfield" rows="4" cols="55"><?php pegarTextoPerfil($tipo, $id); ?></textarea>
                         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
+
                             <label for="texto">Esse é o texto que é exibido ao entrar no seu perfil</label>
+                            
                             <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"><?php pegarTextoPerfil($tipo, $id); ?> </textarea>
                         <?php endif; ?>
                     </div>

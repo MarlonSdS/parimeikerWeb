@@ -43,15 +43,17 @@
                 <?php pegarImagemPerfil($tipo, $id, "profile-picture"); ?>
             <?php endif; ?>
             
-            <p><i class="far fa-envelope" class="icons-prof"> <?php echo $_SESSION['email']; ?> </i></p>
-            <p><i class="fab fa-whatsapp" class="icons-prof"> <?php echo $_SESSION['tel']; ?> </i></p>
+            <p><i class="fas fa-envelope" class="icons-prof">  </i> <?php echo $_SESSION['email']; ?> </p>
+            <p><i class="fab fa-whatsapp fa-lg" class="icons-prof">  </i> <?php echo $_SESSION['tel']; ?> </p>
+            <p></p>
 
             
         </div>
         
         <div class="texto">
             <h1><p><?php echo $_SESSION['nome']; ?></p>
-            <a href="/parimeikerWeb/view/editProfile.php"><img src="../assets/images/icons/lapis.png" class="btn-editar"></a></h1>
+            
+            <a href="/parimeikerWeb/view/editProfile.php" class="btn-editar" ><i class="fas fa-cog fa-sm"></i></a></h1>
         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
             <p class="texto-apre"><?php pegarTextoPerfil($tipo, $id); ?></p>
         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>

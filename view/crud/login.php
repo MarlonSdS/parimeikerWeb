@@ -24,13 +24,7 @@
                 if($erro == "login"):
         ?>
 
-        <div class="alert show">
-                  <span class="fas fa-exclamation-circle"></span>
-                  <span>Login ou Senha incorretos!</span>
-                  <span class="close-btn">
-                    <span class="fas fa-times"></span>
-                </span>
-        </div>
+    
   <!--
         <div class="alert alert-warning" role="alert">
                 <p>Login ou senha incorretos</p>
@@ -68,7 +62,7 @@
                 <div class="link-conta">
                 Ainda não tem uma conta? <a href="cadastro.php?tipo=cliente">Crie agora</a>
                 </div>
-                <div class="senha-login">Esqueçeu a Senha?</div>
+                <!--<div class="senha-login">Esqueçeu a Senha?</div>-->
                 </div>
         </form>
         </div>   
@@ -103,7 +97,7 @@
                 <div class="link-conta">
                 Ainda não tem uma conta? <a href="cadastro.php?tipo=auto">Crie agora</a>
                 </div>
-                <div class="senha-login">Esqueçeu a Senha?</div>
+                <!--<div class="senha-login">Esqueçeu a Senha?</div>-->
                 </div>
 
         </form>
@@ -139,7 +133,7 @@
                 <div class="link-conta">
                 Ainda não tem uma conta? <a href="cadastro.php?tipo=empresa">Crie agora</a>
                 </div>
-                <div class="senha-login">Esqueçeu a Senha?</div>
+                <!--<div class="senha-login">Esqueçeu a Senha?</div>-->
                 </div>
 
         </form>

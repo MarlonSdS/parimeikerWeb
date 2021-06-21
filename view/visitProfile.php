@@ -48,8 +48,8 @@
                 <?php pegarImagemPerfil($type, $idd, "profile-picture"); ?>
             <?php endif; ?>
             
-            <p><img src="../assets/images/icons/gmail.png" class="icon"><?php echo $user['email']; ?></p>
-            <p><img src="../assets/images/icons/whatsapp.png" class="icon"><?php echo $user['tel']; ?></p>
+            <p><i class="fas fa-envelope" class="icons-prof">  </i> <?php echo $_SESSION['email']; ?> </p>
+            <p><i class="fab fa-whatsapp fa-lg" class="icons-prof">  </i> <?php echo $_SESSION['tel']; ?> </p>
 
             
         </div>
@@ -234,6 +234,8 @@
     </main>
 
     <footer>
+
+    <?php include("../util/footer.php"); ?>         
 
     </footer>
 </body>

@@ -8,9 +8,6 @@
 
         <?php include("../util/commonHead.php"); ?>
         
-   
-    <link rel="stylesheet" href="../assets/styles/pesquisa.css">
-    <link rel="stylesheet" href="../assets/styles/main.css">
     <?php 
             session_start();
             
@@ -19,14 +16,12 @@
         ?>
     </head>
     <body>
-    
-        <header>
         
             <?php 
             include_once("../controller/getFile.php");
             include("../util/header.php"); ?>
             
-        </header>
+    
         <div id="vazio"></div>
 
         <!-- DIV PARA BUSCA POR TAG NOME-->
@@ -63,9 +58,7 @@ function pesquisaPorNomeEmpresa(){
             <p><?php pegarTextoPerfil("empresa", $rows_nomes['id']); ?></p> 
         </div>
         <div class="tag">
-        <p> TAG </p>
-        <p> TAG </p>
-        <p> TAG </p>
+       
         </div>  
     </div>
     
@@ -92,9 +85,7 @@ function pesquisaPorNomeEmpresa(){
             <p><?php pegarTextoPerfil("auto", $rows_nomes['id']); ?></p> 
         </div>
         <div class="tag">
-        <p> TAG </p>
-        <p> TAG </p>
-        <p> TAG </p>
+    
         </div>  
     </div>
     
@@ -130,9 +121,7 @@ function pesquisaPorNomeEmpresa(){
             <p><?php pegarTextoPerfil("auto", $id[$i]); ?></p> 
         </div>
         <div class="tag">
-        <p> TAG </p>
-        <p> TAG </p>
-        <p> TAG </p>
+       
         </div>  
     </div>
     
