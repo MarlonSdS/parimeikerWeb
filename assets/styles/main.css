@@ -304,6 +304,17 @@ div.desc {
   text-align: center;
 }
 
+.desc a:hover{
+  text-transform: none;
+  text-decoration: none;
+  color: #ff9b2e;
+}
+
+.desc a{
+  color: #e84118;
+  font-weight: 500;
+}
+
 .container-feed{
   display: flex;
   justify-content: center;

@@ -48,8 +48,8 @@
                 <?php pegarImagemPerfil($type, $idd, "profile-picture"); ?>
             <?php endif; ?>
             
-            <p><i class="fas fa-envelope" class="icons-prof">  </i> <?php echo $_SESSION['email']; ?> </p>
-            <p><i class="fab fa-whatsapp fa-lg" class="icons-prof">  </i> <?php echo $_SESSION['tel']; ?> </p>
+            <p><i class="fas fa-envelope" class="icons-prof">  </i> <?php echo $user['email']; ?> </p>
+            <p><i class="fab fa-whatsapp fa-lg" class="icons-prof">  </i> <?php echo $user['tel']; ?> </p>
 
             
         </div>
@@ -147,11 +147,11 @@
                     <input type="radio" id="estrela_cinco" name="estrela" value="5"><br><br>
                     
                 </div>
-                <div class="ampo-coment">
+                <div class="campo-coment">
                     <p>Deixe um comentário</p>
-                    <textarea name="coment" id="" cols="30" rows="5"></textarea>
+                    <textarea name="coment" id="" cols="30" rows="5" class="form-control"></textarea><br>
                 </div>
-                <input type="submit" value="Avaliar">
+                <input type="submit" value="Avaliar" class="btn btn-danger">
             </form>
         </div>    
     <?php endif; ?>
@@ -195,6 +195,7 @@
                     <p class="nota">Nota: <?php echo $rows_nomes['nota']; ?></p>
                 </div>
             </div>
+            <br>
             <?php endwhile; }?>
             <?php
                 if($type == "empresa"){

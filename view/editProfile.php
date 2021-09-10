@@ -88,7 +88,8 @@
 
                             <label for="texto">Esse é o texto que é exibido ao entrar no seu perfil</label>
                             
-                            <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"><?php pegarTextoPerfil($tipo, $id); ?> </textarea>
+                            <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"
+                            class="form-control"><?php pegarTextoPerfil($tipo, $id); ?> </textarea>
                         <?php endif; ?>
                     </div>
 
@@ -99,7 +100,7 @@
                             </div>
                             <div class="imgedit-leg">
                             <label class="text-perfilimg" for="picture">Selecione uma imagem de perfil</label>
-                            <input class="perfilimg-sel" name="picture" type="file" id="picture" />
+                            <input class="perfilimg-sel" name="picture" type="file" id="picture" class="btn btn-danger"/>
                             </div>
                         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
                             <div class="imgedit-perfil">
@@ -107,7 +108,7 @@
                             </div>
                             <div class="imgedit-leg">
                             <label for="picture">Selecione uma imagem de perfil</label>
-                            <input name="picture" type="file" />
+                            <input name="picture" type="file" class="btn btn-danger"/>
                             </div>
                         <?php else: ?>
                             <div class="imgedit-perfil">
@@ -115,7 +116,7 @@
                             </div>
                             <div class="imgedit-leg">
                             <label for="picture">Selecione uma imagem de perfil</label>
-                            <input name="picture" type="file"/>
+                            <input name="picture" type="file" class="btn btn-danger"/>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -126,7 +127,7 @@
                             <div class="btn-up">
                                  <label class="arq1" for="img1">ESCOLHER ARQUIVO</label>
                             </div>
-                            <input name="img1" type="file" id="img1">
+                            <input name="img1" type="file" id="img1" >
 
                             <div class="texto-desc">
                             <label class="leg1" for="item1">Texto a ser exibido junto com a imagem:</label>
@@ -143,7 +144,7 @@
                             <input name="img2" type="file" id="img2">
                             
                             <div class="texto-desc">
-                            <label class="leg1" for="item2">Texto a ser exibido junto com a imagem:</label>
+                            <label class="leg1 form-control" for="item2">Texto a ser exibido junto com a imagem:</label>
                             </div>
                             
                             <input class="campo-leg" name="item2" type="text" value="<?php pegarTextoPortfolio($tipo, $id, 2); ?>">
@@ -168,9 +169,10 @@
                         <div class="tags">
                             <label for="tags">Adicione Tags para ser encontrado(a) mais facilmente
                             (separe cada tag com vírgula)</label>
-                            <textarea class="text-tag" id="tags" name="tags" class="textfield" rows="7" cols="50"> </textarea>
+                            <textarea class="text-tag" class="form-control" id="tags" name="tags" class="textfield" rows="7" cols="50"> </textarea>
                         </div>
-                    <input type="submit" class="btn-enviar" name="editar"></input>
+                        <br>
+                    <input type="submit" class="btn-enviar btn btn-danger" name="editar"></input>
             </form>
     </main>
 

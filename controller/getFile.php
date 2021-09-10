@@ -141,7 +141,7 @@ function pegarTextoPortfolio($tipo, $id, $num){
         $result = $conexao->query($query);
         $row = mysqli_fetch_array($result);
         $indice = "portText$num";
-        $texto = $row[$indice];
+        //$texto = $row[$indice];
         if(isset($row[$indice])){
             $texto = $row[$indice];
            echo $texto; 

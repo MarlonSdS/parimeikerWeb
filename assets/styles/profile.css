@@ -102,6 +102,9 @@ h1 a:hover{
     transform: translate(-50%, -50%);
     overflow: hidden;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .portfolio-card img{
@@ -110,8 +113,7 @@ h1 a:hover{
     border-radius: 15px;
     border: #d45500ff 2px solid;
     position: absolute;
-    top: 0;
-    left: 0;
+    
 }
 
 .image-info {
@@ -151,6 +153,11 @@ div.portfolio-card:hover div.image-info{
 	color: #FC0;
 }.estrelas  input[type=radio]:checked  ~ label i.fa:before{
 	color: #CCC;
+}
+
+.campo-coment .form-control{
+    width: 60% !important;
+    margin: auto;
 }
 
 .coment img{
