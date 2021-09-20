@@ -55,9 +55,9 @@
             
             <a href="/parimeikerWeb/view/editProfile.php" class="btn-editar" ><i class="fas fa-cog fa-sm"></i></a></h1>
         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
-            <p class="texto-apre"><?php pegarTextoPerfil($tipo, $id); ?></p>
+            <div class="texto-apre"><?php pegarTextoPerfil($tipo, $id); ?></div>
         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
-            <p class="texto-apre"s> <?php pegarTextoPerfil($tipo, $id); ?></p>
+            <div class="texto-apre"s> <?php pegarTextoPerfil($tipo, $id); ?></div>
         <?php endif; ?>
         </div>
     </div>

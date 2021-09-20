@@ -20,6 +20,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $_SESSION['nome'];?></title>
     <style>#hiddenSenha{display: none;}</style>
+    <script src="https://cdn.tiny.cloud/1/gsbw10ftaris79jtkoxjr783pflkddpejxgar1n7i3jm7dlf/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({ 
+        language: "pt_BR",
+        selector:'textarea#texto',
+        plugins: [
+            'advlist autolink link image lists print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+        ] });</script>
 </head>
 <body>
 
@@ -45,13 +52,13 @@
                     <input type="number" name="tel" value="<?php echo $_SESSION['tel']; ?>" 
                     placeholder="Telefone de Contato" class="form-control">
                 </div>
-                <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
+                <?php if(mb_strlen($_SESSION['cnpj']) > 2): //se for uma empresa?>
                 <div class="form-group">
                     <label for="cnpj"></label>
                     <input type="text" name="cnpj" value="<?php echo $_SESSION['cnpj']; ?>" 
                     placeholder="CNPJ da Empresa" class="form-control" maxlength="14">
                 </div>
-                <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
+                <?php elseif(mb_strlen($_SESSION['cpf']) > 2): //se for um autonomo?>
                 <div class="form-group">
                     <label for="cpf"></label>
                     <input type="text" name="cpf" value="<?php echo $_SESSION['cpf']; ?>" 
@@ -76,22 +83,22 @@
                 <input type="submit" class="btn-salvar" name="editar" value="SALVAR">
                 <input type="submit" class="btn-excluir" name="excluir" value="EXCLUIR">
             </form>
-            
-            <form action="../controller/upload.php" enctype="multipart/form-data" method="POST">
-                    <div class="descricao">
-                        <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
-
+            <!--Texto de exibição do perfil-->
+            <form action="../controller/upload.php" enctype="multipart/form-data" method="POST" class="form-desc">
+                    
+                        <?php if(mb_strlen($_SESSION['cnpj']) > 2): //se for uma empresa?>
+                            <div class="descricao">
                             <h1 class="nome-sessao">Esse é o texto que é exibido ao entrar no seu perfil</h1>
-                            
-                            <textarea id="texto" name="texto" class="textfield" rows="4" cols="55"><?php pegarTextoPerfil($tipo, $id); ?></textarea>
+                        </div>
+                            <textarea id="texto" name="texto" class="textfield" rows="20" cols="55"><?php pegarTextoPerfil($tipo, $id); ?></textarea>
                         <?php elseif(mb_strlen($_SESSION['cpf']) > 2): ?>
-
+                            <div class="descricao">
                             <label for="texto">Esse é o texto que é exibido ao entrar no seu perfil</label>
-                            
-                            <textarea id="texto" name="texto" class="textfield" rows="7" cols="50"
+                        </div>
+                            <textarea id="texto" name="texto" class="textfield" rows="20" cols="50"
                             class="form-control"><?php pegarTextoPerfil($tipo, $id); ?> </textarea>
                         <?php endif; ?>
-                    </div>
+                    
 
                     <div>
                         <?php if(mb_strlen($_SESSION['cnpj']) > 2): ?>
@@ -177,6 +184,7 @@
     </main>
 
     <?php include('../util/footer.php'); ?>
+
 
 </body>
 </html>
